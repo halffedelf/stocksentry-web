@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How it Works | StockSentry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-slate-300 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="border-b border-slate-800 bg-dark-900/80 backdrop-blur-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/>
+                        <path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="70" cy="30" r="4" fill="#22c55e"/>
+                    </svg>
+                    <span class="text-xl font-bold text-white tracking-tight">StockSentry<span class="text-brand-500">.bot</span></span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#features" class="hover:text-white transition">Features</a>
+                    <a href="how-it-works.html" class="text-white font-medium">How it Works</a>
+                    <a href="pricing.html" class="hover:text-white transition">Pricing</a>
+                </div>
+                <div>
+                    <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-lg font-medium transition text-sm flex items-center gap-2">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        Start on Telegram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="pt-32 pb-12 px-4 sm:px-6 lg:px-8 border-b border-slate-800 bg-dark-800/50">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-4xl font-bold text-white mb-4">How StockSentry Works</h1>
+            <p class="text-lg text-slate-400">
+                You tell it what you own and what you're watching. It monitors the markets on your behalf and messages you when something needs your attention.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-20">
+
+        <!-- Step 1 -->
+        <section>
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold">1</div>
+                <h2 class="text-2xl font-bold text-white">Add your tickers</h2>
+            </div>
+            <p class="text-slate-400 mb-4">Getting started takes under a minute. Send StockSentry a command in Telegram:</p>
+            <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-4 space-y-3 font-mono text-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                    <span class="bg-dark-900 text-brand-400 px-2 py-1 rounded border border-slate-700 shrink-0">/bought AAPL 190.50</span>
+                    <span class="text-slate-500">Log a stock you own at the price you paid.</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                    <span class="bg-dark-900 text-brand-400 px-2 py-1 rounded border border-slate-700 shrink-0">/watch NVDA</span>
+                    <span class="text-slate-500">Add a stock to your watchlist without committing.</span>
+                </div>
+            </div>
+            <p class="text-sm text-slate-500 mt-4">
+                Every ticker is validated against Yahoo Finance before being saved. You can add, update, or remove tickers any time with <code class="text-brand-400">/sold</code>.
+            </p>
+        </section>
+
+        <!-- Step 2 -->
+        <section>
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold">2</div>
+                <h2 class="text-2xl font-bold text-white">Monitors every 30 minutes</h2>
+            </div>
+            <p class="text-slate-400 mb-6">
+                During market hours, StockSentry checks every ticker in your portfolio and watchlist every 30 minutes. It pulls live price data, volume, and calculates 14 technical indicators across two categories, alongside real-time news sentiment.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-800/30 border border-slate-700 rounded-lg p-6">
+                    <h3 class="text-red-400 font-bold mb-4 flex items-center gap-2">
+                        <i data-lucide="trending-down" class="w-4 h-4"></i> Sell / Risk Signals
+                    </h3>
+                    <p class="text-xs text-slate-500 uppercase tracking-wider mb-3">For owned stocks</p>
+                    <ul class="space-y-2 text-sm text-slate-400 marker:text-red-500 list-disc pl-4">
+                        <li>Stop-loss trigger</li>
+                        <li>Support level breach</li>
+                        <li>RSI overbought</li>
+                        <li>Death Cross (50/200-day MA)</li>
+                        <li>Bearish MACD crossover</li>
+                        <li>Bollinger Band upper breach</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800/30 border border-slate-700 rounded-lg p-6">
+                    <h3 class="text-brand-500 font-bold mb-4 flex items-center gap-2">
+                        <i data-lucide="trending-up" class="w-4 h-4"></i> Buy / Entry Signals
+                    </h3>
+                    <p class="text-xs text-slate-500 uppercase tracking-wider mb-3">For tracked stocks</p>
+                    <ul class="space-y-2 text-sm text-slate-400 marker:text-brand-500 list-disc pl-4">
+                        <li>Breakout above resistance</li>
+                        <li>RSI oversold</li>
+                        <li>Golden Cross</li>
+                        <li>Volume spike</li>
+                        <li>Bullish MACD crossover</li>
+                        <li>Bollinger Band lower touch</li>
+                        <li>Low P/E ratio & High dividend yield</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3 -->
+        <section>
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold">3</div>
+                <h2 class="text-2xl font-bold text-white">You only hear when it matters</h2>
+            </div>
+            <p class="text-slate-400 mb-8">
+                StockSentry stays silent unless something has changed. When a signal fires, it asks an AI layer for a verdict and only sends you a message if the AI agrees the signal is actionable. What you receive is plain English, not a chart.
+            </p>
+            
+            <div class="space-y-6 max-w-xl mx-auto">
+                <!-- Telegram Mockup: Sell -->
+                <div class="bg-slate-700/80 text-slate-200 p-4 rounded-2xl rounded-tl-sm text-[13px] leading-relaxed border border-slate-600 shadow-lg">
+                    <div class="font-bold text-white text-sm mb-2">⚠️ SET STOP-LOSS — META</div>
+                    <div class="mb-2"><span class="text-white">$512.40</span> <span class="text-slate-400">| 🟢 +8.3% from entry</span></div>
+                    <div class="bg-red-500/10 p-2.5 rounded-lg border border-red-500/20 mb-2 space-y-1">
+                        <div>Set stop at: <span class="text-white font-bold">$490.00</span></div>
+                        <div class="text-red-400 font-medium text-xs">If triggered, sell immediately.</div>
+                    </div>
+                    <div class="text-slate-300">
+                        <strong class="text-white">Why:</strong> Death cross forming, volume declining, approaching resistance.
+                    </div>
+                </div>
+
+                <!-- Telegram Mockup: Buy -->
+                <div class="bg-slate-700/80 text-slate-200 p-4 rounded-2xl rounded-tr-sm text-[13px] leading-relaxed border border-slate-600 shadow-lg ml-auto">
+                    <div class="font-bold text-white text-sm mb-2">💡 BUY OPPORTUNITY — NVDA</div>
+                    <div class="mb-2"><span class="text-white">$118.20</span> <span class="text-slate-400">| RSI 31.4</span></div>
+                    <div class="bg-slate-800/50 p-2.5 rounded-lg border border-slate-700/50 mb-2 space-y-1">
+                        <div>Allocate: <span class="text-white font-medium">5% of portfolio</span></div>
+                        <div>Stop-loss: <span class="text-white font-medium">$112.00</span> <span class="text-slate-400">| Risk/reward: 2.8:1</span></div>
+                    </div>
+                    <div class="text-slate-300">
+                        <strong class="text-white">Why:</strong> RSI oversold, bullish MACD crossover, high volume on bounce from support.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 4 -->
+        <section>
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold">4</div>
+                <h2 class="text-2xl font-bold text-white">Morning briefing, every trading day</h2>
+            </div>
+            <p class="text-slate-400 mb-6">At 8:00 AM ET Monday–Friday, StockSentry sends you a personalised portfolio briefing covering:</p>
+            <ul class="grid sm:grid-cols-2 gap-4 text-sm text-slate-300">
+                <li class="bg-slate-800/30 p-4 rounded border border-slate-700 flex gap-3">
+                    <i data-lucide="dollar-sign" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                    <span>Current price and P&L for every owned stock.</span>
+                </li>
+                <li class="bg-slate-800/30 p-4 rounded border border-slate-700 flex gap-3">
+                    <i data-lucide="target" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                    <span>Estimated resistance targets & suggested stop-loss levels.</span>
+                </li>
+                <li class="bg-slate-800/30 p-4 rounded border border-slate-700 flex gap-3">
+                    <i data-lucide="line-chart" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                    <span>Portfolio-wide average P&L (7-day and 30-day trends).</span>
+                </li>
+                <li class="bg-slate-800/30 p-4 rounded border border-slate-700 flex gap-3">
+                    <i data-lucide="pie-chart" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                    <span>Sector concentration warnings if overweight.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Step 5 & 6 (Grid) -->
+        <div class="grid md:grid-cols-2 gap-12">
+            <section>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">5</div>
+                    <h2 class="text-xl font-bold text-white">Discovery Scan</h2>
+                </div>
+                <p class="text-sm text-slate-400 mb-4">
+                    Every evening, StockSentry screens the S&P 100 (and NASDAQ 100 on higher tiers) for strong technical setups you aren't tracking.
+                </p>
+                <p class="text-sm text-slate-400 mb-4">
+                    Run manually anytime with <code class="text-brand-400 font-mono bg-slate-800 px-1 rounded">/scan</code>. Add surfaced tickers with <code class="text-brand-400 font-mono bg-slate-800 px-1 rounded">/watch</code> to begin 30-minute monitoring.
+                </p>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">6</div>
+                    <h2 class="text-xl font-bold text-white">Price Alerts</h2>
+                </div>
+                <p class="text-sm text-slate-400 mb-4">Set specific price thresholds on any valid ticker (owned or unowned) to receive an immediate ping.</p>
+                <div class="space-y-2 font-mono text-xs">
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700 text-brand-400">/alert AAPL 220 <span class="text-slate-500 ml-2">// Alert if > $220</span></div>
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700 text-brand-400">/alert AAPL 180 below <span class="text-slate-500 ml-2">// Alert if < $180</span></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Step 7 -->
+        <section>
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold">7</div>
+                <h2 class="text-2xl font-bold text-white">Self-tracking performance</h2>
+            </div>
+            <p class="text-slate-400 mb-4">
+                Every recommendation made is recorded with the price at the time of the call. Each morning, StockSentry checks whether those calls played out correctly to build a transparent track record (win rate, average outcome, top signal types).
+            </p>
+            <p class="text-slate-400">
+                This data feeds back into the AI layer. The longer the agent runs, the more calibrated its signaling becomes.
+            </p>
+        </section>
+
+        <!-- Technical Table -->
+        <section class="mt-16">
+            <h2 class="text-2xl font-bold text-white mb-6">Under the hood</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-slate-800 border-b border-slate-700 text-white">
+                            <th class="p-4 font-bold w-1/4">System</th>
+                            <th class="p-4 font-bold">Implementation</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr class="hover:bg-slate-800/30 transition">
+                            <td class="p-4 font-medium text-white">Data source</td>
+                            <td class="p-4">Yahoo Finance (live prices, fundamentals)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30 transition">
+                            <td class="p-4 font-medium text-white">Technical signals</td>
+                            <td class="p-4">14 indicators across price action, momentum, and volume</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30 transition">
+                            <td class="p-4 font-medium text-white">Analysis layer</td>
+                            <td class="p-4">Claude AI (Anthropic) — verdict & plain-English reasoning</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30 transition">
+                            <td class="p-4 font-medium text-white">Monitoring freq.</td>
+                            <td class="p-4">Every 30 minutes during US market hours</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30 transition">
+                            <td class="p-4 font-medium text-white">Delivery</td>
+                            <td class="p-4">Telegram direct message</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30 transition">
+                            <td class="p-4 font-medium text-white">Storage</td>
+                            <td class="p-4">Ticker list and Telegram ID only — no personal data</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/30 transition">
+                            <td class="p-4 font-medium text-white">Performance</td>
+                            <td class="p-4">Every recommendation recorded and evaluated daily</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-6 text-center text-brand-500 font-bold text-lg tracking-wide uppercase">
+                StockSentry analyses data. You make the decisions.
+            </div>
+        </section>
+
+        <!-- Step 8 (Disclaimer) -->
+        <section class="bg-slate-800/30 p-6 border border-slate-700 rounded-lg text-left mt-16">
+            <div class="flex items-center gap-2 text-white font-bold mb-4">
+                <i data-lucide="shield-alert" class="w-5 h-5 text-red-500"></i> What StockSentry doesn't do
+            </div>
+            <p class="text-sm text-slate-300 mb-4">
+                It is not a financial adviser. Every alert is based on publicly available market data and technical signals. StockSentry has no visibility into your brokerage account, portfolio size, income, or financial situation.
+            </p>
+            <p class="text-sm text-slate-300">
+                It cannot and does not provide personalised investment advice. Every message StockSentry sends is a data point for your own research, not an instruction to trade.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-dark-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div class="flex flex-col gap-1 text-slate-400">
+                <div class="flex items-center justify-center md:justify-start gap-2">
+                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/>
+                        <path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="70" cy="30" r="4" fill="#22c55e"/>
+                    </svg>
+                    <span class="font-bold text-white">StockSentry.bot</span>
+                    <span class="text-sm">© 2026</span>
+                </div>
+                <span class="text-xs text-slate-500">A product of Seer Labs Inc., registered in Ontario.</span>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-3">
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="tos.html" class="hover:text-white transition">Terms of Service</a>
+                    <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="refund.html" class="hover:text-white transition">Refund Policy</a>
+                </div>
+                <a href="mailto:support@stocksentry.bot" class="text-xs text-slate-500 hover:text-white transition flex items-center gap-1">
+                    <i data-lucide="mail" class="w-3 h-3"></i> support@stocksentry.bot
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

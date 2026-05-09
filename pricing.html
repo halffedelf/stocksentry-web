@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | StockSentry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-slate-300 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="border-b border-slate-800 bg-dark-900/80 backdrop-blur-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/>
+                        <path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="70" cy="30" r="4" fill="#22c55e"/>
+                    </svg>
+                    <span class="text-xl font-bold text-white tracking-tight">StockSentry<span class="text-brand-500">.bot</span></span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#features" class="hover:text-white transition">Features</a>
+                    <a href="how-it-works.html" class="hover:text-white transition">How it Works</a>
+                    <a href="pricing.html" class="text-white font-medium">Pricing</a>
+                </div>
+                <div>
+                    <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-lg font-medium transition text-sm flex items-center gap-2">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        Start Free Trial
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-12 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Delegate your technical analysis.</h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
+            Choose the capacity that fits your portfolio. All plans include automated 30-minute monitoring, AI assessments, and plain-English Telegram alerts.
+        </p>
+    </header>
+
+    <!-- Pricing Cards -->
+    <section class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start mt-8">
+            
+            <!-- Free Trial Tier -->
+            <div class="bg-slate-800/30 border border-slate-700 border-dashed rounded-2xl p-8 flex flex-col h-full">
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold text-white mb-2">Free Trial</h2>
+                    <p class="text-sm text-slate-400">Test drive the Pro features for two weeks. No credit card required.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-white">$0</span>
+                    <span class="text-slate-500">/14 days</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">25</strong> Tracked Tickers</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">25</strong> Manual /checks per day</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">Daily</strong> S&P 100 Discovery Scan</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300">Daily Morning Briefing</span>
+                    </li>
+                    <li class="flex items-start gap-3 opacity-40">
+                        <i data-lucide="minus" class="w-5 h-5 text-slate-500 shrink-0"></i>
+                        <span class="text-sm text-slate-500">NASDAQ 100 Scans</span>
+                    </li>
+                </ul>
+                <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="block w-full py-3 px-4 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white text-center rounded-lg font-bold transition">
+                    Start Free Trial
+                </a>
+            </div>
+
+            <!-- Basic Tier -->
+            <div class="bg-slate-800/30 border border-slate-700 rounded-2xl p-8 flex flex-col h-full">
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold text-white mb-2">Basic</h2>
+                    <p class="text-sm text-slate-400">For casual investors watching a tight list of specific assets.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-white">$19.99</span>
+                    <span class="text-slate-500">/month</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">10</strong> Tracked Tickers</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">10</strong> Manual /checks per day</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">Weekly</strong> S&P 100 Discovery Scan</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300">Daily Morning Briefing</span>
+                    </li>
+                    <li class="flex items-start gap-3 opacity-40">
+                        <i data-lucide="minus" class="w-5 h-5 text-slate-500 shrink-0"></i>
+                        <span class="text-sm text-slate-500">NASDAQ 100 Scans</span>
+                    </li>
+                </ul>
+                <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="block w-full py-3 px-4 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white text-center rounded-lg font-bold transition">
+                    Subscribe
+                </a>
+            </div>
+
+            <!-- Pro Tier (Highlighted) -->
+            <div class="bg-dark-900 border-2 border-brand-500 rounded-2xl p-8 flex flex-col h-full relative shadow-[0_0_30px_rgba(34,197,94,0.1)] transform lg:-translate-y-4">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-dark-900 font-bold text-xs uppercase tracking-wider px-3 py-1 rounded-full">
+                    Most Popular
+                </div>
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold text-white mb-2">Pro</h2>
+                    <p class="text-sm text-slate-400">For active swing traders managing broader portfolios.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-white">$29.99</span>
+                    <span class="text-slate-500">/month</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">25</strong> Tracked Tickers</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">25</strong> Manual /checks per day</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">Daily</strong> S&P 100 Discovery Scan</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300">Daily Morning Briefing</span>
+                    </li>
+                    <li class="flex items-start gap-3 opacity-40">
+                        <i data-lucide="minus" class="w-5 h-5 text-slate-500 shrink-0"></i>
+                        <span class="text-sm text-slate-500">NASDAQ 100 Scans</span>
+                    </li>
+                </ul>
+                <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="block w-full py-3 px-4 bg-brand-600 hover:bg-brand-500 text-white text-center rounded-lg font-bold transition shadow-lg shadow-brand-500/20">
+                    Subscribe
+                </a>
+            </div>
+
+            <!-- Premium Tier -->
+            <div class="bg-slate-800/30 border border-slate-700 rounded-2xl p-8 flex flex-col h-full">
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold text-white mb-2">Premium</h2>
+                    <p class="text-sm text-slate-400">Unrestricted access and expanded market discovery.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-white">$49.99</span>
+                    <span class="text-slate-500">/month</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">100</strong> Tracked Tickers</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">100</strong> Manual /checks per day</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">Daily</strong> S&P 100 Scan</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300"><strong class="text-white">Daily</strong> NASDAQ 100 Scan</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i>
+                        <span class="text-sm text-slate-300">Daily Morning Briefing</span>
+                    </li>
+                </ul>
+                <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="block w-full py-3 px-4 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white text-center rounded-lg font-bold transition">
+                    Subscribe
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- AI Plan Recommender -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="bg-dark-800/80 border border-brand-500/30 rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand-500/5 blur-3xl rounded-full pointer-events-none"></div>
+            
+            <div class="relative z-10 text-center mb-6">
+                <h2 class="text-2xl font-bold text-white mb-2">Unsure which plan to pick?</h2>
+                <p class="text-slate-400 text-sm">Tell us about your trading style, and our AI will recommend the most cost-effective tier for your needs.</p>
+            </div>
+            
+            <div class="relative z-10 flex flex-col sm:flex-row gap-4">
+                <input type="text" id="tradingStyleInput" placeholder="e.g., I swing trade crypto and about 8 tech stocks..." class="flex-grow bg-slate-900 border border-slate-700 text-white text-sm rounded-lg px-4 py-3 focus:outline-none focus:border-brand-500 transition">
+                <button id="recommendButton" onclick="recommendPlan()" class="bg-brand-600 hover:bg-brand-500 text-white px-6 py-3 rounded-lg font-bold transition whitespace-nowrap flex justify-center items-center gap-2 min-w-[160px]">
+                    ✨ Find My Plan
+                </button>
+            </div>
+            
+            <div id="recommendationResult" class="mt-6 bg-slate-900/80 border border-slate-700 rounded-lg p-5 hidden relative z-10">
+                <!-- Result will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="border-t border-slate-800 bg-dark-800/50 py-24">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+            
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">How does the free trial work?</h3>
+                    <p class="text-slate-400 text-sm">You get 14 days of full access to the Pro tier. We do not require a credit card upfront. When your trial ends, the bot will message you with a link to subscribe via Stripe to keep your watchlist active.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">How are payments processed?</h3>
+                    <p class="text-slate-400 text-sm">All payments are securely handled by Stripe. StockSentry never sees or stores your payment information. You will receive a unique checkout link directly inside your Telegram chat.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">How do I cancel?</h3>
+                    <p class="text-slate-400 text-sm">You can cancel anytime by typing <code>/account</code> in the bot. It will provide a link to your Stripe customer portal where you can cancel your subscription with one click. Your access will continue until the end of your billing cycle.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">Can I upgrade or downgrade later?</h3>
+                    <p class="text-slate-400 text-sm">Yes. You can manage your tier from your Stripe portal at any time. Pricing adjustments are prorated automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-dark-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div class="flex flex-col gap-1 text-slate-400">
+                <div class="flex items-center justify-center md:justify-start gap-2">
+                    <!-- Concept 1: Shield Logo Small -->
+                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/>
+                        <path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="70" cy="30" r="4" fill="#22c55e"/>
+                    </svg>
+                    <span class="font-bold text-white">StockSentry.bot</span>
+                    <span class="text-sm">© 2026</span>
+                </div>
+                <span class="text-xs text-slate-500">A product of Seer Labs Inc., registered in Ontario.</span>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-3">
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="tos.html" class="hover:text-white transition">Terms of Service</a>
+                    <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="refund.html" class="hover:text-white transition">Refund Policy</a>
+                </div>
+                <a href="mailto:support@stocksentry.bot" class="text-xs text-slate-500 hover:text-white transition flex items-center gap-1">
+                    <i data-lucide="mail" class="w-3 h-3"></i> support@stocksentry.bot
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Gemini API Integration
+        const apiKey = "";
+        const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+        async function fetchWithRetry(url, options, retries = 5) {
+            const delays = [1000, 2000, 4000, 8000, 16000];
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return await response.json();
+                } catch (error) {
+                    if (i === retries - 1) throw error;
+                    await new Promise(res => setTimeout(res, delays[i]));
+                }
+            }
+        }
+
+        async function recommendPlan() {
+            const input = document.getElementById('tradingStyleInput').value.trim();
+            const resultDiv = document.getElementById('recommendationResult');
+            const button = document.getElementById('recommendButton');
+            
+            if (!input) return;
+
+            // UI Loading State
+            button.disabled = true;
+            button.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Analyzing';
+            lucide.createIcons();
+            resultDiv.classList.add('hidden');
+
+            const systemInstruction = `You are a pricing assistant for StockSentry. Based on the user's input about their trading habits, recommend the BEST pricing tier for them. 
+            Available Tiers: 
+            1. Basic ($19.99/mo, strictly max 10 tickers, weekly S&P 100 scan).
+            2. Pro ($29.99/mo, up to 25 tickers, daily S&P 100 scan).
+            3. Premium ($49.99/mo, up to 100 tickers, daily S&P 100 + NASDAQ 100 scan).
+            Keep your response under 3 sentences. Be professional, direct, and clearly name the recommended tier in your response. Do not use Markdown styling.`;
+
+            const payload = {
+                contents: [{ parts: [{ text: input }] }],
+                systemInstruction: { parts: [{ text: systemInstruction }] }
+            };
+
+            try {
+                const data = await fetchWithRetry(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't process that right now.";
+                resultDiv.innerHTML = `<p class="text-slate-300 text-sm leading-relaxed">${text}</p>`;
+                resultDiv.classList.remove('hidden');
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="text-red-400 text-sm">Unable to connect to the recommendation engine. Please select a plan above based on your portfolio size.</p>`;
+                resultDiv.classList.remove('hidden');
+            } finally {
+                // Restore UI
+                button.disabled = false;
+                button.innerHTML = '✨ Find My Plan';
+            }
+        }
+    </script>
+</body>
+</html>
