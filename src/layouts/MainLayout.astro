@@ -1,6 +1,7 @@
 ---
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Tracker from '../components/Tracker.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -26,5 +27,6 @@ const currentPath = Astro.url.pathname;
 		<Nav currentPath={currentPath} />
 		<slot />
 		<Footer />
+		<Tracker />
 	</body>
 </html>

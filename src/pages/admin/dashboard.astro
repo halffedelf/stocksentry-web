@@ -1,0 +1,203 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { supabase } from '../../lib/supabase';
+
+export const prerender = false;
+
+// Basic security: require a password in the URL (e.g., /admin/dashboard?p=secret)
+const p = Astro.url.searchParams.get('p');
+const ADMIN_PASS = import.meta.env.ADMIN_PASSWORD || 'sentry123';
+
+if (p !== ADMIN_PASS) {
+    return Astro.redirect('/');
+}
+
+// Fetch analytics from the last 30 days
+const thirtyDaysAgo = new Date();
+thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+const { data: views, error } = await supabase
+    .from('page_views')
+    .select('*')
+    .filter('created_at', 'gte', thirtyDaysAgo.toISOString())
+    .order('created_at', { ascending: false });
+
+if (error) {
+    console.error(error);
+}
+
+// Data Processing
+const totalViews = views?.length || 0;
+const uniqueVisitors = new Set(views?.map(v => v.daily_hash)).size;
+const avgDuration = views?.length ? Math.round(views.reduce((acc, v) => acc + (v.duration_seconds || 0), 0) / views.length) : 0;
+
+// Top Pages
+const pageMap = new Map();
+views?.forEach(v => {
+    pageMap.set(v.path, (pageMap.get(v.path) || 0) + 1);
+});
+const topPages = Array.from(pageMap.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5);
+
+// Top Referrers
+const refMap = new Map();
+views?.forEach(v => {
+    const ref = v.referrer || 'Direct';
+    refMap.set(ref, (refMap.get(ref) || 0) + 1);
+});
+const topReferrers = Array.from(refMap.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5);
+
+// Geo Breakdown
+const countryMap = new Map();
+views?.forEach(v => {
+    countryMap.set(v.country, (countryMap.get(v.country) || 0) + 1);
+});
+const topCountries = Array.from(countryMap.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5);
+---
+
+<MainLayout title="Traffic Dashboard">
+    <div class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-white">Market Intelligence Dashboard</h1>
+                <p class="text-slate-400 mt-2">Privacy-first traffic monitoring for StockSentry.bot</p>
+            </div>
+            <div class="bg-brand-500/10 border border-brand-500/20 px-4 py-2 rounded-lg text-brand-500 text-sm font-bold">
+                Last 30 Days
+            </div>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-dark-800 border border-slate-700 p-6 rounded-2xl">
+                <div class="text-slate-400 text-sm mb-2 flex items-center gap-2">
+                    <i data-lucide="eye" class="w-4 h-4"></i> Total Page Views
+                </div>
+                <div class="text-4xl font-bold text-white">{totalViews}</div>
+            </div>
+            <div class="bg-dark-800 border border-slate-700 p-6 rounded-2xl">
+                <div class="text-slate-400 text-sm mb-2 flex items-center gap-2">
+                    <i data-lucide="users" class="w-4 h-4"></i> Unique Visitors
+                </div>
+                <div class="text-4xl font-bold text-white">{uniqueVisitors}</div>
+            </div>
+            <div class="bg-dark-800 border border-slate-700 p-6 rounded-2xl">
+                <div class="text-slate-400 text-sm mb-2 flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4"></i> Avg. Time on Page
+                </div>
+                <div class="text-4xl font-bold text-white">{avgDuration}s</div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Top Pages -->
+            <div class="bg-dark-800 border border-slate-700 rounded-2xl overflow-hidden">
+                <div class="p-6 border-b border-slate-700 bg-dark-900/50">
+                    <h2 class="font-bold text-white flex items-center gap-2">
+                        <i data-lucide="file-text" class="w-5 h-5 text-brand-500"></i> Most Visited Pages
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        {topPages.map(([path, count]) => (
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-300 font-mono text-sm">{path}</span>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-32 bg-dark-900 h-2 rounded-full overflow-hidden hidden sm:block">
+                                        <div class="bg-brand-500 h-full" style={`width: ${(count / totalViews) * 100}%`}></div>
+                                    </div>
+                                    <span class="text-white font-bold">{count}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Referrers -->
+            <div class="bg-dark-800 border border-slate-700 rounded-2xl overflow-hidden">
+                <div class="p-6 border-b border-slate-700 bg-dark-900/50">
+                    <h2 class="font-bold text-white flex items-center gap-2">
+                        <i data-lucide="share-2" class="w-5 h-5 text-brand-500"></i> Traffic Sources
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        {topReferrers.map(([ref, count]) => (
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-300 text-sm truncate max-w-[200px]">{ref}</span>
+                                <span class="text-white font-bold">{count}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Distribution -->
+            <div class="bg-dark-800 border border-slate-700 rounded-2xl overflow-hidden lg:col-span-2">
+                <div class="p-6 border-b border-slate-700 bg-dark-900/50">
+                    <h2 class="font-bold text-white flex items-center gap-2">
+                        <i data-lucide="globe" class="w-5 h-5 text-brand-500"></i> Global Distribution
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {topCountries.map(([country, count]) => (
+                            <div class="flex flex-col">
+                                <span class="text-slate-400 text-xs uppercase tracking-wider mb-1">{country}</span>
+                                <span class="text-2xl font-bold text-white">{count} <span class="text-sm font-normal text-slate-500">views</span></span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity Feed -->
+        <div class="mt-12 bg-dark-800 border border-slate-700 rounded-2xl overflow-hidden">
+            <div class="p-6 border-b border-slate-700 bg-dark-900/50">
+                <h2 class="font-bold text-white flex items-center gap-2">
+                    <i data-lucide="activity" class="w-5 h-5 text-brand-500"></i> Real-time Feed
+                </h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                    <thead>
+                        <tr class="bg-dark-900/30 text-slate-400 border-b border-slate-700">
+                            <th class="p-4 font-medium">Time</th>
+                            <th class="p-4 font-medium">Location</th>
+                            <th class="p-4 font-medium">Page</th>
+                            <th class="p-4 font-medium">Engagement</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700">
+                        {views?.slice(0, 10).map(v => (
+                            <tr class="hover:bg-dark-900/20 transition">
+                                <td class="p-4 text-slate-300">{new Date(v.created_at).toLocaleTimeString()}</td>
+                                <td class="p-4 text-white font-medium">{v.city}, {v.country}</td>
+                                <td class="p-4 text-slate-400 font-mono text-xs">{v.path}</td>
+                                <td class="p-4">
+                                    <span class={`px-2 py-1 rounded text-[10px] font-bold uppercase ${v.duration_seconds > 60 ? 'bg-green-500/10 text-green-500' : 'bg-slate-500/10 text-slate-500'}`}>
+                                        {v.duration_seconds}s stay
+                                    </span>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</MainLayout>
+
+<script>
+    import { createIcons, Eye, Users, Clock, FileText, Share2, Globe, Activity } from 'lucide';
+    createIcons({
+        icons: { Eye, Users, Clock, FileText, Share2, Globe, Activity }
+    });
+</script>

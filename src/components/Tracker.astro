@@ -1,0 +1,58 @@
+---
+---
+<script>
+    let currentViewId: string;
+    let secondsSpent = 0;
+    let heartbeatInterval: any;
+
+    const track = async (type = 'pageview', extra = {}) => {
+        const payload = {
+            type,
+            path: window.location.pathname,
+            referrer: document.referrer,
+            viewId: currentViewId,
+            ...extra
+        };
+
+        try {
+            // Use fetch with keepalive to ensure it completes even if page is closed
+            await fetch('/api/track', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+                keepalive: true
+            });
+        } catch (e) {
+            // Silently fail to not disturb the user experience
+        }
+    };
+
+    const startTracking = () => {
+        // Generate a unique ID for this specific page view
+        currentViewId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        secondsSpent = 0;
+        
+        // Initial page view ping
+        track('pageview');
+
+        // Heartbeat every 15 seconds to track engagement
+        if (heartbeatInterval) clearInterval(heartbeatInterval);
+        heartbeatInterval = setInterval(() => {
+            secondsSpent += 15;
+            track('heartbeat', { duration: secondsSpent });
+        }, 15000);
+    };
+
+    // Run on initial load
+    startTracking();
+
+    // Re-run on Astro page transitions (if using View Transitions)
+    document.addEventListener('astro:after-swap', startTracking);
+
+    // Final heartbeat on page leave
+    window.addEventListener('beforeunload', () => {
+        if (secondsSpent > 0) {
+            track('heartbeat', { duration: secondsSpent });
+        }
+    });
+</script>
