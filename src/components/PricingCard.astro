@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  price: string;
+  period: string;
+  features: { label: string; active: boolean }[];
+  buttonText: string;
+  highlight?: boolean;
+}
+
+const { title, description, price, period, features, buttonText, highlight = false } = Astro.props;
+---
+
+<div class={`${highlight ? 'bg-dark-900 border-2 border-brand-500 relative shadow-[0_0_30px_rgba(34,197,94,0.1)] transform lg:-translate-y-4' : 'bg-slate-800/30 border border-slate-700'} rounded-2xl p-8 flex flex-col h-full`}>
+    {highlight && (
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-dark-900 font-bold text-xs uppercase tracking-wider px-3 py-1 rounded-full">
+            Most Popular
+        </div>
+    )}
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-white mb-2">{title}</h2>
+        <p class="text-sm text-slate-400">{description}</p>
+    </div>
+    <div class="mb-8">
+        <span class="text-4xl font-bold text-white">{price}</span>
+        <span class="text-slate-500">{period}</span>
+    </div>
+    <ul class="space-y-4 mb-8 flex-grow">
+        {features.map((feature) => (
+            <li class={`flex items-start gap-3 ${!feature.active ? 'opacity-40' : ''}`}>
+                <i data-lucide={feature.active ? "check" : "minus"} class={`w-5 h-5 shrink-0 ${feature.active ? 'text-brand-500' : 'text-slate-500'}`}></i>
+                <span class={`text-sm ${feature.active ? 'text-slate-300' : 'text-slate-500'}`} set:html={feature.label}></span>
+            </li>
+        ))}
+    </ul>
+    <a href="https://t.me/StockSentryAYS_bot" target="_blank" class={`block w-full py-3 px-4 text-center rounded-lg font-bold transition ${highlight ? 'bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-500/20' : 'bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white'}`}>
+        {buttonText}
+    </a>
+</div>

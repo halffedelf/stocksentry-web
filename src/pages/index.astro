@@ -1,64 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="logo.png">
-    <title>StockSentry | AI powered stock monitoring bot</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            900: '#14532d',
-                            950: '#052e16',
-                        },
-                        dark: {
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="bg-dark-900 text-slate-300 font-sans antialiased">
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
 
-    <!-- Navigation -->
-    <nav class="border-b border-slate-800 bg-dark-900/80 backdrop-blur-md fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <a href="index.html" class="flex items-center gap-2">
-                    <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/>
-                        <path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="70" cy="30" r="4" fill="#22c55e"/>
-                    </svg>
-                    <span class="text-xl font-bold text-white tracking-tight">StockSentry<span class="text-brand-500">.bot</span></span>
-                </a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html#features" class="hover:text-white transition">Features</a>
-                    <a href="how-it-works.html" class="hover:text-white transition">How it Works</a>
-                    <a href="pricing.html" class="hover:text-white transition">Pricing</a>
-                    <a href="faq.html" class="hover:text-white transition">FAQ</a>
-                </div>
-                <div>
-                    <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-lg font-medium transition text-sm flex items-center gap-2">
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                        Start Free Trial
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
+<MainLayout title="AI powered stock monitoring bot">
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -78,7 +22,7 @@
                         <i data-lucide="send" class="w-5 h-5"></i>
                         Start Free Trial
                     </a>
-                    <a href="#how-it-works" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-xl font-medium text-lg text-center transition">
+                    <a href="/how-it-works" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-xl font-medium text-lg text-center transition">
                         View Example Alerts
                     </a>
                 </div>
@@ -418,37 +362,4 @@
             <strong>* Subscription Features:</strong> Scanning of the NASDAQ 100 is exclusive to the Premium subscription. The S&P 100 is available in both Basic and Pro subscriptions. The frequency of the discovery scan is weekly for Basic subscriptions and daily for Pro and Premium subscriptions.
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="border-t border-slate-800 bg-dark-900 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-            <div class="flex flex-col gap-1 text-slate-400">
-                <div class="flex items-center justify-center md:justify-start gap-2">
-                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/>
-                        <path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="70" cy="30" r="4" fill="#22c55e"/>
-                    </svg>
-                    <span class="font-bold text-white">StockSentry.bot</span>
-                    <span class="text-sm">© 2026</span>
-                </div>
-                <span class="text-xs text-slate-500">A product of Seer Labs Inc., registered in Ontario.</span>
-            </div>
-            <div class="flex flex-col items-center md:items-end gap-3">
-                <div class="flex gap-6 text-sm text-slate-500">
-                    <a href="tos.html" class="hover:text-white transition">Terms of Service</a>
-                    <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
-                    <a href="refund.html" class="hover:text-white transition">Refund Policy</a>
-                </div>
-                <a href="mailto:support@stocksentry.bot" class="text-xs text-slate-500 hover:text-white transition flex items-center gap-1">
-                    <i data-lucide="mail" class="w-3 h-3"></i> support@stocksentry.bot
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-    </script>
-</body>
-</html>
+</MainLayout>

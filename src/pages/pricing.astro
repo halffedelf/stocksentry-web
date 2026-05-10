@@ -1,0 +1,195 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PricingCard from '../components/PricingCard.astro';
+
+const tiers = [
+  {
+    title: "Free Trial",
+    description: "Test drive the Pro features for two weeks. No credit card required.",
+    price: "$0",
+    period: "/14 days",
+    buttonText: "Start Free Trial",
+    features: [
+      { label: "<strong class='text-white'>25</strong> Tracked Tickers", active: true },
+      { label: "<strong class='text-white'>25</strong> Manual /checks per day", active: true },
+      { label: "<strong class='text-white'>Daily</strong> S&P 100 Discovery Scan", active: true },
+      { label: "Daily Morning Briefing", active: true },
+      { label: "NASDAQ 100 Scans", active: false },
+    ]
+  },
+  {
+    title: "Basic",
+    description: "For casual investors watching a tight list of specific assets.",
+    price: "$19.99",
+    period: "/month",
+    buttonText: "Subscribe",
+    features: [
+      { label: "<strong class='text-white'>10</strong> Tracked Tickers", active: true },
+      { label: "<strong class='text-white'>10</strong> Manual /checks per day", active: true },
+      { label: "<strong class='text-white'>Weekly</strong> S&P 100 Discovery Scan", active: true },
+      { label: "Daily Morning Briefing", active: true },
+      { label: "NASDAQ 100 Scans", active: false },
+    ]
+  },
+  {
+    title: "Pro",
+    description: "For active swing traders managing broader portfolios.",
+    price: "$29.99",
+    period: "/month",
+    buttonText: "Subscribe",
+    highlight: true,
+    features: [
+      { label: "<strong class='text-white'>25</strong> Tracked Tickers", active: true },
+      { label: "<strong class='text-white'>25</strong> Manual /checks per day", active: true },
+      { label: "<strong class='text-white'>Daily</strong> S&P 100 Discovery Scan", active: true },
+      { label: "Daily Morning Briefing", active: true },
+      { label: "NASDAQ 100 Scans", active: false },
+    ]
+  },
+  {
+    title: "Premium",
+    description: "Unrestricted access and expanded market discovery.",
+    price: "$49.99",
+    period: "/month",
+    buttonText: "Subscribe",
+    features: [
+      { label: "<strong class='text-white'>100</strong> Tracked Tickers", active: true },
+      { label: "<strong class='text-white'>100</strong> Manual /checks per day", active: true },
+      { label: "<strong class='text-white'>Daily</strong> S&P 100 Scan", active: true },
+      { label: "<strong class='text-white'>Daily</strong> NASDAQ 100 Scan", active: true },
+      { label: "Daily Morning Briefing", active: true },
+    ]
+  }
+];
+---
+
+<MainLayout title="Pricing">
+    <!-- Header -->
+    <header class="pt-32 pb-12 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Delegate your technical analysis.</h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
+            Choose the capacity that fits your portfolio. All plans include automated 30-minute monitoring, AI assessments, and plain-English Telegram alerts.
+        </p>
+    </header>
+
+    <!-- Pricing Cards -->
+    <section class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start mt-8">
+            {tiers.map(tier => (
+                <PricingCard {...tier} />
+            ))}
+        </div>
+    </section>
+
+    <!-- AI Plan Recommender -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="bg-dark-800/80 border border-brand-500/30 rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand-500/5 blur-3xl rounded-full pointer-events-none"></div>
+            
+            <div class="relative z-10 text-center mb-6">
+                <h2 class="text-2xl font-bold text-white mb-2">Unsure which plan to pick?</h2>
+                <p class="text-slate-400 text-sm">Tell us about your trading style, and our AI will recommend the most cost-effective tier for your needs.</p>
+            </div>
+            
+            <div class="relative z-10 flex flex-col sm:flex-row gap-4">
+                <input type="text" id="tradingStyleInput" placeholder="e.g., I swing trade crypto and about 8 tech stocks..." class="flex-grow bg-slate-900 border border-slate-700 text-white text-sm rounded-lg px-4 py-3 focus:outline-none focus:border-brand-500 transition">
+                <button id="recommendButton" class="bg-brand-600 hover:bg-brand-500 text-white px-6 py-3 rounded-lg font-bold transition whitespace-nowrap flex justify-center items-center gap-2 min-w-[160px]">
+                    ✨ Find My Plan
+                </button>
+            </div>
+            
+            <div id="recommendationResult" class="mt-6 bg-slate-900/80 border border-slate-700 rounded-lg p-5 hidden relative z-10">
+                <!-- Result will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="border-t border-slate-800 bg-dark-800/50 py-24">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+            
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">How does the free trial work?</h3>
+                    <p class="text-slate-400 text-sm">You get 14 days of full access to the Pro tier. We do not require a credit card upfront. When your trial ends, the bot will message you with a link to subscribe via Stripe to keep your watchlist active.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">How are payments processed?</h3>
+                    <p class="text-slate-400 text-sm">All payments are securely handled by Stripe. StockSentry never sees or stores your payment information. You will receive a unique checkout link directly inside your Telegram chat.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">How do I cancel?</h3>
+                    <p class="text-slate-400 text-sm">You can cancel anytime by typing <code>/account</code> in the bot. It will provide a link to your Stripe customer portal where you can cancel your subscription with one click. Your access will continue until the end of your billing cycle.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">Can I upgrade or downgrade later?</h3>
+                    <p class="text-slate-400 text-sm">Yes. You can manage your tier from your Stripe portal at any time. Pricing adjustments are prorated automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</MainLayout>
+
+<script>
+    // AI Plan Recommender Logic
+    // We can import the lucide icons here if needed, but they are already in Footer.astro script.
+    // However, the Footer script runs on every page.
+    
+    const recommendButton = document.getElementById('recommendButton');
+    const inputField = document.getElementById('tradingStyleInput') as HTMLInputElement;
+    const resultDiv = document.getElementById('recommendationResult');
+
+    if (recommendButton && inputField && resultDiv) {
+        recommendButton.addEventListener('click', async () => {
+            const input = inputField.value.trim();
+            if (!input) return;
+
+            // UI Loading State
+            recommendButton.setAttribute('disabled', 'true');
+            const originalText = recommendButton.innerHTML;
+            recommendButton.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Analyzing';
+            // Trigger lucide icon refresh if needed, but Footer.astro already does this on load.
+            // Since we are adding dynamic HTML, we might need to re-run lucide.
+            // But let's see.
+            
+            resultDiv.classList.add('hidden');
+
+            const apiKey = ""; // Should be handled via environment variables in a real app
+            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            const systemInstruction = `You are a pricing assistant for StockSentry. Based on the user's input about their trading habits, recommend the BEST pricing tier for them. 
+            Available Tiers: 
+            1. Basic ($19.99/mo, strictly max 10 tickers, weekly S&P 100 scan).
+            2. Pro ($29.99/mo, up to 25 tickers, daily S&P 100 scan).
+            3. Premium ($49.99/mo, up to 100 tickers, daily S&P 100 + NASDAQ 100 scan).
+            Keep your response under 3 sentences. Be professional, direct, and clearly name the recommended tier in your response. Do not use Markdown styling.`;
+
+            const payload = {
+                contents: [{ parts: [{ text: input }] }],
+                systemInstruction: { parts: [{ text: systemInstruction }] }
+            };
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error('API Error');
+                const data = await response.json();
+
+                const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't process that right now.";
+                resultDiv.innerHTML = `<p class="text-slate-300 text-sm leading-relaxed">${text}</p>`;
+                resultDiv.classList.remove('hidden');
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="text-red-400 text-sm">Unable to connect to the recommendation engine. Please select a plan above based on your portfolio size.</p>`;
+                resultDiv.classList.remove('hidden');
+            } finally {
+                recommendButton.removeAttribute('disabled');
+                recommendButton.innerHTML = originalText;
+            }
+        });
+    }
+</script>

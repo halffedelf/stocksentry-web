@@ -1,0 +1,30 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "The AI powered bot that constantly monitors your positions. It reads the charts, examines the news, and nudges you in plain English only when it's time to act." } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/logo.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | StockSentry</title>
+	</head>
+	<body>
+		<Nav currentPath={currentPath} />
+		<slot />
+		<Footer />
+	</body>
+</html>

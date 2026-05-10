@@ -1,0 +1,24 @@
+:root {
+  --brand-50: #f0fdf4;
+  --brand-500: #22c55e;
+  --brand-600: #16a34a;
+  --brand-900: #14532d;
+  --brand-950: #052e16;
+  
+  --dark-800: #1e293b;
+  --dark-900: #0f172a;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-slate-300 font-sans antialiased;
+  }
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
