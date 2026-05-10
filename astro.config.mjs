@@ -10,6 +10,7 @@ export default defineConfig({
     webAnalytics: {
       enabled: true,
     },
+    edge: false, // Ensure we are using Serverless, not Edge
   }),
   integrations: [tailwind()],
   build: {
