@@ -2,7 +2,7 @@
 const { currentPath } = Astro.props;
 
 const navLinks = [
-  { href: "/#features", label: "Features" },
+  { href: "/", label: "Home" },
   { href: "/how-it-works", label: "How it Works" },
   { href: "/pricing", label: "Pricing" },
   { href: "/faq", label: "FAQ" },
@@ -20,6 +20,8 @@ const navLinks = [
                 </svg>
                 <span class="text-xl font-bold text-white tracking-tight">StockSentry<span class="text-brand-500">.bot</span></span>
             </a>
+            
+            <!-- Desktop Navigation -->
             <div class="hidden md:flex space-x-8">
                 {navLinks.map(({ href, label }) => (
                     <a 
@@ -30,12 +32,101 @@ const navLinks = [
                     </a>
                 ))}
             </div>
-            <div>
-                <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-lg font-medium transition text-sm flex items-center gap-2">
+
+            <div class="flex items-center gap-4">
+                <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="hidden sm:flex bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-lg font-medium transition text-sm items-center gap-2">
                     <i data-lucide="send" class="w-4 h-4"></i>
+                    Start Free Trial
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button 
+                    id="mobile-menu-button" 
+                    class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2"
+                    aria-label="Menu"
+                >
+                    <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-dark-900 border-b border-slate-800 absolute w-full left-0 top-16 shadow-2xl">
+        <div class="px-4 pt-2 pb-8 space-y-1">
+            {navLinks.map(({ href, label }) => (
+                <a 
+                    href={href} 
+                    class={`block px-3 py-4 rounded-lg transition hover:bg-dark-800 ${currentPath === href || (href !== "/" && currentPath?.startsWith(href)) ? "text-brand-500 font-medium bg-dark-800" : "text-slate-300"}`}
+                >
+                    {label}
+                </a>
+            ))}
+            <div class="pt-4 px-3">
+                <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-600 hover:bg-brand-500 text-white px-5 py-4 rounded-xl font-bold transition">
+                    <i data-lucide="send" class="w-5 h-5"></i>
                     Start Free Trial
                 </a>
             </div>
         </div>
     </div>
 </nav>
+
+<script>
+    const setupMobileMenu = () => {
+        const button = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const navLinks = menu?.querySelectorAll('a');
+
+        const toggleMenu = () => {
+            const isHidden = menu?.classList.contains('hidden');
+            if (isHidden) {
+                menu?.classList.remove('hidden');
+                menuIcon?.classList.add('hidden');
+                closeIcon?.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu?.classList.add('hidden');
+                menuIcon?.classList.remove('hidden');
+                closeIcon?.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        };
+
+        button?.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            const isMenuOpen = !menu?.classList.contains('hidden');
+            const clickedInsideMenu = menu?.contains(event.target as Node);
+            const clickedButton = button?.contains(event.target as Node);
+            
+            if (isMenuOpen && !clickedInsideMenu && !clickedButton) {
+                toggleMenu();
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks?.forEach(link => {
+            link.addEventListener('click', () => {
+                menu?.classList.add('hidden');
+                menuIcon?.classList.remove('hidden');
+                closeIcon?.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+        });
+    };
+
+    // Run on initial load
+    setupMobileMenu();
+
+    // Re-run after Astro page transitions
+    document.addEventListener('astro:after-swap', setupMobileMenu);
+</script>
