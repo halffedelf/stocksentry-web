@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | StockSentry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-slate-300 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="border-b border-slate-800 bg-dark-900/80 backdrop-blur-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/>
+                        <path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="70" cy="30" r="4" fill="#22c55e"/>
+                    </svg>
+                    <span class="text-xl font-bold text-white tracking-tight">StockSentry<span class="text-brand-500">.bot</span></span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#features" class="hover:text-white transition">Features</a>
+                    <a href="how-it-works.html" class="hover:text-white transition">How it Works</a>
+                    <a href="pricing.html" class="hover:text-white transition">Pricing</a>
+                    <a href="faq.html" class="text-white font-medium">FAQ</a>
+                </div>
+                <div>
+                    <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-lg font-medium transition text-sm flex items-center gap-2">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        Start Free Trial
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="pt-32 pb-12 px-4 border-b border-slate-800 bg-dark-800/50">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <!-- Operations & Security -->
+            <div class="space-y-8">
+                <h2 class="text-xl font-bold text-brand-500 border-b border-slate-800 pb-2">Operations & Security</h2>
+                
+                <div>
+                    <h3 class="text-white font-bold mb-2">Does StockSentry execute trades for me?</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                        <li><strong>No.</strong> StockSentry is an intelligence and alerting tool only.</li>
+                        <li>We identify setups and send Telegram notifications.</li>
+                        <li>You are responsible for executing trades manually in your own brokerage account.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-2">Do you connect to my brokerage account?</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                        <li><strong>No.</strong> We operate with zero financial visibility.</li>
+                        <li>We do not ask for API keys, login credentials, or account balances.</li>
+                        <li>We only store your Telegram ID and the specific ticker symbols you ask the bot to watch.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-2">Why Telegram instead of a standalone app?</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                        <li><strong>Speed:</strong> Telegram's API allows for near-instant push notification delivery.</li>
+                        <li><strong>Efficiency:</strong> No heavy charting app running in your background draining battery.</li>
+                        <li><strong>Frictionless:</strong> You likely already have the app open; no context switching required to get an alert.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-2">What markets do you cover?</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                        <li>Currently limited to US Equities.</li>
+                        <li>Discovery scans are restricted to the highly liquid S&P 100 and NASDAQ 100 components.</li>
+                        <li>OTC, crypto, and forex are not supported.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Billing & Account -->
+            <div class="space-y-8">
+                <h2 class="text-xl font-bold text-brand-500 border-b border-slate-800 pb-2">Billing & Account</h2>
+
+                <div>
+                    <h3 class="text-white font-bold mb-2">How does the 14-day free trial work?</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                        <li>You receive 14 days of unrestricted access to the Pro tier features.</li>
+                        <li>No credit card is required to initiate the trial.</li>
+                        <li>After 14 days, the bot will cease monitoring unless you initiate a paid subscription via Stripe.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-2">How do I cancel my subscription?</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                        <li>Send the command <code>/account</code> to the bot in Telegram.</li>
+                        <li>The bot will return a secure, temporary link to your Stripe Customer Portal.</li>
+                        <li>Click "Cancel Plan". Service remains active until the end of your billing cycle.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-2">Do you offer refunds?</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                        <li><strong>No.</strong> Due to the nature of data processing costs, we do not offer prorated refunds for mid-cycle cancellations.</li>
+                        <li>This is why we provide a strict, no-credit-card-required 14-day trial for evaluation.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-2">Is this financial advice?</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-red-500">
+                        <li><strong>Absolutely not.</strong> StockSentry is an algorithmic data tool.</li>
+                        <li>Alerts are generated based on mathematical technical indicators, not personalized fiduciary assessment.</li>
+                        <li>All trading involves risk. You are solely responsible for your financial decisions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Usage & Strategy -->
+            <div class="md:col-span-2 space-y-8 mt-8">
+                <h2 class="text-xl font-bold text-brand-500 border-b border-slate-800 pb-2">Usage & Strategy</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-white font-bold mb-2">How can I find new tickers to watch or buy?</h3>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                                <li>Rely on the automated <strong>discovery scans</strong>.</li>
+                                <li>The agent sweeps the S&P 100 (and NASDAQ 100 on higher tiers) at the end of the trading day.</li>
+                                <li>It surfaces high-probability technical setups that are not currently on your watchlist.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold mb-2">Does the app track after-market price changes?</h3>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                                <li><strong>No.</strong> Active monitoring occurs strictly during standard market hours.</li>
+                                <li>If a stock's trend changes drastically overnight, it will be captured and reported in your 8:30 AM ET morning briefing.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold mb-2">Is it worth paying for this app?</h3>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                                <li><strong>Yes</strong>, provided you use it correctly.</li>
+                                <li>Continuous monitoring helps limit your losses and lock in gains by catching trend reversals you might miss.</li>
+                                <li>The agent reports your P&L daily, so you can measure its value yourself.</li>
+                                <li><strong>The Catch:</strong> The math only works if you are honest with the bot. You must accurately log your exact entry prices via the <code>/bought</code> command for alerts to trigger accurately.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-white font-bold mb-2">How can I make the best use of the app?</h3>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                                <li><strong>Log holdings accurately:</strong> Add owned tickers and exact entry prices via <code>/bought</code>.</li>
+                                <li><strong>Check scans:</strong> Review discovery scans (Daily for Pro/Premium; Mon, Wed, Thu for Basic).</li>
+                                <li><strong>Build watchlist:</strong> Use <code>/watch</code> on promising scan results so the agent tracks them every 30 minutes.</li>
+                                <li><strong>Execute & Update:</strong> Wait for a buy alert, do your due diligence, execute the trade, and immediately log it as <code>/bought</code> so the agent can monitor.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold mb-2">Will the agent get better with time?</h3>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                                <li><strong>Yes.</strong> The agent evaluates its own performance.</li>
+                                <li>Every call (buy, sell, set stop-loss) is recorded in the database.</li>
+                                <li>The system tracks the ticker's trend for up to 30 days to verify if the call was correct, feeding this data back into the analysis loop to calibrate future signals.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold mb-2">How exactly is AI involved?</h3>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                                <li>The agent pulls historical price data, 14 technical indicators, and real-time news sentiment.</li>
+                                <li>The AI layer processes these diverse data points against strict trading rules.</li>
+                                <li>It calculates a definitive verdict and translates complex chart setups into plain English.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Contact CTA -->
+        <div class="mt-16 bg-slate-800/30 border border-slate-700 rounded-lg p-6 text-center">
+            <h3 class="text-white font-bold mb-2">Still have questions?</h3>
+            <p class="text-sm text-slate-400 mb-4">Reach out to our technical support desk.</p>
+            <a href="mailto:support@stocksentry.bot" class="inline-flex items-center gap-2 text-brand-500 hover:text-brand-400 font-medium transition">
+                <i data-lucide="mail" class="w-4 h-4"></i> support@stocksentry.bot
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-dark-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div class="flex flex-col gap-1 text-slate-400">
+                <div class="flex items-center justify-center md:justify-start gap-2">
+                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/>
+                        <path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="70" cy="30" r="4" fill="#22c55e"/>
+                    </svg>
+                    <span class="font-bold text-white">StockSentry.bot</span>
+                    <span class="text-sm">© 2026</span>
+                </div>
+                <span class="text-xs text-slate-500">A product of Seer Labs Inc., registered in Ontario.</span>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-3">
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="tos.html" class="hover:text-white transition">Terms of Service</a>
+                    <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="refund.html" class="hover:text-white transition">Refund Policy</a>
+                </div>
+                <a href="mailto:support@stocksentry.bot" class="text-xs text-slate-500 hover:text-white transition flex items-center gap-1">
+                    <i data-lucide="mail" class="w-3 h-3"></i> support@stocksentry.bot
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
