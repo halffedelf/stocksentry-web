@@ -6,9 +6,13 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   site: 'https://stocksentry.bot',
   output: 'hybrid',
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   integrations: [tailwind()],
   build: {
-    format: 'file'
+    // format: 'file'
   }
 });
