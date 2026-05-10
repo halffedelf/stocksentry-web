@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",

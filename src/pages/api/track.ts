@@ -13,7 +13,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
     const ip = clientAddress || request.headers.get('x-forwarded-for')?.split(',')[0] || '0.0.0.0';
     
     // Privacy-safe Daily Hash
-    const salt = new Date().toISOString().split('T')[0] + (process.env.TRACKER_SECRET || 'default_secret');
+    const salt = new Date().toISOString().split('T')[0] + (import.meta.env.TRACKER_SECRET || 'default_secret');
     const dailyHash = crypto.createHash('sha256').update(ip + userAgent + salt).digest('hex');
 
     if (type === 'pageview') {

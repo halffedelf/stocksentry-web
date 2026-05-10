@@ -27,13 +27,14 @@ if (error) {
 }
 
 // Data Processing
-const totalViews = views?.length || 0;
-const uniqueVisitors = new Set(views?.map(v => v.daily_hash)).size;
-const avgDuration = views?.length ? Math.round(views.reduce((acc, v) => acc + (v.duration_seconds || 0), 0) / views.length) : 0;
+const safeViews = views || [];
+const totalViews = safeViews.length;
+const uniqueVisitors = new Set(safeViews.map(v => v.daily_hash)).size;
+const avgDuration = safeViews.length ? Math.round(safeViews.reduce((acc, v) => acc + (v.duration_seconds || 0), 0) / safeViews.length) : 0;
 
 // Top Pages
 const pageMap = new Map();
-views?.forEach(v => {
+safeViews.forEach(v => {
     pageMap.set(v.path, (pageMap.get(v.path) || 0) + 1);
 });
 const topPages = Array.from(pageMap.entries())
@@ -42,7 +43,7 @@ const topPages = Array.from(pageMap.entries())
 
 // Top Referrers
 const refMap = new Map();
-views?.forEach(v => {
+safeViews.forEach(v => {
     const ref = v.referrer || 'Direct';
     refMap.set(ref, (refMap.get(ref) || 0) + 1);
 });
@@ -52,7 +53,7 @@ const topReferrers = Array.from(refMap.entries())
 
 // Geo Breakdown
 const countryMap = new Map();
-views?.forEach(v => {
+safeViews.forEach(v => {
     countryMap.set(v.country, (countryMap.get(v.country) || 0) + 1);
 });
 const topCountries = Array.from(countryMap.entries())
@@ -176,7 +177,7 @@ const topCountries = Array.from(countryMap.entries())
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-700">
-                        {views?.slice(0, 10).map(v => (
+                        {safeViews.slice(0, 10).map(v => (
                             <tr class="hover:bg-dark-900/20 transition">
                                 <td class="p-4 text-slate-300">{new Date(v.created_at).toLocaleTimeString()}</td>
                                 <td class="p-4 text-white font-medium">{v.city}, {v.country}</td>
@@ -194,10 +195,3 @@ const topCountries = Array.from(countryMap.entries())
         </div>
     </div>
 </MainLayout>
-
-<script>
-    import { createIcons, Eye, Users, Clock, FileText, Share2, Globe, Activity } from 'lucide';
-    createIcons({
-        icons: { Eye, Users, Clock, FileText, Share2, Globe, Activity }
-    });
-</script>
