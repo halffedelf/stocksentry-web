@@ -62,6 +62,7 @@
     <header class="pt-32 pb-12 px-4 border-b border-slate-800 bg-dark-800/50">
         <div class="max-w-3xl mx-auto text-center">
             <h1 class="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h1>
+            <p class="text-sm text-slate-500 uppercase tracking-wider">System Operations & Billing</p>
         </div>
     </header>
 
@@ -158,59 +159,67 @@
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="space-y-8">
                         <div>
-                            <h3 class="text-white font-bold mb-2">How can I find new tickers to watch or buy?</h3>
+                            <h3 class="text-white font-bold mb-2">I don't have any stock yet but I want to start. Is this bot useful for me?</h3>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
-                                <li>Rely on the automated <strong>discovery scans</strong>.</li>
-                                <li>The agent sweeps the S&P 100 (and NASDAQ 100 on higher tiers) at the end of the trading day.</li>
-                                <li>It surfaces high-probability technical setups that are not currently on your watchlist.</li>
+                                <li><strong>Yes, absolutely!</strong> The daily discovery scan is a great way to find potential investment ideas to research.</li>
+                                <li>Just keep in mind that StockSentry is an analysis tool, not a broker or a financial advisor.</li>
+                                <li>When you're ready to buy, you'll need to use your own brokerage account to place the trade.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold mb-2">How can I find new stocks to watch or buy?</h3>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                                <li>Our automated <strong>discovery scans</strong> do the heavy lifting for you.</li>
+                                <li>At the end of the trading day, the agent sweeps the S&P 100 to find strong chart setups that aren't on your radar yet.</li>
+                                <li>It then sends these ideas directly to your chat so you can look into them.</li>
                             </ul>
                         </div>
 
                         <div>
                             <h3 class="text-white font-bold mb-2">Does the app track after-market price changes?</h3>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
-                                <li><strong>No.</strong> Active monitoring occurs strictly during standard market hours.</li>
-                                <li>If a stock's trend changes drastically overnight, it will be captured and reported in your 8:30 AM ET morning briefing.</li>
+                                <li><strong>No.</strong> The agent actively monitors the markets only during standard trading hours.</li>
+                                <li>If a stock makes a big move overnight, the agent will catch it and include the update in your 8:30 AM morning briefing.</li>
                             </ul>
                         </div>
 
                         <div>
                             <h3 class="text-white font-bold mb-2">Is it worth paying for this app?</h3>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
-                                <li><strong>Yes</strong>, provided you use it correctly.</li>
-                                <li>Continuous monitoring helps limit your losses and lock in gains by catching trend reversals you might miss.</li>
-                                <li>The agent reports your P&L daily, so you can measure its value yourself.</li>
-                                <li><strong>The Catch:</strong> The math only works if you are honest with the bot. You must accurately log your exact entry prices via the <code>/bought</code> command for alerts to trigger accurately.</li>
+                                <li><strong>Yes</strong>, having a dedicated assistant watching your portfolio helps you spot trend changes early so you can manage your risk.</li>
+                                <li>The agent sends you a daily P&L report, so you can easily see if it's adding value.</li>
+                                <li><strong>The Catch:</strong> The math only works if you tell the bot the truth. You must log your actual, exact entry prices (using <code>/bought</code>) so the agent knows exactly where your break-even points are to calculate accurate alert levels.</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="space-y-8">
                         <div>
-                            <h3 class="text-white font-bold mb-2">How can I make the best use of the app?</h3>
+                            <h3 class="text-white font-bold mb-2">How can I get the most out of the app?</h3>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
-                                <li><strong>Log holdings accurately:</strong> Add owned tickers and exact entry prices via <code>/bought</code>.</li>
-                                <li><strong>Check scans:</strong> Review discovery scans (Daily for Pro/Premium; Mon, Wed, Thu for Basic).</li>
-                                <li><strong>Build watchlist:</strong> Use <code>/watch</code> on promising scan results so the agent tracks them every 30 minutes.</li>
-                                <li><strong>Execute & Update:</strong> Wait for a buy alert, do your due diligence, execute the trade, and immediately log it as <code>/bought</code> so the agent can monitor.</li>
+                                <li><strong>Be accurate:</strong> Log the stocks you own and your exact entry prices using the <code>/bought</code> command.</li>
+                                <li><strong>Check the scans:</strong> Review the discovery scans for new ideas.</li>
+                                <li><strong>Build a watchlist:</strong> See something interesting? Use <code>/watch</code> so the agent starts tracking it every 30 minutes.</li>
+                                <li><strong>Do your homework:</strong> When the agent sends an alert that a stock looks ready, do your own research. If you decide to buy, immediately tell the agent via <code>/bought</code> so it can start watching your back.</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h3 class="text-white font-bold mb-2">Will the agent get better with time?</h3>
+                            <h3 class="text-white font-bold mb-2">Will the agent get better over time?</h3>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
-                                <li><strong>Yes.</strong> The agent evaluates its own performance.</li>
-                                <li>Every call (buy, sell, set stop-loss) is recorded in the database.</li>
-                                <li>The system tracks the ticker's trend for up to 30 days to verify if the call was correct, feeding this data back into the analysis loop to calibrate future signals.</li>
+                                <li><strong>Yes.</strong> The system evaluates its own performance.</li>
+                                <li>Every time the agent sends an alert (whether it suggests looking at a buy, a sell, or a stop-loss level), it records the call in our database.</li>
+                                <li>It then tracks that stock's trend for up to 30 days to see if the alert was accurate, which helps calibrate future analysis.</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h3 class="text-white font-bold mb-2">How exactly is AI involved?</h3>
+                            <h3 class="text-white font-bold mb-2">How exactly does the AI work?</h3>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
-                                <li>The agent pulls historical price data, 14 technical indicators, and real-time news sentiment.</li>
-                                <li>The AI layer processes these diverse data points against strict trading rules.</li>
-                                <li>It calculates a definitive verdict and translates complex chart setups into plain English.</li>
+                                <li>The agent pulls up to a year of historical price data, calculates 14 different technical indicators, and reads the latest news sentiment.</li>
+                                <li>The AI looks at all these different angles to form a clear verdict.</li>
+                                <li>Finally, it translates complex chart data into a simple, easy-to-read English message for you.</li>
                             </ul>
                         </div>
                     </div>
