@@ -1,12 +1,19 @@
 :root {
-  --brand-50: #f0fdf4;
-  --brand-500: #22c55e;
-  --brand-600: #16a34a;
-  --brand-900: #14532d;
-  --brand-950: #052e16;
+  /* Brand Colors (Custom Orange Palette) */
+  --brand-50: #ffd0a6;
+  --brand-500: #ff7a1a;
+  --brand-500-rgb: 255, 122, 26;
+  --brand-600: #e66a15; /* Hover state */
+  --brand-900: #431407;
+  --brand-950: #1a0802;
   
-  --dark-800: #1e293b;
-  --dark-900: #0f172a;
+  /* Background / Surface Colors */
+  --dark-800: #2a2d2f;
+  --dark-900: #111214;
+
+  /* Text Colors */
+  --text-base: #cfd4d7;
+  --text-muted: #94a3b8;
 }
 
 @tailwind base;
@@ -15,7 +22,9 @@
 
 @layer base {
   body {
-    @apply bg-dark-900 text-slate-300 font-sans antialiased;
+    background-color: var(--dark-900);
+    color: var(--text-base);
+    @apply font-sans antialiased;
   }
 }
 

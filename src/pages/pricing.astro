@@ -88,17 +88,17 @@ const tiers = [
             
             <div class="relative z-10 text-center mb-6">
                 <h2 class="text-2xl font-bold text-white mb-2">Unsure which plan to pick?</h2>
-                <p class="text-slate-400 text-sm">Tell us about your trading style, and our AI will recommend the most cost-effective tier for your needs.</p>
+                <p class="text-[var(--text-muted)] text-sm">Tell us about your trading style, and our AI will recommend the most cost-effective tier for your needs.</p>
             </div>
             
             <div class="relative z-10 flex flex-col sm:flex-row gap-4">
-                <input type="text" id="tradingStyleInput" placeholder="e.g., I swing trade crypto and about 8 tech stocks..." class="flex-grow bg-slate-900 border border-slate-700 text-white text-sm rounded-lg px-4 py-3 focus:outline-none focus:border-brand-500 transition">
+                <input type="text" id="tradingStyleInput" placeholder="e.g., I swing trade crypto and about 8 tech stocks..." class="flex-grow bg-dark-900 border border-slate-700 text-white text-sm rounded-lg px-4 py-3 focus:outline-none focus:border-brand-500 transition">
                 <button id="recommendButton" class="bg-brand-600 hover:bg-brand-500 text-white px-6 py-3 rounded-lg font-bold transition whitespace-nowrap flex justify-center items-center gap-2 min-w-[160px]">
                     ✨ Find My Plan
                 </button>
             </div>
             
-            <div id="recommendationResult" class="mt-6 bg-slate-900/80 border border-slate-700 rounded-lg p-5 hidden relative z-10">
+            <div id="recommendationResult" class="mt-6 bg-dark-900/80 border border-slate-700 rounded-lg p-5 hidden relative z-10">
                 <!-- Result will be injected here -->
             </div>
         </div>

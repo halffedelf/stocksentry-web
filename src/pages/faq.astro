@@ -7,7 +7,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     <header class="pt-32 pb-12 px-4 border-b border-slate-800 bg-dark-800/50">
         <div class="max-w-3xl mx-auto text-center">
             <h1 class="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h1>
-            <p class="text-sm text-slate-500 uppercase tracking-wider">System Operations & Billing</p>
+            <p class="text-sm text-[var(--text-muted)] uppercase tracking-wider">System Operations & Billing</p>
         </div>
     </header>
 
@@ -22,7 +22,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 
                 <div>
                     <h3 class="text-white font-bold mb-2">Does StockSentry execute trades for me?</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                         <li><strong>No.</strong> StockSentry is an intelligence and alerting tool only.</li>
                         <li>We identify setups and send Telegram notifications.</li>
                         <li>You are responsible for executing trades manually in your own brokerage account.</li>
@@ -31,7 +31,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                 <div>
                     <h3 class="text-white font-bold mb-2">Do you connect to my brokerage account?</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                         <li><strong>No.</strong> We operate with zero financial visibility.</li>
                         <li>We do not ask for API keys, login credentials, or account balances.</li>
                         <li>We only store your Telegram ID and the specific ticker symbols you ask the bot to watch.</li>
@@ -40,7 +40,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                 <div>
                     <h3 class="text-white font-bold mb-2">Why Telegram instead of a standalone app?</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                         <li><strong>Speed:</strong> Telegram's API allows for near-instant push notification delivery.</li>
                         <li><strong>Efficiency:</strong> No heavy charting app running in your background draining battery.</li>
                         <li><strong>Frictionless:</strong> You likely already have the app open; no context switching required to get an alert.</li>
@@ -49,7 +49,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                 <div>
                     <h3 class="text-white font-bold mb-2">What markets do you cover?</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                         <li>Currently limited to US Equities.</li>
                         <li>Discovery scans are restricted to the highly liquid S&P 100 and NASDAQ 100 components.</li>
                         <li>OTC, crypto, and forex are not supported.</li>
@@ -63,7 +63,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                 <div>
                     <h3 class="text-white font-bold mb-2">How does the 14-day free trial work?</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                         <li>You receive 14 days of unrestricted access to the Pro tier features.</li>
                         <li>No credit card is required to initiate the trial.</li>
                         <li>After 14 days, the bot will cease monitoring unless you initiate a paid subscription via Stripe.</li>
@@ -72,7 +72,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                 <div>
                     <h3 class="text-white font-bold mb-2">How do I cancel my subscription?</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                         <li>Send the command <code>/account</code> to the bot in Telegram.</li>
                         <li>The bot will return a secure, temporary link to your Stripe Customer Portal.</li>
                         <li>Click "Cancel Plan". Service remains active until the end of your billing cycle.</li>
@@ -81,7 +81,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                 <div>
                     <h3 class="text-white font-bold mb-2">Do you offer refunds?</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                         <li><strong>No.</strong> Due to the nature of data processing costs, we do not offer prorated refunds for mid-cycle cancellations.</li>
                         <li>This is why we provide a strict, no-credit-card-required 14-day trial for evaluation.</li>
                     </ul>
@@ -89,7 +89,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                 <div>
                     <h3 class="text-white font-bold mb-2">Is this financial advice?</h3>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-red-500">
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-red-500">
                         <li><strong>Absolutely not.</strong> StockSentry is an algorithmic data tool.</li>
                         <li>Alerts are generated based on mathematical technical indicators, not personalized fiduciary assessment.</li>
                         <li>All trading involves risk. You are solely responsible for your financial decisions.</li>
@@ -105,7 +105,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                     <div class="space-y-8">
                         <div>
                             <h3 class="text-white font-bold mb-2">I don't have any stock yet but I want to start. Is this bot useful for me?</h3>
-                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                                 <li><strong>Yes, absolutely!</strong> The daily discovery scan is a great way to find potential investment ideas to research.</li>
                                 <li>Just keep in mind that StockSentry is an analysis tool, not a broker or a financial advisor.</li>
                                 <li>When you're ready to buy, you'll need to use your own brokerage account to place the trade.</li>
@@ -114,7 +114,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                         <div>
                             <h3 class="text-white font-bold mb-2">How can I find new stocks to watch or buy?</h3>
-                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                                 <li>Our automated <strong>discovery scans</strong> do the heavy lifting for you.</li>
                                 <li>At the end of the trading day, the agent sweeps the S&P 100 to find strong chart setups that aren't on your radar yet.</li>
                                 <li>It then sends these ideas directly to your chat so you can look into them.</li>
@@ -123,7 +123,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                         <div>
                             <h3 class="text-white font-bold mb-2">Does the app track after-market price changes?</h3>
-                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                                 <li><strong>No.</strong> The agent actively monitors the markets only during standard trading hours.</li>
                                 <li>If a stock makes a big move overnight, the agent will catch it and include the update in your 8:30 AM morning briefing.</li>
                             </ul>
@@ -131,7 +131,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                         <div>
                             <h3 class="text-white font-bold mb-2">Is it worth paying for this app?</h3>
-                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                                 <li><strong>Yes</strong>, having a dedicated assistant watching your portfolio helps you spot trend changes early so you can manage your risk.</li>
                                 <li>The agent sends you a daily P&L report, so you can easily see if it's adding value.</li>
                                 <li><strong>The Catch:</strong> The math only works if you tell the bot the truth. You must log your actual, exact entry prices (using <code>/bought</code>) so the agent knows exactly where your break-even points are to calculate accurate alert levels.</li>
@@ -142,7 +142,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                     <div class="space-y-8">
                         <div>
                             <h3 class="text-white font-bold mb-2">How can I get the most out of the app?</h3>
-                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                                 <li><strong>Be accurate:</strong> Log the stocks you own and your exact entry prices using the <code>/bought</code> command.</li>
                                 <li><strong>Check the scans:</strong> Review the discovery scans for new ideas.</li>
                                 <li><strong>Build a watchlist:</strong> See something interesting? Use <code>/watch</code> so the agent starts tracking it every 30 minutes.</li>
@@ -152,7 +152,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                         <div>
                             <h3 class="text-white font-bold mb-2">Will the agent get better over time?</h3>
-                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                                 <li><strong>Yes.</strong> The system evaluates its own performance.</li>
                                 <li>Every time the agent sends an alert (whether it suggests looking at a buy, a sell, or a stop-loss level), it records the call in our database.</li>
                                 <li>It then tracks that stock's trend for up to 30 days to see if the alert was accurate, which helps calibrate future analysis.</li>
@@ -161,7 +161,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                         <div>
                             <h3 class="text-white font-bold mb-2">How exactly does the AI work?</h3>
-                            <ul class="list-disc pl-5 space-y-1 text-sm text-slate-400 marker:text-brand-500">
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                                 <li>The agent pulls up to a year of historical price data, calculates 14 different technical indicators, and reads the latest news sentiment.</li>
                                 <li>The AI looks at all these different angles to form a clear verdict.</li>
                                 <li>Finally, it translates complex chart data into a simple, easy-to-read English message for you.</li>
@@ -174,9 +174,9 @@ import MainLayout from '../layouts/MainLayout.astro';
         </div>
 
         <!-- Contact CTA -->
-        <div class="mt-16 bg-slate-800/30 border border-slate-700 rounded-lg p-6 text-center">
+        <div class="mt-16 bg-dark-800/30 border border-slate-700 rounded-lg p-6 text-center">
             <h3 class="text-white font-bold mb-2">Still have questions?</h3>
-            <p class="text-sm text-slate-400 mb-4">Reach out to our technical support desk.</p>
+            <p class="text-sm text-[var(--text-muted)] mb-4">Reach out to our technical support desk.</p>
             <a href="mailto:support@stocksentry.bot" class="inline-flex items-center gap-2 text-brand-500 hover:text-brand-400 font-medium transition">
                 <i data-lucide="mail" class="w-4 h-4"></i> support@stocksentry.bot
             </a>

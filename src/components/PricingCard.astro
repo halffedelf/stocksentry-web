@@ -12,7 +12,7 @@ interface Props {
 const { title, description, price, period, features, buttonText, highlight = false } = Astro.props;
 ---
 
-<div class={`${highlight ? 'bg-dark-900 border-2 border-brand-500 relative shadow-[0_0_30px_rgba(34,197,94,0.1)] transform lg:-translate-y-4' : 'bg-slate-800/30 border border-slate-700'} rounded-2xl p-8 flex flex-col h-full`}>
+<div class={`${highlight ? 'bg-dark-900 border-2 border-brand-500 relative shadow-[0_0_30px_var(--brand-500)]/10 transform lg:-translate-y-4' : 'bg-dark-800/30 border border-slate-700'} rounded-2xl p-8 flex flex-col h-full`}>
     {highlight && (
         <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-dark-900 font-bold text-xs uppercase tracking-wider px-3 py-1 rounded-full">
             Most Popular

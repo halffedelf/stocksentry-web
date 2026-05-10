@@ -16,7 +16,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         
         <section>
             <h2 class="text-2xl font-bold text-white mb-4">1. Acceptance of Terms</h2>
-            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-4">
                 By accessing or using the StockSentry Telegram bot ("the Service"), you agree to be bound by these Terms of Service. If you do not agree, do not use the Service.
             </p>
         </section>
@@ -27,10 +27,10 @@ import MainLayout from '../layouts/MainLayout.astro';
                     <i data-lucide="alert-triangle" class="w-5 h-5 text-red-500"></i>
                     2. Not Financial Advice (Strict Disclaimer)
                 </h2>
-                <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                <p class="text-[var(--text-base)] text-sm leading-relaxed mb-4">
                     StockSentry is an algorithmic data-processing tool, not a registered investment advisor, broker, or fiduciary.
                 </p>
-                <ul class="list-disc pl-5 space-y-2 text-sm text-slate-400 marker:text-red-500">
+                <ul class="list-disc pl-5 space-y-2 text-sm text-[var(--text-muted)] marker:text-red-500">
                     <li><strong>No Personalization:</strong> Alerts are generated mathematically based on public market data. They do not account for your personal financial situation, risk tolerance, or investment objectives.</li>
                     <li><strong>No Trading Execution:</strong> StockSentry cannot and will not execute trades on your behalf. You are strictly responsible for placing your own trades in your own brokerage account.</li>
                     <li><strong>Risk of Loss:</strong> All trading involves significant risk of loss. Past performance of the algorithm is not indicative of future results.</li>
@@ -40,10 +40,10 @@ import MainLayout from '../layouts/MainLayout.astro';
 
         <section>
             <h2 class="text-2xl font-bold text-white mb-4">3. Limitation of Liability</h2>
-            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-4">
                 To the maximum extent permitted by applicable law, StockSentry and its operators shall not be liable for any direct, indirect, incidental, or consequential damages resulting from:
             </p>
-            <ul class="list-disc pl-5 space-y-2 text-sm text-slate-400 marker:text-brand-500">
+            <ul class="list-disc pl-5 space-y-2 text-sm text-[var(--text-muted)] marker:text-brand-500">
                 <li>Trading losses incurred after acting on an alert (or failing to act).</li>
                 <li>System downtime, delayed messages, or Telegram API failures that result in missed market movements.</li>
                 <li>Inaccuracies in third-party data feeds (e.g., Yahoo Finance, Finnhub).</li>
@@ -52,22 +52,22 @@ import MainLayout from '../layouts/MainLayout.astro';
 
         <section>
             <h2 class="text-2xl font-bold text-white mb-4">4. Acceptable Use & API Limits</h2>
-            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            <p class="text-[var(--text-muted)] text-sm leading-relaxed mb-4">
                 You agree not to abuse the Service. This includes:
             </p>
-            <ul class="list-disc pl-5 space-y-2 text-sm text-slate-400 marker:text-brand-500">
+            <ul class="list-disc pl-5 space-y-2 text-sm text-[var(--text-muted)] marker:text-brand-500">
                 <li>Automating commands to the bot via external scripts.</li>
                 <li>Attempting to bypass tier limits for tracked tickers or manual checks.</li>
                 <li>Reselling or publicly broadcasting StockSentry alerts without explicit permission.</li>
             </ul>
-            <p class="text-slate-400 text-sm leading-relaxed mt-4">
+            <p class="text-[var(--text-muted)] text-sm leading-relaxed mt-4">
                 We reserve the right to rate-limit or terminate accounts that exhibit bot-like or abusive behavior, even on "Unlimited" tiers, to protect overall system integrity.
             </p>
         </section>
 
         <section>
             <h2 class="text-2xl font-bold text-white mb-4">5. Governing Law</h2>
-            <p class="text-slate-400 text-sm leading-relaxed">
+            <p class="text-[var(--text-muted)] text-sm leading-relaxed">
                 These Terms shall be governed by and construed in accordance with the laws of the Province of Ontario, Canada, without regard to its conflict of law provisions.
             </p>
         </section>

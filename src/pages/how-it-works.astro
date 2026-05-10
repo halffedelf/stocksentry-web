@@ -7,7 +7,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     <header class="pt-32 pb-12 px-4 sm:px-6 lg:px-8 border-b border-slate-800 bg-dark-800/50">
         <div class="max-w-3xl mx-auto text-center">
             <h1 class="text-4xl font-bold text-white mb-4">How StockSentry Works</h1>
-            <p class="text-lg text-slate-400">
+            <p class="text-lg text-[var(--text-base)]">
                 You tell it what you own and what you're watching. It monitors the markets and messages you when action is required.
             </p>
         </div>
@@ -19,13 +19,13 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Step 1: Telegram Setup -->
         <section>
             <div class="flex items-center gap-4 mb-6">
-                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">1</div>
+                <div class="w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">1</div>
                 <h2 class="text-2xl font-bold text-white">Connect via Telegram</h2>
             </div>
-            <p class="text-slate-400 mb-4">StockSentry operates entirely within the Telegram messaging app. You do not need to download a separate charting application.</p>
+            <p class="text-[var(--text-muted)] mb-4">StockSentry operates entirely within the Telegram messaging app. You do not need to download a separate charting application.</p>
             
-            <div class="bg-slate-800/30 border border-slate-700 rounded-lg p-6">
-                <ul class="space-y-4 text-sm text-slate-300">
+            <div class="bg-dark-800/30 border border-slate-700 rounded-lg p-6">
+                <ul class="space-y-4 text-sm text-[var(--text-base)]">
                     <li class="flex items-start gap-3">
                         <i data-lucide="download" class="w-5 h-5 text-brand-500 shrink-0 mt-0.5"></i>
                         <div>
@@ -44,7 +44,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                         <i data-lucide="play" class="w-5 h-5 text-brand-500 shrink-0 mt-0.5"></i>
                         <div>
                             <strong class="text-white block">Start the Bot</strong>
-                            Open <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="text-brand-400 hover:underline">t.me/StockSentryAYS_bot</a> in your browser, allow it to open Telegram, and tap <b>START</b> at the bottom of the chat to begin your 14-day trial.
+                            Open <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="text-brand-500 hover:underline">t.me/StockSentryAYS_bot</a> in your browser, allow it to open Telegram, and tap <b>START</b> at the bottom of the chat to begin your 14-day trial.
                         </div>
                     </li>
                 </ul>
@@ -54,36 +54,36 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Step 2: Add Tickers -->
         <section>
             <div class="flex items-center gap-4 mb-6">
-                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">2</div>
+                <div class="w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">2</div>
                 <h2 class="text-2xl font-bold text-white">Add your tickers</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                    <p class="text-slate-400 mb-4">Initial setup takes seconds. Send StockSentry a command directly in the chat to start monitoring.</p>
-                    <ul class="space-y-4 text-sm text-slate-300 mb-6">
+                    <p class="text-[var(--text-muted)] mb-4">Initial setup takes seconds. Send StockSentry a command directly in the chat to start monitoring.</p>
+                    <ul class="space-y-4 text-sm text-[var(--text-base)] mb-6">
                         <li>
-                            <code class="bg-slate-800 text-brand-400 px-1.5 py-0.5 rounded border border-slate-700 font-mono">/bought AAPL 190.50</code><br>
-                            <span class="text-slate-500">Log a stock you own at the exact price you paid.</span>
+                            <code class="bg-dark-800 text-brand-500 px-1.5 py-0.5 rounded border border-slate-700 font-mono">/bought AAPL 190.50</code><br>
+                            <span class="text-[var(--text-muted)]">Log a stock you own at the exact price you paid.</span>
                         </li>
                         <li>
-                            <code class="bg-slate-800 text-brand-400 px-1.5 py-0.5 rounded border border-slate-700 font-mono">/watch NVDA</code><br>
-                            <span class="text-slate-500">Add a stock to your watchlist for entry monitoring.</span>
+                            <code class="bg-dark-800 text-brand-500 px-1.5 py-0.5 rounded border border-slate-700 font-mono">/watch NVDA</code><br>
+                            <span class="text-[var(--text-muted)]">Add a stock to your watchlist for entry monitoring.</span>
                         </li>
                     </ul>
-                    <p class="text-xs text-slate-500">
-                        Every ticker is validated against Yahoo Finance before being saved. You can add, update, or remove tickers any time using <code class="text-brand-400 font-mono">/sold</code>.
+                    <p class="text-xs text-[var(--text-muted)]">
+                        Every ticker is validated against Yahoo Finance before being saved. You can add, update, or remove tickers any time using <code class="text-brand-500 font-mono">/sold</code>.
                     </p>
                 </div>
 
                 <!-- Telegram Mockup: Setup -->
                 <div class="relative mx-auto w-full max-w-[340px]">
-                    <div class="bg-[#0e1621] rounded-[2.5rem] p-2 shadow-2xl relative z-10 border-4 border-slate-800">
-                        <div class="bg-[#0e1621] rounded-[2rem] overflow-hidden relative flex flex-col h-[480px]">
+                    <div class="bg-dark-900 rounded-[2.5rem] p-2 shadow-2xl relative z-10 border-4 border-slate-800">
+                        <div class="bg-dark-900 rounded-[2rem] overflow-hidden relative flex flex-col h-[480px]">
                             <!-- Header -->
-                            <div class="bg-[#17212b] px-4 py-3 flex items-center gap-3 relative z-20">
+                            <div class="bg-dark-800 px-4 py-3 flex items-center gap-3 relative z-20">
                                 <i data-lucide="arrow-left" class="w-5 h-5 text-slate-400"></i>
                                 <div class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center border border-brand-500 shrink-0 overflow-hidden relative">
-                                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/><path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="70" cy="30" r="4" fill="#22c55e"/></svg>
+                                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="var(--brand-500)" stroke-width="6" stroke-linejoin="round"/><path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="70" cy="30" r="4" fill="var(--brand-500)"/></svg>
                                 </div>
                                 <div class="flex-grow">
                                     <div class="text-white font-bold text-[15px] leading-tight">StockSentry</div>
@@ -92,37 +92,37 @@ import MainLayout from '../layouts/MainLayout.astro';
                                 <i data-lucide="more-vertical" class="w-5 h-5 text-slate-400"></i>
                             </div>
                             <!-- Background -->
-                            <div class="absolute inset-0 top-[60px] bottom-[50px] bg-[#0e1621]" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+                            <div class="absolute inset-0 top-[60px] bottom-[50px] bg-dark-900" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
                             <!-- Messages -->
                             <div class="p-3 space-y-2 flex-grow overflow-hidden flex flex-col justify-end text-[13px] relative z-10 pb-4">
-                                <div class="bg-[#8774e1] text-white px-3 py-2 rounded-2xl rounded-tr-sm self-end max-w-[85%] relative flex items-end gap-2 mt-3">
+                                <div class="bg-brand-500 text-white px-3 py-2 rounded-2xl rounded-tr-sm self-end max-w-[85%] relative flex items-end gap-2 mt-3">
                                     <span>/bought AAPL 190.50</span>
-                                    <div class="text-[10px] text-purple-200 flex items-center gap-1 shrink-0 pt-1">11:00 PM <i data-lucide="check-check" class="w-3 h-3"></i></div>
+                                    <div class="text-[10px] text-brand-50 flex items-center gap-1 shrink-0 pt-1">11:00 PM <i data-lucide="check-check" class="w-3 h-3"></i></div>
                                 </div>
-                                <div class="bg-[#182533] text-white px-3 py-2 rounded-2xl rounded-tl-sm self-start max-w-[85%] flex items-center justify-between gap-4">
+                                <div class="bg-dark-800 text-white px-3 py-2 rounded-2xl rounded-tl-sm self-start max-w-[85%] flex items-center justify-between gap-4 border border-slate-700">
                                     <div class="flex items-center gap-2"><span>🔍 Validating AAPL...</span></div>
                                     <div class="text-[10px] text-slate-400 shrink-0">11:00 PM</div>
                                 </div>
-                                <div class="bg-[#182533] text-white px-3 py-2 rounded-2xl rounded-tl-sm self-start max-w-[85%]">
+                                <div class="bg-dark-800 text-white px-3 py-2 rounded-2xl rounded-tl-sm self-start max-w-[85%] border border-slate-700">
                                     ✅ Logged <b>AAPL (Apple Inc.)</b> at <b>$190.50</b>.<br>I'll monitor it and alert you when action is needed.
                                     <div class="text-[10px] text-slate-400 text-right mt-1">11:01 PM</div>
                                 </div>
-                                <div class="bg-[#8774e1] text-white px-3 py-2 rounded-2xl rounded-tr-sm self-end max-w-[85%] relative flex items-end gap-2 mt-3">
+                                <div class="bg-brand-500 text-white px-3 py-2 rounded-2xl rounded-tr-sm self-end max-w-[85%] relative flex items-end gap-2 mt-3">
                                     <span>/watch AVGO</span>
-                                    <div class="text-[10px] text-purple-200 flex items-center gap-1 shrink-0 pt-1">11:01 PM <i data-lucide="check-check" class="w-3 h-3"></i></div>
+                                    <div class="text-[10px] text-brand-50 flex items-center gap-1 shrink-0 pt-1">11:01 PM <i data-lucide="check-check" class="w-3 h-3"></i></div>
                                 </div>
-                                <div class="bg-[#182533] text-white px-3 py-2 rounded-2xl rounded-tl-sm self-start max-w-[85%]">
+                                <div class="bg-dark-800 text-white px-3 py-2 rounded-2xl rounded-tl-sm self-start max-w-[85%] border border-slate-700">
                                     👀 Added <b>AVGO (Broadcom Inc.)</b> to your watchlist.<br>I'll alert you when it looks like a good entry point.
                                     <div class="text-[10px] text-slate-400 text-right mt-1">11:01 PM</div>
                                 </div>
                             </div>
                             <!-- Input -->
-                            <div class="bg-[#17212b] p-2 flex items-center gap-2 relative z-20">
-                                <div class="w-8 h-8 rounded-full bg-[#2aabf2] flex items-center justify-center shrink-0"><i data-lucide="menu" class="w-4 h-4 text-white"></i></div>
-                                <div class="flex-grow bg-[#17212b] text-slate-500 rounded-full px-3 py-1 text-[15px] flex items-center gap-2">
+                            <div class="bg-dark-800 p-2 flex items-center gap-2 relative z-20">
+                                <div class="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><i data-lucide="menu" class="w-4 h-4 text-white"></i></div>
+                                <div class="flex-grow bg-dark-900 border border-slate-700 text-slate-500 rounded-full px-3 py-1 text-[15px] flex items-center gap-2">
                                     <i data-lucide="smile" class="w-5 h-5 text-slate-400"></i><span class="flex-grow">Message</span><i data-lucide="paperclip" class="w-5 h-5 text-slate-400"></i>
                                 </div>
-                                <div class="w-9 h-9 rounded-full bg-[#2aabf2] flex items-center justify-center shrink-0"><i data-lucide="mic" class="w-5 h-5 text-white"></i></div>
+                                <div class="w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><i data-lucide="mic" class="w-5 h-5 text-white"></i></div>
                             </div>
                         </div>
                     </div>
@@ -133,19 +133,19 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Step 3: Monitoring -->
         <section>
             <div class="flex items-center gap-4 mb-6">
-                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">3</div>
+                <div class="w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">3</div>
                 <h2 class="text-2xl font-bold text-white">Monitors every 30 minutes</h2>
             </div>
-            <p class="text-slate-400 mb-6">
+            <p class="text-[var(--text-muted)] mb-6">
                 During market hours, StockSentry checks every ticker in your portfolio and watchlist every 30 minutes. It pulls live price data, volume, and calculates 14 technical indicators across two categories, alongside real-time news sentiment.
             </p>
             <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-slate-800/30 border border-slate-700 rounded-lg p-6">
+                <div class="bg-dark-800/30 border border-slate-700 rounded-lg p-6">
                     <h3 class="text-red-400 font-bold mb-4 flex items-center gap-2">
                         <i data-lucide="trending-down" class="w-4 h-4"></i> Risk / Exit Signals
                     </h3>
-                    <p class="text-xs text-slate-500 uppercase tracking-wider mb-3">For owned stocks</p>
-                    <ul class="space-y-2 text-sm text-slate-400 marker:text-red-500 list-disc pl-4">
+                    <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-3">For owned stocks</p>
+                    <ul class="space-y-2 text-sm text-[var(--text-base)] marker:text-red-500 list-disc pl-4">
                         <li>Stop-loss target hit</li>
                         <li>Support level breach</li>
                         <li>RSI overbought</li>
@@ -154,12 +154,12 @@ import MainLayout from '../layouts/MainLayout.astro';
                         <li>Bollinger Band upper breach</li>
                     </ul>
                 </div>
-                <div class="bg-slate-800/30 border border-slate-700 rounded-lg p-6">
+                <div class="bg-dark-800/30 border border-slate-700 rounded-lg p-6">
                     <h3 class="text-brand-500 font-bold mb-4 flex items-center gap-2">
                         <i data-lucide="trending-up" class="w-4 h-4"></i> Entry Signals
                     </h3>
-                    <p class="text-xs text-slate-500 uppercase tracking-wider mb-3">For tracked stocks</p>
-                    <ul class="space-y-2 text-sm text-slate-400 marker:text-brand-500 list-disc pl-4">
+                    <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-3">For tracked stocks</p>
+                    <ul class="space-y-2 text-sm text-[var(--text-base)] marker:text-brand-500 list-disc pl-4">
                         <li>Breakout above resistance</li>
                         <li>RSI oversold</li>
                         <li>Golden Cross</li>
@@ -174,25 +174,25 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Step 4: Alerts -->
         <section>
             <div class="flex items-center gap-4 mb-6">
-                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">4</div>
+                <div class="w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">4</div>
                 <h2 class="text-2xl font-bold text-white">You only hear when it matters</h2>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                    <p class="text-slate-400 mb-4">StockSentry stays silent unless something has changed. When a signal fires, the AI layer assesses the setup and alerts you if it deems the data actionable.</p>
-                    <p class="text-slate-400">What you receive is a plain-English briefing detailing exactly why the alert triggered, the suggested stop-loss, and the current market context—not a chart you have to interpret yourself.</p>
+                    <p class="text-[var(--text-muted)] mb-4">StockSentry stays silent unless something has changed. When a signal fires, the AI layer assesses the setup and alerts you if it deems the data actionable.</p>
+                    <p class="text-[var(--text-muted)]">What you receive is a plain-English briefing detailing exactly why the alert triggered, the suggested stop-loss, and the current market context—not a chart you have to interpret yourself.</p>
                 </div>
 
                 <!-- Telegram Mockup: Alert -->
                 <div class="relative mx-auto w-full max-w-[340px]">
-                    <div class="bg-[#0e1621] rounded-[2.5rem] p-2 shadow-2xl relative z-10 border-4 border-slate-800">
-                        <div class="bg-[#0e1621] rounded-[2rem] overflow-hidden relative flex flex-col h-[580px]">
+                    <div class="bg-dark-900 rounded-[2.5rem] p-2 shadow-2xl relative z-10 border-4 border-slate-800">
+                        <div class="bg-dark-900 rounded-[2rem] overflow-hidden relative flex flex-col h-[580px]">
                             <!-- Header -->
-                            <div class="bg-[#17212b] px-4 py-3 flex items-center gap-3 relative z-20">
+                            <div class="bg-dark-800 px-4 py-3 flex items-center gap-3 relative z-20">
                                 <i data-lucide="arrow-left" class="w-5 h-5 text-slate-400"></i>
                                 <div class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center border border-brand-500 shrink-0 overflow-hidden relative">
-                                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/><path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="70" cy="30" r="4" fill="#22c55e"/></svg>
+                                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="var(--brand-500)" stroke-width="6" stroke-linejoin="round"/><path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="70" cy="30" r="4" fill="var(--brand-500)"/></svg>
                                 </div>
                                 <div class="flex-grow">
                                     <div class="text-white font-bold text-[15px] leading-tight">StockSentry</div>
@@ -201,12 +201,12 @@ import MainLayout from '../layouts/MainLayout.astro';
                                 <i data-lucide="more-vertical" class="w-5 h-5 text-slate-400"></i>
                             </div>
                             <!-- Background -->
-                            <div class="absolute inset-0 top-[60px] bottom-[50px] bg-[#0e1621]" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+                            <div class="absolute inset-0 top-[60px] bottom-[50px] bg-dark-900" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
                             <!-- Messages -->
                             <div class="p-3 space-y-2 flex-grow overflow-hidden flex flex-col justify-end text-[13px] relative z-10 pb-4">
-                                <div class="bg-[#182533] text-white px-3 py-2.5 rounded-2xl rounded-tl-sm self-start w-[95%] shadow-sm leading-relaxed text-[13px]">
+                                <div class="bg-dark-800 text-white px-3 py-2.5 rounded-2xl rounded-tl-sm self-start w-[95%] shadow-sm leading-relaxed text-[13px] border border-slate-700">
                                     🚨 [17:40]<br>
-                                    <span class="font-bold text-[#e1ad46]">⚠️ SET STOP-LOSS — META</span><br>
+                                    <span class="font-bold text-brand-500">⚠️ SET STOP-LOSS — META</span><br>
                                     $609.63 | 🔴 -9.6% from entry<br>
                                     Set stop at: <b>$572.13</b><br>
                                     If triggered, sell immediately.<br>
@@ -215,12 +215,12 @@ import MainLayout from '../layouts/MainLayout.astro';
                                 </div>
                             </div>
                             <!-- Input -->
-                            <div class="bg-[#17212b] p-2 flex items-center gap-2 relative z-20">
-                                <div class="w-8 h-8 rounded-full bg-[#2aabf2] flex items-center justify-center shrink-0"><i data-lucide="menu" class="w-4 h-4 text-white"></i></div>
-                                <div class="flex-grow bg-[#17212b] text-slate-500 rounded-full px-3 py-1 text-[15px] flex items-center gap-2">
+                            <div class="bg-dark-800 p-2 flex items-center gap-2 relative z-20">
+                                <div class="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><i data-lucide="menu" class="w-4 h-4 text-white"></i></div>
+                                <div class="flex-grow bg-dark-900 border border-slate-700 text-slate-500 rounded-full px-3 py-1 text-[15px] flex items-center gap-2">
                                     <i data-lucide="smile" class="w-5 h-5 text-slate-400"></i><span class="flex-grow">Message</span><i data-lucide="paperclip" class="w-5 h-5 text-slate-400"></i>
                                 </div>
-                                <div class="w-9 h-9 rounded-full bg-[#2aabf2] flex items-center justify-center shrink-0"><i data-lucide="mic" class="w-5 h-5 text-white"></i></div>
+                                <div class="w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><i data-lucide="mic" class="w-5 h-5 text-white"></i></div>
                             </div>
                         </div>
                     </div>
@@ -231,14 +231,14 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Step 5: Briefing -->
         <section>
             <div class="flex items-center gap-4 mb-6">
-                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">5</div>
+                <div class="w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">5</div>
                 <h2 class="text-2xl font-bold text-white">Morning briefing, every trading day</h2>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                    <p class="text-slate-400 mb-6">At 8:00 AM ET Monday–Friday, StockSentry sends you a personalised portfolio briefing detailing exactly where your assets stand before the bell rings.</p>
-                    <ul class="space-y-4 text-sm text-slate-300">
+                    <p class="text-[var(--text-muted)] mb-6">At 8:00 AM ET Monday–Friday, StockSentry sends you a personalised portfolio briefing detailing exactly where your assets stand before the bell rings.</p>
+                    <ul class="space-y-4 text-sm text-[var(--text-base)]">
                         <li class="flex items-start gap-3">
                             <i data-lucide="dollar-sign" class="w-5 h-5 text-brand-500 shrink-0 mt-0.5"></i>
                             <span>Current price and P&L for every owned stock against your entry price.</span>
@@ -260,13 +260,13 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                 <!-- Telegram Mockup: Briefing -->
                 <div class="relative mx-auto w-full max-w-[340px]">
-                    <div class="bg-[#0e1621] rounded-[2.5rem] p-2 shadow-2xl relative z-10 border-4 border-slate-800">
-                        <div class="bg-[#0e1621] rounded-[2rem] overflow-hidden relative flex flex-col h-[580px]">
+                    <div class="bg-dark-900 rounded-[2.5rem] p-2 shadow-2xl relative z-10 border-4 border-slate-800">
+                        <div class="bg-dark-900 rounded-[2rem] overflow-hidden relative flex flex-col h-[580px]">
                             <!-- Header -->
-                            <div class="bg-[#17212b] px-4 py-3 flex items-center gap-3 relative z-20">
+                            <div class="bg-dark-800 px-4 py-3 flex items-center gap-3 relative z-20">
                                 <i data-lucide="arrow-left" class="w-5 h-5 text-slate-400"></i>
                                 <div class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center border border-brand-500 shrink-0 overflow-hidden relative">
-                                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/><path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="70" cy="30" r="4" fill="#22c55e"/></svg>
+                                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="var(--brand-500)" stroke-width="6" stroke-linejoin="round"/><path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="70" cy="30" r="4" fill="var(--brand-500)"/></svg>
                                 </div>
                                 <div class="flex-grow">
                                     <div class="text-white font-bold text-[15px] leading-tight">StockSentry</div>
@@ -275,10 +275,10 @@ import MainLayout from '../layouts/MainLayout.astro';
                                 <i data-lucide="more-vertical" class="w-5 h-5 text-slate-400"></i>
                             </div>
                             <!-- Background -->
-                            <div class="absolute inset-0 top-[60px] bottom-[50px] bg-[#0e1621]" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+                            <div class="absolute inset-0 top-[60px] bottom-[50px] bg-dark-900" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
                             <!-- Messages -->
                             <div class="p-3 space-y-2 flex-grow overflow-hidden flex flex-col justify-end text-[13px] relative z-10 pb-4">
-                                <div class="bg-[#182533] text-white px-3 py-2.5 rounded-2xl rounded-tl-sm self-start w-[95%] shadow-sm leading-relaxed text-[12px] break-words">
+                                <div class="bg-dark-800 text-white px-3 py-2.5 rounded-2xl rounded-tl-sm self-start w-[95%] shadow-sm leading-relaxed text-[12px] break-words border border-slate-700">
                                     📊 [22:53]<br>
                                     <span class="font-bold">📋 MORNING PORTFOLIO BRIEFING</span><br><br>
                                     <b>AMZN</b> $272.68 🟢 +162.3% from $103.95 | Target ~$278.56<br>
@@ -286,7 +286,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                                     <b>META</b> $609.63 🔴 -9.6% from $674.15 | Target ~$624.98<br>
                                     <b>NVDA</b> $215.20 🟢 +9.8% from $195.97 | Target ~$217.80<br>
                                     <b>QQQ</b> $711.23 🟢 +2.8% from $691.95 | Target ~$711.23<br>
-                                    <a href="#" class="text-[#2aabf2] hover:underline">VFV.TO</a> $179.42 🟢 +5.4% from $170.23 | Target ~$179.77<br><br>
+                                    <a href="#" class="text-brand-500 hover:underline">VFV.TO</a> $179.42 🟢 +5.4% from $170.23 | Target ~$179.77<br><br>
                                     <b>Avg P&L: 🟢 +32.5%</b><br>
                                     P&L tracker: building history (1/7 days recorded)<br><br>
                                     ⚠️ 4/6 positions are tech/growth — consider diversifying.
@@ -294,12 +294,12 @@ import MainLayout from '../layouts/MainLayout.astro';
                                 </div>
                             </div>
                             <!-- Input -->
-                            <div class="bg-[#17212b] p-2 flex items-center gap-2 relative z-20">
-                                <div class="w-8 h-8 rounded-full bg-[#2aabf2] flex items-center justify-center shrink-0"><i data-lucide="menu" class="w-4 h-4 text-white"></i></div>
-                                <div class="flex-grow bg-[#17212b] text-slate-500 rounded-full px-3 py-1 text-[15px] flex items-center gap-2">
+                            <div class="bg-dark-800 p-2 flex items-center gap-2 relative z-20">
+                                <div class="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><i data-lucide="menu" class="w-4 h-4 text-white"></i></div>
+                                <div class="flex-grow bg-dark-900 border border-slate-700 text-slate-500 rounded-full px-3 py-1 text-[15px] flex items-center gap-2">
                                     <i data-lucide="smile" class="w-5 h-5 text-slate-400"></i><span class="flex-grow">Message</span><i data-lucide="paperclip" class="w-5 h-5 text-slate-400"></i>
                                 </div>
-                                <div class="w-9 h-9 rounded-full bg-[#2aabf2] flex items-center justify-center shrink-0"><i data-lucide="mic" class="w-5 h-5 text-white"></i></div>
+                                <div class="w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><i data-lucide="mic" class="w-5 h-5 text-white"></i></div>
                             </div>
                         </div>
                     </div>
@@ -310,25 +310,25 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Step 6: Discovery Scan -->
         <section>
             <div class="flex items-center gap-4 mb-6">
-                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">6</div>
+                <div class="w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">6</div>
                 <h2 class="text-2xl font-bold text-white">Discovery Scan</h2>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                    <p class="text-slate-400 mb-4">Every evening, StockSentry screens the S&P 100 (and the NASDAQ 100 on higher tiers) for strong technical setups you aren't currently tracking.</p>
-                    <p class="text-slate-400 mb-4">You receive heavily vetted buy opportunities complete with allocation sizing, calculated risk/reward ratios, and links to pertinent financial news driving the momentum.</p>
+                    <p class="text-[var(--text-muted)] mb-4">Every evening, StockSentry screens the S&P 100 (and the NASDAQ 100 on higher tiers) for strong technical setups you aren't currently tracking.</p>
+                    <p class="text-[var(--text-muted)] mb-4">You receive heavily vetted buy opportunities complete with allocation sizing, calculated risk/reward ratios, and links to pertinent financial news driving the momentum.</p>
                 </div>
 
                 <!-- Telegram Mockup: Discovery -->
                 <div class="relative mx-auto w-full max-w-[340px]">
-                    <div class="bg-[#0e1621] rounded-[2.5rem] p-2 shadow-2xl relative z-10 border-4 border-slate-800">
-                        <div class="bg-[#0e1621] rounded-[2rem] overflow-hidden relative flex flex-col h-[580px]">
+                    <div class="bg-dark-900 rounded-[2.5rem] p-2 shadow-2xl relative z-10 border-4 border-slate-800">
+                        <div class="bg-dark-900 rounded-[2rem] overflow-hidden relative flex flex-col h-[580px]">
                             <!-- Header -->
-                            <div class="bg-[#17212b] px-4 py-3 flex items-center gap-3 relative z-20">
+                            <div class="bg-dark-800 px-4 py-3 flex items-center gap-3 relative z-20">
                                 <i data-lucide="arrow-left" class="w-5 h-5 text-slate-400"></i>
                                 <div class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center border border-brand-500 shrink-0 overflow-hidden relative">
-                                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="#22c55e" stroke-width="6" stroke-linejoin="round"/><path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="70" cy="30" r="4" fill="#22c55e"/></svg>
+                                    <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="var(--brand-500)" stroke-width="6" stroke-linejoin="round"/><path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="70" cy="30" r="4" fill="var(--brand-500)"/></svg>
                                 </div>
                                 <div class="flex-grow">
                                     <div class="text-white font-bold text-[15px] leading-tight">StockSentry</div>
@@ -337,32 +337,32 @@ import MainLayout from '../layouts/MainLayout.astro';
                                 <i data-lucide="more-vertical" class="w-5 h-5 text-slate-400"></i>
                             </div>
                             <!-- Background -->
-                            <div class="absolute inset-0 top-[60px] bottom-[50px] bg-[#0e1621]" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+                            <div class="absolute inset-0 top-[60px] bottom-[50px] bg-dark-900" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
                             <!-- Messages -->
                             <div class="p-3 space-y-2 flex-grow overflow-y-auto flex flex-col justify-end text-[13px] relative z-10 pb-4">
-                                <div class="bg-[#182533] text-white px-3 py-2.5 rounded-2xl rounded-tl-sm self-start w-[95%] shadow-sm leading-relaxed text-[12px]">
+                                <div class="bg-dark-800 text-white px-3 py-2.5 rounded-2xl rounded-tl-sm self-start w-[95%] shadow-sm leading-relaxed text-[12px] border border-slate-700">
                                     📊 [22:53]<br>
                                     <span class="font-bold">💡 BUY OPPORTUNITY — MCD</span><br>
                                     $275.75 | RSI 25.2<br>
                                     Allocate: <b>4-5% of portfolio</b><br>
                                     Stop-loss: $263.77 | Risk/reward: 1:2.4<br>
                                     Why: McDonald's has fallen so far and so fast that it's now deeply oversold — historically, drops this extreme tend to snap back, and the stock is sitting right at a key price floor with above-average trading volume suggesting big money is paying attention. It's not a tech position, the dividend adds a cushion, and analysts still see significant upside...<br>
-                                    <div class="bg-[#0e1621]/50 rounded p-1.5 mt-2 border border-[#2b3a4a] text-[#2aabf2] truncate text-[11px]">
+                                    <div class="bg-dark-900/50 rounded p-1.5 mt-2 border border-slate-700 text-brand-500 truncate text-[11px]">
                                         📰 McDonald's Q1 Review: Strong Fundamentals Shine In A Troubled Sector...
                                     </div>
-                                    <div class="bg-[#0e1621]/50 rounded p-1.5 mt-1 border border-[#2b3a4a] text-[#2aabf2] truncate text-[11px]">
+                                    <div class="bg-dark-900/50 rounded p-1.5 mt-1 border border-slate-700 text-brand-500 truncate text-[11px]">
                                         📰 Evercore ISI Group Maintains Outperform on McDonald's, Lowers Price Target to $3...
                                     </div>
                                     <div class="text-[10px] text-slate-400 text-right mt-1">6:53 PM</div>
                                 </div>
                             </div>
                             <!-- Input -->
-                            <div class="bg-[#17212b] p-2 flex items-center gap-2 relative z-20">
-                                <div class="w-8 h-8 rounded-full bg-[#2aabf2] flex items-center justify-center shrink-0"><i data-lucide="menu" class="w-4 h-4 text-white"></i></div>
-                                <div class="flex-grow bg-[#17212b] text-slate-500 rounded-full px-3 py-1 text-[15px] flex items-center gap-2">
+                            <div class="bg-dark-800 p-2 flex items-center gap-2 relative z-20">
+                                <div class="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><i data-lucide="menu" class="w-4 h-4 text-white"></i></div>
+                                <div class="flex-grow bg-dark-900 border border-slate-700 text-slate-500 rounded-full px-3 py-1 text-[15px] flex items-center gap-2">
                                     <i data-lucide="smile" class="w-5 h-5 text-slate-400"></i><span class="flex-grow">Message</span><i data-lucide="paperclip" class="w-5 h-5 text-slate-400"></i>
                                 </div>
-                                <div class="w-9 h-9 rounded-full bg-[#2aabf2] flex items-center justify-center shrink-0"><i data-lucide="mic" class="w-5 h-5 text-white"></i></div>
+                                <div class="w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center shrink-0"><i data-lucide="mic" class="w-5 h-5 text-white"></i></div>
                             </div>
                         </div>
                     </div>
@@ -373,26 +373,26 @@ import MainLayout from '../layouts/MainLayout.astro';
         <!-- Step 7: Price Alerts -->
         <section>
             <div class="flex items-center gap-4 mb-6">
-                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">7</div>
+                <div class="w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">7</div>
                 <h2 class="text-2xl font-bold text-white">Price Alerts</h2>
             </div>
-            <p class="text-sm text-slate-400 mb-4 max-w-2xl">Set specific price thresholds on any valid ticker (whether you own it or not) to receive an immediate ping when the price level is crossed.</p>
+            <p class="text-sm text-[var(--text-muted)] mb-4 max-w-2xl">Set specific price thresholds on any valid ticker (whether you own it or not) to receive an immediate ping when the price level is crossed.</p>
             <div class="space-y-2 font-mono text-xs max-w-2xl">
-                <div class="bg-slate-800 p-3 rounded border border-slate-700 text-brand-400">/alert AAPL 220 <span class="text-slate-500 ml-2">// Alert if > $220</span></div>
-                <div class="bg-slate-800 p-3 rounded border border-slate-700 text-brand-400">/alert AAPL 180 below <span class="text-slate-500 ml-2">// Alert if < $180</span></div>
+                <div class="bg-dark-800 p-3 rounded border border-slate-700 text-brand-500">/alert AAPL 220 <span class="text-[var(--text-muted)] ml-2">// Alert if > $220</span></div>
+                <div class="bg-dark-800 p-3 rounded border border-slate-700 text-brand-500">/alert AAPL 180 below <span class="text-[var(--text-muted)] ml-2">// Alert if < $180</span></div>
             </div>
         </section>
 
         <!-- Step 8: Performance tracking -->
         <section>
             <div class="flex items-center gap-4 mb-6">
-                <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">8</div>
+                <div class="w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">8</div>
                 <h2 class="text-2xl font-bold text-white">Self-tracking performance</h2>
             </div>
-            <p class="text-slate-400 mb-4 max-w-3xl">
+            <p class="text-[var(--text-muted)] mb-4 max-w-3xl">
                 Every alert is recorded. Each morning, StockSentry checks whether its recent setup analyses played out correctly to build a transparent track record.
             </p>
-            <p class="text-slate-400 max-w-3xl">
+            <p class="text-[var(--text-muted)] max-w-3xl">
                 This data feeds back into the AI layer. The longer the agent runs, the more calibrated its signaling becomes.
             </p>
         </section>
@@ -403,37 +403,37 @@ import MainLayout from '../layouts/MainLayout.astro';
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse text-sm">
                     <thead>
-                        <tr class="bg-slate-800 border-b border-slate-700 text-white">
+                        <tr class="bg-dark-800 border-b border-slate-700 text-white">
                             <th class="p-4 font-bold w-1/4">System</th>
                             <th class="p-4 font-bold">Implementation</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-slate-800 text-slate-300">
-                        <tr class="hover:bg-slate-800/30 transition">
+                    <tbody class="divide-y divide-slate-800 text-[var(--text-base)]">
+                        <tr class="hover:bg-dark-800/30 transition">
                             <td class="p-4 font-medium text-white">Data source</td>
                             <td class="p-4">Yahoo Finance (live prices, fundamentals)</td>
                         </tr>
-                        <tr class="hover:bg-slate-800/30 transition">
+                        <tr class="hover:bg-dark-800/30 transition">
                             <td class="p-4 font-medium text-white">Technical signals</td>
                             <td class="p-4">14 indicators across price action, momentum, and volume</td>
                         </tr>
-                        <tr class="hover:bg-slate-800/30 transition">
+                        <tr class="hover:bg-dark-800/30 transition">
                             <td class="p-4 font-medium text-white">Analysis layer</td>
                             <td class="p-4">Claude AI (Anthropic) — verdict & plain-English reasoning</td>
                         </tr>
-                        <tr class="hover:bg-slate-800/30 transition">
+                        <tr class="hover:bg-dark-800/30 transition">
                             <td class="p-4 font-medium text-white">Monitoring freq.</td>
                             <td class="p-4">Every 30 minutes during US market hours</td>
                         </tr>
-                        <tr class="hover:bg-slate-800/30 transition">
+                        <tr class="hover:bg-dark-800/30 transition">
                             <td class="p-4 font-medium text-white">Delivery</td>
                             <td class="p-4">Telegram direct message</td>
                         </tr>
-                        <tr class="hover:bg-slate-800/30 transition">
+                        <tr class="hover:bg-dark-800/30 transition">
                             <td class="p-4 font-medium text-white">Storage</td>
                             <td class="p-4">Ticker list and Telegram ID only — no personal data</td>
                         </tr>
-                        <tr class="hover:bg-slate-800/30 transition">
+                        <tr class="hover:bg-dark-800/30 transition">
                             <td class="p-4 font-medium text-white">Performance</td>
                             <td class="p-4">Every setup analysis recorded and evaluated daily</td>
                         </tr>
@@ -446,14 +446,14 @@ import MainLayout from '../layouts/MainLayout.astro';
         </section>
 
         <!-- Disclaimer -->
-        <section class="bg-slate-800/30 p-6 border border-slate-700 rounded-lg text-left mt-16">
+        <section class="bg-dark-800/30 p-6 border border-slate-700 rounded-lg text-left mt-16">
             <div class="flex items-center gap-2 text-white font-bold mb-4">
                 <i data-lucide="shield-alert" class="w-5 h-5 text-red-500"></i> What StockSentry doesn't do
             </div>
-            <p class="text-sm text-slate-300 mb-4">
+            <p class="text-sm text-white mb-4">
                 It is not a financial adviser. Every alert is based on publicly available market data and technical signals. StockSentry has no visibility into your brokerage account, portfolio size, income, or financial situation.
             </p>
-            <p class="text-sm text-slate-300">
+            <p class="text-sm text-white">
                 It cannot and does not provide personalised investment advice. Every message StockSentry sends is a data point for your own research, not an instruction to trade.
             </p>
         </section>
