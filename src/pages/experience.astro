@@ -29,36 +29,54 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </div>
                 <p class="text-lg text-[var(--text-muted)] mb-8">StockSentry operates <strong>entirely within Telegram</strong>. You don't need a new app or a heavy charting suite. It's conversational, intuitive, and always in your pocket.</p>
                 
-                <div class="bg-dark-800/30 border border-slate-700 rounded-3xl p-8">
-                    <ul class="grid md:grid-cols-3 gap-8 text-sm text-[var(--text-base)]">
-                        <li class="space-y-3">
-                            <div class="w-10 h-10 bg-brand-500/10 rounded-lg flex items-center justify-center text-brand-500">
-                                <i data-lucide="download" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <strong class="text-white block text-base mb-1">Install Telegram</strong>
-                                Available for iOS, Android, or Desktop.
-                            </div>
-                        </li>
-                        <li class="space-y-3">
-                            <div class="w-10 h-10 bg-brand-500/10 rounded-lg flex items-center justify-center text-brand-500">
-                                <i data-lucide="user-plus" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <strong class="text-white block text-base mb-1">Create an Account</strong>
-                                Privacy first: StockSentry <strong>cannot see your phone number</strong>, only your anonymous ID.
-                            </div>
-                        </li>
-                        <li class="space-y-3">
-                            <div class="w-10 h-10 bg-brand-500/10 rounded-lg flex items-center justify-center text-brand-500">
-                                <i data-lucide="play" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <strong class="text-white block text-base mb-1">Start the Bot</strong>
-                                Visit <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="text-brand-500 hover:underline">t.me/StockSentryAYS_bot</a> and tap <strong>START</strong> to begin.
-                            </div>
-                        </li>
-                    </ul>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 bg-dark-800/30 border border-slate-700 rounded-3xl p-8">
+                        <ul class="grid md:grid-cols-3 gap-8 text-sm text-[var(--text-base)]">
+                            <li class="space-y-3">
+                                <div class="w-10 h-10 bg-brand-500/10 rounded-lg flex items-center justify-center text-brand-500">
+                                    <i data-lucide="download" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-white block text-base mb-1">Install Telegram</strong>
+                                    Available for iOS, Android, or Desktop.
+                                </div>
+                            </li>
+                            <li class="space-y-3">
+                                <div class="w-10 h-10 bg-brand-500/10 rounded-lg flex items-center justify-center text-brand-500">
+                                    <i data-lucide="user-plus" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-white block text-base mb-1">Create an Account</strong>
+                                    Privacy first: StockSentry <strong>cannot see your phone number</strong>, only your anonymous ID.
+                                </div>
+                            </li>
+                            <li class="space-y-3">
+                                <div class="w-10 h-10 bg-brand-500/10 rounded-lg flex items-center justify-center text-brand-500">
+                                    <i data-lucide="play" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <strong class="text-white block text-base mb-1">Start the Bot</strong>
+                                    Visit <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="text-brand-500 hover:underline">t.me/StockSentryAYS_bot</a> and tap <strong>START</strong>.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Visual Reward: Bot Profile Card -->
+                    <div class="bg-dark-800 border border-slate-700 rounded-3xl p-6 flex flex-col items-center text-center shadow-xl relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-brand-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="w-20 h-20 rounded-full bg-brand-900 flex items-center justify-center border-2 border-brand-500 mb-4 shadow-lg shadow-brand-500/20">
+                            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="var(--brand-500)" stroke-width="6" stroke-linejoin="round"/>
+                                <path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="70" cy="30" r="4" fill="var(--brand-500)"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-bold">StockSentry Bot</h3>
+                        <p class="text-brand-500 text-xs mb-4">@StockSentryAYS_bot</p>
+                        <div class="bg-brand-500/10 text-brand-500 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter border border-brand-500/20">
+                            Ready to Monitor
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -72,14 +90,20 @@ import MainLayout from '../layouts/MainLayout.astro';
                         </div>
                         <p class="text-lg text-[var(--text-muted)] mb-6">Setup takes seconds. Tell the Sentry what you own and what you're watching using simple commands.</p>
                         <div class="space-y-4 mb-8">
-                            <div class="bg-dark-800 p-4 rounded-xl border border-slate-700">
-                                <code class="text-brand-500 font-mono text-base">/bought AAPL 190.50</code>
-                                <p class="text-xs text-slate-500 mt-2">Log an owned stock to track your specific P&L and risk.</p>
-                            </div>
-                            <div class="bg-dark-800 p-4 rounded-xl border border-slate-700">
-                                <code class="text-brand-500 font-mono text-base">/watch NVDA</code>
-                                <p class="text-xs text-slate-500 mt-2">Add to your watchlist for entry-point monitoring.</p>
-                            </div>
+                            <button class="copy-cmd w-full text-left bg-dark-800 p-4 rounded-xl border border-slate-700 hover:border-brand-500/50 transition group flex justify-between items-center" data-cmd="/bought AAPL 190.50">
+                                <div>
+                                    <code class="text-brand-500 font-mono text-base">/bought AAPL 190.50</code>
+                                    <p class="text-[10px] text-slate-500 mt-1 uppercase font-bold tracking-wider">Log an owned stock</p>
+                                </div>
+                                <i data-lucide="copy" class="w-4 h-4 text-slate-600 group-hover:text-brand-500 transition"></i>
+                            </button>
+                            <button class="copy-cmd w-full text-left bg-dark-800 p-4 rounded-xl border border-slate-700 hover:border-brand-500/50 transition group flex justify-between items-center" data-cmd="/watch NVDA">
+                                <div>
+                                    <code class="text-brand-500 font-mono text-base">/watch NVDA</code>
+                                    <p class="text-[10px] text-slate-500 mt-1 uppercase font-bold tracking-wider">Monitor entry points</p>
+                                </div>
+                                <i data-lucide="copy" class="w-4 h-4 text-slate-600 group-hover:text-brand-500 transition"></i>
+                            </button>
                         </div>
                     </div>
                     <!-- Telegram Mockup: Setup -->
@@ -106,11 +130,11 @@ import MainLayout from '../layouts/MainLayout.astro';
                         <div class="bg-dark-950 rounded-[3rem] p-3 shadow-2xl relative z-10 border-2 border-slate-800/80">
                             <div class="bg-dark-900 rounded-[2.5rem] overflow-hidden relative flex flex-col h-[400px]">
                                 <div class="p-4 space-y-3 flex-grow overflow-hidden flex flex-col justify-end text-[12px]">
-                                    <div class="bg-dark-800 text-white px-3 py-3 rounded-2xl rounded-tl-sm self-start border border-slate-700 leading-relaxed">
-                                        🚨 [17:40]<br>
-                                        <span class="font-bold text-brand-500">⚠️ SET STOP-LOSS — META</span><br>
-                                        $609.63 | 🔴 -9.6% from entry<br>
-                                        Why: META has dropped below its long-term average. Protecing your capital is the priority...
+                                    <div class="bg-dark-800 text-white px-3 py-3 rounded-2xl rounded-tl-sm self-start border border-slate-700 leading-relaxed italic">
+                                        🚨 [20:12]<br>
+                                        <span class="font-bold text-brand-500 not-italic">⚠️ SET STOP-LOSS — META</span><br>
+                                        <strong>Why:</strong> META is now trading below its long-term average — a sign of a weak trend, not just a bad day.<br>
+                                        <strong>Set stop at: $572.13</strong>
                                     </div>
                                 </div>
                             </div>
@@ -233,3 +257,36 @@ import MainLayout from '../layouts/MainLayout.astro';
 
     </main>
 </MainLayout>
+
+<script>
+    const setupExperience = () => {
+        const copyButtons = document.querySelectorAll('.copy-cmd');
+        
+        copyButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const cmd = btn.getAttribute('data-cmd');
+                if (cmd) {
+                    navigator.clipboard.writeText(cmd);
+                    
+                    // Visual feedback
+                    const icon = btn.querySelector('i');
+                    if (icon) {
+                        const originalIcon = icon.getAttribute('data-lucide');
+                        icon.setAttribute('data-lucide', 'check');
+                        // @ts-ignore
+                        if (window.lucide) window.lucide.createIcons();
+                        
+                        setTimeout(() => {
+                            icon.setAttribute('data-lucide', originalIcon || 'copy');
+                            // @ts-ignore
+                            if (window.lucide) window.lucide.createIcons();
+                        }, 2000);
+                    }
+                }
+            });
+        });
+    };
+
+    // Initialize on page load
+    document.addEventListener('astro:page-load', setupExperience);
+</script>
