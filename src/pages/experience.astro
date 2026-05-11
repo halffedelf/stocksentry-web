@@ -19,8 +19,97 @@ import MainLayout from '../layouts/MainLayout.astro';
     <!-- Main Content -->
     <main class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-32">
 
-        <!-- Step-by-Step Process -->
-        <div class="space-y-24">
+        <!-- Horizontal Scroll Experience (Mobile Only) -->
+        <div class="md:hidden -mx-4 px-4 flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-12">
+            <!-- Mobile Step 1 -->
+            <div class="min-w-[85vw] snap-center">
+                <div class="bg-dark-800 border border-slate-700 rounded-[2.5rem] p-6 flex flex-col h-full shadow-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-brand-900 border border-brand-500 flex items-center justify-center text-brand-500 font-bold text-sm shrink-0">1</div>
+                        <h2 class="text-xl font-bold text-white leading-tight">Connect via Telegram</h2>
+                    </div>
+                    <p class="text-sm text-[var(--text-muted)] mb-6">Connect in seconds. StockSentry lives where you already are—private and conversational.</p>
+                    
+                    <div class="bg-dark-900/50 rounded-2xl p-4 border border-slate-700/50 mb-6 flex-grow">
+                        <ul class="space-y-4 text-xs text-[var(--text-base)]">
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="play" class="w-4 h-4 text-brand-500"></i>
+                                <span>Visit <a href="https://t.me/StockSentryAYS_bot" class="text-brand-500 underline">t.me/StockSentryAYS_bot</a></span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="user-plus" class="w-4 h-4 text-brand-500"></i>
+                                <span>Tap <strong>START</strong> to initialize.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Visual Reward for Mobile -->
+                    <div class="bg-brand-900/10 border border-brand-500/20 rounded-2xl p-4 flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center border border-brand-500 shadow-glow">
+                             <i data-lucide="activity" class="w-5 h-5 text-brand-500"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-white font-bold text-xs">Sentry Bot</div>
+                            <div class="text-brand-500 text-[10px]">Active & Ready</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Step 2 -->
+            <div class="min-w-[85vw] snap-center">
+                <div class="bg-dark-800 border border-slate-700 rounded-[2.5rem] p-6 flex flex-col h-full shadow-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-brand-900 border border-brand-500 flex items-center justify-center text-brand-500 font-bold text-sm shrink-0">2</div>
+                        <h2 class="text-xl font-bold text-white leading-tight">Add your tickers</h2>
+                    </div>
+                    <p class="text-sm text-[var(--text-muted)] mb-6">Tell the Sentry what you're watching using simple, natural messages.</p>
+                    
+                    <div class="bg-dark-900 rounded-2xl overflow-hidden border border-slate-700 h-[220px] relative mb-6">
+                        <div class="p-3 space-y-2 flex flex-col justify-end h-full">
+                            <div class="bg-brand-500 text-white px-3 py-1.5 rounded-xl rounded-tr-sm self-end text-[10px]">
+                                /watch NVDA
+                            </div>
+                            <div class="bg-dark-800 text-white px-3 py-2 rounded-xl rounded-tl-sm self-start border border-slate-700 text-[10px] leading-relaxed">
+                                ✅ Now watching <strong>NVDA</strong>. I'll ping you when action is needed.
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="copy-cmd w-full bg-brand-600/10 text-brand-500 border border-brand-500/30 py-3 rounded-xl font-bold text-xs flex justify-center items-center gap-2" data-cmd="/watch NVDA">
+                        <i data-lucide="copy" class="w-4 h-4"></i> Copy Example Command
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Step 3 -->
+            <div class="min-w-[85vw] snap-center">
+                <div class="bg-dark-800 border border-slate-700 rounded-[2.5rem] p-6 flex flex-col h-full shadow-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-brand-900 border border-brand-500 flex items-center justify-center text-brand-500 font-bold text-sm shrink-0">3</div>
+                        <h2 class="text-xl font-bold text-white leading-tight">Act on Intelligence</h2>
+                    </div>
+                    <p class="text-sm text-[var(--text-muted)] mb-6">The Sentry stays silent until a significant trend shift is detected. No noise, just alerts.</p>
+                    
+                    <div class="bg-dark-900 rounded-2xl overflow-hidden border border-slate-700 h-[220px] relative mb-6">
+                        <div class="p-3 flex flex-col justify-end h-full">
+                            <div class="bg-dark-800 text-white px-3 py-3 rounded-xl rounded-tl-sm self-start border border-slate-700 text-[10px] leading-relaxed italic">
+                                🚨 [20:12]<br>
+                                <span class="font-bold text-brand-500 not-italic">⚠️ SET STOP-LOSS — META</span><br>
+                                <strong>Why:</strong> META is now trading below its long-term average...
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-[10px] text-slate-500 uppercase tracking-widest font-bold">
+                        Swipe for next <i data-lucide="arrow-right" class="inline w-3 h-3"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Flow (Hidden on Mobile) -->
+        <div class="hidden md:block space-y-24">
             <!-- Step 1: Telegram Setup -->
             <section class="reveal-item">
                 <div class="flex items-center gap-4 mb-6">
@@ -108,7 +197,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                     </div>
                     <!-- Telegram Mockup: Setup -->
                     <div class="bg-dark-950 rounded-[3rem] p-3 shadow-2xl relative z-10 border-2 border-slate-800/80">
-                        <div class="bg-dark-900 rounded-[2.5rem] overflow-hidden relative flex flex-col h-[400px]">
+                        <div class="bg-dark-900 rounded-[2.5rem] overflow-hidden relative border border-slate-800/50 shadow-inner flex flex-col h-[400px]">
                             <div class="p-4 space-y-3 flex-grow overflow-hidden flex flex-col justify-end text-[12px]">
                                 <div class="bg-brand-500 text-white px-3 py-2 rounded-2xl rounded-tr-sm self-end max-w-[85%] relative">
                                     /bought AAPL 190.50
@@ -128,7 +217,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                     <div class="order-2 md:order-1">
                          <!-- Telegram Mockup: Alert -->
                         <div class="bg-dark-950 rounded-[3rem] p-3 shadow-2xl relative z-10 border-2 border-slate-800/80">
-                            <div class="bg-dark-900 rounded-[2.5rem] overflow-hidden relative flex flex-col h-[400px]">
+                            <div class="bg-dark-900 rounded-[2.5rem] overflow-hidden relative border border-slate-800/50 shadow-inner flex flex-col h-[400px]">
                                 <div class="p-4 space-y-3 flex-grow overflow-hidden flex flex-col justify-end text-[12px]">
                                     <div class="bg-dark-800 text-white px-3 py-3 rounded-2xl rounded-tl-sm self-start border border-slate-700 leading-relaxed italic">
                                         🚨 [20:12]<br>
