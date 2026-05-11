@@ -57,27 +57,27 @@ const navLinks = [
     </div>
 
     <!-- Mobile Navigation Menu (Floating Card) -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden md:hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[40] hidden md:hidden opacity-0 transition-all duration-300"></div>
     
-    <div id="mobile-menu" class="hidden md:hidden fixed top-20 inset-x-4 z-50 transform -translate-y-4 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="bg-dark-900/90 backdrop-blur-2xl border border-slate-700/50 rounded-[2rem] shadow-2xl p-4 overflow-hidden">
+    <div id="mobile-menu" class="hidden md:hidden fixed top-20 inset-x-4 z-[50] transform -translate-y-4 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-dark-800 border border-slate-700/50 rounded-[2.5rem] shadow-2xl p-3 overflow-hidden">
             <div class="space-y-1">
                 {navLinks.map(({ href, label }) => (
                     <a 
                         href={href} 
-                        class={`flex items-center gap-4 px-5 py-4 rounded-2xl transition-all ${currentPath === href || (href !== "/" && currentPath?.startsWith(href)) ? "bg-brand-500/10 text-brand-500 font-bold" : "text-slate-300 hover:bg-white/5"}`}
+                        class={`flex items-center gap-4 px-6 py-4 rounded-2xl transition-all ${currentPath === href || (href !== "/" && currentPath?.startsWith(href)) ? "bg-brand-500/20 text-brand-500 font-bold" : "text-white hover:bg-white/5"}`}
                     >
                         <i data-lucide={
                             label === "Home" ? "home" : 
                             label === "Experience" ? "compass" : 
                             label === "Pricing" ? "credit-card" : "help-circle"
-                        } class="w-5 h-5"></i>
-                        {label}
+                        } class="w-5 h-5 text-brand-500"></i>
+                        <span class="text-base">{label}</span>
                     </a>
                 ))}
             </div>
-            <div class="mt-4 pt-4 border-t border-slate-800">
-                <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="flex items-center justify-center gap-3 w-full bg-brand-600 hover:bg-brand-500 text-white px-5 py-5 rounded-[1.5rem] font-bold transition shadow-lg shadow-brand-500/20">
+            <div class="mt-3 pt-3 border-t border-slate-700/50">
+                <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="flex items-center justify-center gap-3 w-full bg-brand-600 hover:bg-brand-500 text-white px-5 py-5 rounded-[1.8rem] font-bold transition shadow-lg">
                     <i data-lucide="send" class="w-5 h-5"></i>
                     Start Free Trial
                 </a>
@@ -116,27 +116,24 @@ const navLinks = [
             const isOpening = forceClose ? false : menu?.classList.contains('hidden');
             
             if (isOpening) {
-                // Open
                 menu?.classList.remove('hidden');
                 overlay?.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
                 
-                // Animate in
-                setTimeout(() => {
+                // Trigger animation
+                requestAnimationFrame(() => {
                     menu?.classList.remove('-translate-y-4', 'opacity-0', 'pointer-events-none');
                     overlay?.classList.add('opacity-100');
                     menuIcon?.classList.add('hidden');
                     closeIcon?.classList.remove('hidden');
-                }, 10);
+                });
             } else {
-                // Close
                 menu?.classList.add('-translate-y-4', 'opacity-0', 'pointer-events-none');
                 overlay?.classList.remove('opacity-100');
                 menuIcon?.classList.remove('hidden');
                 closeIcon?.classList.add('hidden');
                 document.body.style.overflow = '';
                 
-                // Hide after transition
                 setTimeout(() => {
                     menu?.classList.add('hidden');
                     overlay?.classList.add('hidden');
@@ -147,7 +144,6 @@ const navLinks = [
         button?.addEventListener('click', () => toggleMenu());
         overlay?.addEventListener('click', () => toggleMenu(true));
 
-        // Close menu when clicking a link
         navLinks?.forEach(link => {
             link.addEventListener('click', () => toggleMenu(true));
         });
