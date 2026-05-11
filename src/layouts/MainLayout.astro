@@ -24,6 +24,11 @@ const currentPath = Astro.url.pathname;
 		<title>{title} | StockSentry</title>
 	</head>
 	<body>
+		<div class="bg-mesh">
+			<div class="mesh-blob blob-1"></div>
+			<div class="mesh-blob blob-2"></div>
+			<div class="mesh-blob blob-3"></div>
+		</div>
 		<Nav currentPath={currentPath} />
 		<slot />
 		<Footer />
