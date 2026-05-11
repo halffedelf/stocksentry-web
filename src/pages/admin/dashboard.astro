@@ -54,6 +54,7 @@ const stats = {
 };
 
 const avgDuration = safeViews.length ? Math.round(safeViews.reduce((acc, v) => acc + (v.duration_seconds || 0), 0) / safeViews.length) : 0;
+const totalViews = safeViews.length;
 
 // Top Pages
 const pageMap = new Map();
@@ -182,7 +183,7 @@ const topCountries = Array.from(countryMap.entries())
                                 <span class="text-slate-300 font-mono text-sm">{path}</span>
                                 <div class="flex items-center gap-4">
                                     <div class="w-32 bg-dark-900 h-2 rounded-full overflow-hidden hidden sm:block">
-                                        <div class="bg-brand-500 h-full" style={`width: ${(count / totalViews) * 100}%`}></div>
+                                        <div class="bg-brand-500 h-full" style={`width: ${totalViews > 0 ? (count / totalViews) * 100 : 0}%`}></div>
                                     </div>
                                     <span class="text-white font-bold">{count}</span>
                                 </div>
