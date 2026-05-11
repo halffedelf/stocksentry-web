@@ -141,12 +141,8 @@ const navLinks = [
         });
     };
 
-    // Run on initial load
-    setupNav();
-    setupMobileMenu();
-
     // Re-run after Astro page transitions
-    document.addEventListener('astro:after-swap', () => {
+    document.addEventListener('astro:page-load', () => {
         setupNav();
         setupMobileMenu();
     });

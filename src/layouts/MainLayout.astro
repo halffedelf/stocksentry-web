@@ -2,6 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Tracker from '../components/Tracker.astro';
+import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
 
 interface Props {
@@ -22,6 +23,7 @@ const currentPath = Astro.url.pathname;
 		<link rel="icon" type="image/png" href="/logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | StockSentry</title>
+		<ViewTransitions />
 	</head>
 	<body>
 		<div class="bg-mesh">
@@ -34,41 +36,61 @@ const currentPath = Astro.url.pathname;
 		<Footer />
 		<Tracker />
 		<style is:global>
+			/* Refined Scroll Reveal */
 			.reveal {
 				opacity: 0;
-				transform: translateY(20px);
-				transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+				transform: translateY(30px);
+				transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+				will-change: transform, opacity;
 			}
 			.reveal.active {
 				opacity: 1;
 				transform: translateY(0);
 			}
+
+			/* Staggered children reveal */
+			.reveal-group .reveal-item {
+				opacity: 0;
+				transform: translateY(20px);
+				transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+			}
+
+			.reveal-group.active .reveal-item {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.reveal-group.active .reveal-item:nth-child(1) { transition-delay: 0.1s; }
+			.reveal-group.active .reveal-item:nth-child(2) { transition-delay: 0.2s; }
+			.reveal-group.active .reveal-item:nth-child(3) { transition-delay: 0.3s; }
+			.reveal-group.active .reveal-item:nth-child(4) { transition-delay: 0.4s; }
+			.reveal-group.active .reveal-item:nth-child(5) { transition-delay: 0.5s; }
+			.reveal-group.active .reveal-item:nth-child(6) { transition-delay: 0.6s; }
 		</style>
 		<script>
-			const observerOptions = {
-				threshold: 0.1
-			};
-
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('active');
-					}
-				});
-			}, observerOptions);
-
 			const setupReveal = () => {
-				document.querySelectorAll('section > div > div:first-child, .reveal-item').forEach(el => {
+				const observerOptions = {
+					threshold: 0.15,
+					rootMargin: '0px 0px -50px 0px'
+				};
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('active');
+						}
+					});
+				}, observerOptions);
+
+				// Target headers and main content blocks
+				document.querySelectorAll('section > div > div:first-child, .reveal-group, .reveal-direct').forEach(el => {
 					el.classList.add('reveal');
 					observer.observe(el);
 				});
 			};
 
-			// Run on initial load
-			setupReveal();
-
-			// Re-run after Astro page transitions
-			document.addEventListener('astro:after-swap', setupReveal);
+			// Re-run after View Transitions
+			document.addEventListener('astro:page-load', setupReveal);
 		</script>
 	</body>
 </html>

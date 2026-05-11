@@ -76,12 +76,20 @@
         BrainCircuit,
         MessageSquareMore,
         Search,
-        Lock
+        Lock,
+        CheckCircle2,
+        MinusCircle,
+        XCircle
     } from 'lucide';
 
-    createIcons({
-        icons: {
-            Send, Mail, Scan, Binoculars, MessageCircle, Activity, Shield, EyeOff, MessageSquare, Sunrise, Radar, Brain, Info, AlertTriangle, Paperclip, Mic, Scale, TrendingDown, TrendingUp, UserCheck, Loader2, Check, Minus, Download, UserPlus, Play, ArrowLeft, MoreVertical, Menu, Smile, DollarSign, Target, LineChart, PieChart, ShieldAlert, CheckCheck, Eye, Users, Clock, FileText, Share2, Globe, BellRing, BrainCircuit, MessageSquareMore, Search, Lock
-        }
-    });
+    const renderIcons = () => {
+        createIcons({
+            icons: {
+                Send, Mail, Scan, Binoculars, MessageCircle, Activity, Shield, EyeOff, MessageSquare, Sunrise, Radar, Brain, Info, AlertTriangle, Paperclip, Mic, Scale, TrendingDown, TrendingUp, UserCheck, Loader2, Check, Minus, Download, UserPlus, Play, ArrowLeft, MoreVertical, Menu, Smile, DollarSign, Target, LineChart, PieChart, ShieldAlert, CheckCheck, Eye, Users, Clock, FileText, Share2, Globe, BellRing, BrainCircuit, MessageSquareMore, Search, Lock, CheckCircle2, MinusCircle, XCircle
+            }
+        });
+    };
+
+    // Initial render logic for Astro View Transitions
+    document.addEventListener('astro:page-load', renderIcons);
 </script>

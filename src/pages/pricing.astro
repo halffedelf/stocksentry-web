@@ -132,64 +132,62 @@ const tiers = [
 </MainLayout>
 
 <script>
-    // AI Plan Recommender Logic
-    // We can import the lucide icons here if needed, but they are already in Footer.astro script.
-    // However, the Footer script runs on every page.
-    
-    const recommendButton = document.getElementById('recommendButton');
-    const inputField = document.getElementById('tradingStyleInput') as HTMLInputElement;
-    const resultDiv = document.getElementById('recommendationResult');
+    const setupRecommender = () => {
+        const recommendButton = document.getElementById('recommendButton');
+        const inputField = document.getElementById('tradingStyleInput') as HTMLInputElement;
+        const resultDiv = document.getElementById('recommendationResult');
 
-    if (recommendButton && inputField && resultDiv) {
-        recommendButton.addEventListener('click', async () => {
-            const input = inputField.value.trim();
-            if (!input) return;
+        if (recommendButton && inputField && resultDiv) {
+            recommendButton.addEventListener('click', async () => {
+                const input = inputField.value.trim();
+                if (!input) return;
 
-            // UI Loading State
-            recommendButton.setAttribute('disabled', 'true');
-            const originalText = recommendButton.innerHTML;
-            recommendButton.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Analyzing';
-            // Trigger lucide icon refresh if needed, but Footer.astro already does this on load.
-            // Since we are adding dynamic HTML, we might need to re-run lucide.
-            // But let's see.
-            
-            resultDiv.classList.add('hidden');
+                // UI Loading State
+                recommendButton.setAttribute('disabled', 'true');
+                const originalText = recommendButton.innerHTML;
+                recommendButton.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Analyzing';
+                
+                resultDiv.classList.add('hidden');
 
-            const apiKey = ""; // Should be handled via environment variables in a real app
-            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+                const apiKey = ""; // Should be handled via environment variables in a real app
+                const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
-            const systemInstruction = `You are a pricing assistant for StockSentry. Based on the user's input about their trading habits, recommend the BEST pricing tier for them. 
-            Available Tiers: 
-            1. Basic ($19.99/mo, strictly max 10 tickers, weekly S&P 100 scan).
-            2. Pro ($29.99/mo, up to 25 tickers, daily S&P 100 scan).
-            3. Premium ($49.99/mo, up to 100 tickers, daily S&P 100 + NASDAQ 100 scan).
-            Keep your response under 3 sentences. Be professional, direct, and clearly name the recommended tier in your response. Do not use Markdown styling.`;
+                const systemInstruction = `You are a pricing assistant for StockSentry. Based on the user's input about their trading habits, recommend the BEST pricing tier for them. 
+                Available Tiers: 
+                1. Basic ($19.99/mo, strictly max 10 tickers, weekly S&P 100 scan).
+                2. Pro ($29.99/mo, up to 25 tickers, daily S&P 100 scan).
+                3. Premium ($49.99/mo, up to 100 tickers, daily S&P 100 + NASDAQ 100 scan).
+                Keep your response under 3 sentences. Be professional, direct, and clearly name the recommended tier in your response. Do not use Markdown styling.`;
 
-            const payload = {
-                contents: [{ parts: [{ text: input }] }],
-                systemInstruction: { parts: [{ text: systemInstruction }] }
-            };
+                const payload = {
+                    contents: [{ parts: [{ text: input }] }],
+                    systemInstruction: { parts: [{ text: systemInstruction }] }
+                };
 
-            try {
-                const response = await fetch(endpoint, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
+                try {
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
 
-                if (!response.ok) throw new Error('API Error');
-                const data = await response.json();
+                    if (!response.ok) throw new Error('API Error');
+                    const data = await response.json();
 
-                const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't process that right now.";
-                resultDiv.innerHTML = `<p class="text-slate-300 text-sm leading-relaxed">${text}</p>`;
-                resultDiv.classList.remove('hidden');
-            } catch (error) {
-                resultDiv.innerHTML = `<p class="text-red-400 text-sm">Unable to connect to the recommendation engine. Please select a plan above based on your portfolio size.</p>`;
-                resultDiv.classList.remove('hidden');
-            } finally {
-                recommendButton.removeAttribute('disabled');
-                recommendButton.innerHTML = originalText;
-            }
-        });
-    }
+                    const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't process that right now.";
+                    resultDiv.innerHTML = `<p class="text-slate-300 text-sm leading-relaxed">${text}</p>`;
+                    resultDiv.classList.remove('hidden');
+                } catch (error) {
+                    resultDiv.innerHTML = `<p class="text-red-400 text-sm">Unable to connect to the recommendation engine. Please select a plan above based on your portfolio size.</p>`;
+                    resultDiv.classList.remove('hidden');
+                } finally {
+                    recommendButton.removeAttribute('disabled');
+                    recommendButton.innerHTML = originalText;
+                }
+            });
+        }
+    };
+
+    // Initialize on page load
+    document.addEventListener('astro:page-load', setupRecommender);
 </script>
