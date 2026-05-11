@@ -15,14 +15,14 @@ import MainLayout from '../layouts/MainLayout.astro';
                     Stop watching charts. <br><span class="text-brand-500">Let StockSentry do it.</span>
                 </h1>
                 <p class="text-lg text-[var(--text-base)] mb-8 max-w-xl">
-                    The AI powered bot that constantly monitors your positions. It reads the charts, examines the news, and nudges you in plain English only when it's time to act.
+                    The AI powered bot that <strong>constantly monitors your positions</strong>. It reads the charts, examines the news, and nudges you in <strong>plain English</strong> only when it's time to act.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-xl font-bold text-lg text-center transition btn-hover-effect flex items-center justify-center gap-2">
                         <i data-lucide="send" class="w-5 h-5"></i>
                         Start Free Trial
                     </a>
-                    <a href="/how-it-works" class="bg-dark-800 hover:bg-slate-700 text-white px-8 py-4 rounded-xl font-medium text-lg text-center transition border border-slate-700 btn-hover-effect-dark">
+                    <a href="/experience" class="bg-dark-800 hover:bg-slate-700 text-white px-8 py-4 rounded-xl font-medium text-lg text-center transition border border-slate-700 btn-hover-effect-dark">
                         View Example Alerts
                     </a>
                 </div>
@@ -134,6 +134,156 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </div>
                 <!-- Background glow -->
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-500/20 blur-3xl rounded-full z-0 pointer-events-none"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Sentry in Action (Visual Proof) -->
+    <section class="py-24 bg-dark-800 border-y border-slate-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold tracking-wider uppercase mb-6 border border-brand-500/20">
+                    Real-time Performance
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+                    See the Sentry <br><span class="text-brand-500">in action.</span>
+                </h2>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                    We don't just give you tools. We provide a <strong>complete market oversight service</strong> that speaks your language.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Visual 1: The Verdict -->
+                <div class="reveal-item bg-dark-900 rounded-[2.5rem] p-8 border border-slate-700 shadow-2xl relative group">
+                    <div class="absolute -top-4 -right-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">The Verdict</div>
+                    <div class="space-y-6">
+                        <div class="bg-dark-800 rounded-2xl p-6 border border-slate-700 relative">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center border border-brand-500 shrink-0">
+                                     <i data-lucide="brain-circuit" class="w-5 h-5 text-brand-500"></i>
+                                </div>
+                                <span class="text-white font-bold">Sentry Analysis</span>
+                            </div>
+                            <p class="text-[var(--text-base)] leading-relaxed italic border-l-4 border-brand-500 pl-4">
+                                "NVDA has cleared its 50-day resistance on massive volume. RSI is neutral, and news sentiment for AI chips is surging. <strong>Action: Add to watchlist for a clean entry at $118.</strong>"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 text-slate-500 text-sm">
+                            <div class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4"></i> No Charts</div>
+                            <div class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4"></i> Plain English</div>
+                            <div class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4"></i> Data-Backed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual 2: Proactive Safety -->
+                <div class="reveal-item bg-dark-900 rounded-[2.5rem] p-8 border border-slate-700 shadow-2xl relative group">
+                    <div class="absolute -top-4 -right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">Proactive Safety</div>
+                    <div class="space-y-6">
+                        <div class="bg-dark-800 rounded-2xl p-6 border border-slate-700 relative">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-full bg-red-900/20 flex items-center justify-center border border-red-500 shrink-0">
+                                     <i data-lucide="shield-alert" class="w-5 h-5 text-red-500"></i>
+                                </div>
+                                <span class="text-white font-bold">Risk Management</span>
+                            </div>
+                            <p class="text-[var(--text-base)] leading-relaxed italic border-l-4 border-red-500 pl-4">
+                                "META just hit your target stop-loss of $572. The trend has turned bearish after the earnings report. <strong>Action: Sell immediately to protect capital.</strong>"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 text-slate-500 text-sm">
+                            <div class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4"></i> Auto-Tracking</div>
+                            <div class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4"></i> Instant Alert</div>
+                            <div class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4"></i> Capital Shield</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Market Intelligence Section (The Sentry Advantage) -->
+    <section id="features" class="py-24 bg-dark-900 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold tracking-wider uppercase mb-6 border border-brand-500/20">
+                    The Sentry Advantage
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+                    Personal market intelligence <br><span class="text-brand-500">in your pocket.</span>
+                </h2>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                    Most trading tools are built for <strong>"Full-time Quants."</strong> We built StockSentry for the <strong>99% of investors</strong> who have jobs, families, and lives, but still want professional-grade market oversight.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1: No Charts -->
+                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                    <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="eye-off" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Zero Chart Overwhelm</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Drawing trendlines and watching RSI is a full-time job. StockSentry <strong>continuously monitors 14 technical indicators</strong> for you. You get the verdict, not the noise.
+                    </p>
+                </div>
+
+                <!-- Feature 2: Proactive AI -->
+                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                    <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="brain-circuit" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">The Latest AI Analysis</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Under the hood, we use the <strong>latest LLMs</strong> to analyze news sentiment and technical setups. It translates raw numbers into <strong>clear, plain English</strong> directives.
+                    </p>
+                </div>
+
+                <!-- Feature 3: Conversational UX -->
+                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                    <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="message-square-more" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Conversational & Intuitive</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Telegram is <strong>native and conversational</strong>. No heavy software to install. Adding a ticker is as easy as sending a message. It's built for humans, not quants.
+                    </p>
+                </div>
+
+                <!-- Feature 4: Discovery -->
+                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                    <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="search" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Find New Tickers</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Don't know what to trade? Our <strong>Discovery Scan</strong> sweeps the S&P 100 daily to find fresh opportunities with high signal strength, so you <strong>never miss a trend</strong>.
+                    </p>
+                </div>
+
+                <!-- Feature 5: Privacy First -->
+                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                    <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="lock" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Strict Privacy</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        We don't want your data. We <strong>don't link to your broker</strong>. We store only your Telegram ID and the tickers you watch. Your portfolio is your business.
+                    </p>
+                </div>
+
+                <!-- Feature 6: Proactive Alerts -->
+                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                    <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
+                        <i data-lucide="bell-ring" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Actionable Pings</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Unlike "Stock Alarms" that beep every time a cent moves, we only reach out when a <strong>significant trend shift</strong> is detected. We respect your attention.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -255,7 +405,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
                 <!-- 4:30 PM -->
                 <div class="relative pl-8 md:pl-12">
-                    <div class="absolute -left-[21px] top-1 bg-dark-800 border-2 border-slate-700 rounded-full w-10 h-10 flex items-center justify-center">
+                    <div class="absolute -left-[21px] top-1 bg-dark-900 border-2 border-slate-700 rounded-full w-10 h-10 flex items-center justify-center">
                         <i data-lucide="radar" class="w-4 h-4 text-slate-400"></i>
                     </div>
                     <div class="text-brand-500 font-mono text-sm font-bold mb-2">04:30 PM</div>
@@ -277,58 +427,6 @@ import MainLayout from '../layouts/MainLayout.astro';
                     </p>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Propositions -->
-    <section id="features" class="py-20 bg-dark-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white">Personal Market Intelligence in your pocket</h2>
-                <p class="text-[var(--text-muted)] mt-4 max-w-2xl mx-auto">You focus on your career. The bot focuses on the 14 indicators, ATR trailing stops, and breaking news sentiment.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-dark-800 p-6 sm:p-8 rounded-2xl border border-slate-700 hover:border-brand-500/50 transition">
-                    <div class="w-12 h-12 bg-dark-800 rounded-lg flex items-center justify-center mb-6 text-brand-500 border border-slate-700">
-                        <i data-lucide="eye-off"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Chartless Execution</h3>
-                    <p class="text-[var(--text-base)] text-sm leading-relaxed">
-                        Never stare at a candlestick again. The agent constantly processes RSI, SMA crossovers, MACD, and Bollinger Bands in the background.
-                    </p>
-                </div>
-                
-                <div class="bg-dark-800 p-6 sm:p-8 rounded-2xl border border-slate-700 hover:border-brand-500/50 transition">
-                    <div class="w-12 h-12 bg-dark-800 rounded-lg flex items-center justify-center mb-6 text-brand-500 border border-slate-700">
-                        <i data-lucide="bell-ring"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Proactive Reachout</h3>
-                    <p class="text-[var(--text-base)] text-sm leading-relaxed">
-                        Stop hunting for data. The sentry reaches out to you only when critical trend changes occur, saving you from constant checking.
-                    </p>
-                </div>
-
-                <div class="bg-dark-800 p-6 sm:p-8 rounded-2xl border border-slate-700 hover:border-brand-500/50 transition">
-                    <div class="w-12 h-12 bg-dark-800 rounded-lg flex items-center justify-center mb-6 text-brand-500 border border-slate-700">
-                        <i data-lucide="message-square"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Plain English</h3>
-                    <p class="text-[var(--text-base)] text-sm leading-relaxed">
-                        Zero financial jargon. You receive clear, one-sentence directives translated into standard English so you know exactly why an alert was triggered.
-                    </p>
-                </div>
-                
-                <div class="bg-dark-800 p-6 sm:p-8 rounded-2xl border border-slate-700 hover:border-brand-500/50 transition">
-                    <div class="w-12 h-12 bg-dark-800 rounded-lg flex items-center justify-center mb-6 text-brand-500 border border-slate-700">
-                        <i data-lucide="shield"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Capital Protection</h3>
-                    <p class="text-[var(--text-base)] text-sm leading-relaxed">
-                        Analyzes the stop-loss strategy for you based on the trend and your entry price. It ignores daily market noise and alerts you only during genuine trend breakdowns.
-                    </p>
-                </div>
             </div>
         </div>
     </section>

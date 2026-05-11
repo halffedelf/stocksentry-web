@@ -1,0 +1,266 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="The Experience">
+    <!-- Page Header -->
+    <header class="pt-32 pb-12 px-4 sm:px-6 lg:px-8 border-b border-slate-800 bg-dark-800/50">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold tracking-wider uppercase mb-6 border border-brand-500/20">
+                The Experience
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Elite oversight, delivered.</h1>
+            <p class="text-xl text-[var(--text-base)]">
+                Most trading tools are built for <strong>"Full-time Quants."</strong> We built StockSentry for the <strong>99% of investors</strong> who have jobs, families, and lives, but still want professional-grade market oversight.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-32">
+
+        <!-- Step-by-Step Process -->
+        <div class="space-y-24">
+            <!-- Step 1: Telegram Setup -->
+            <section class="reveal-item">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">1</div>
+                    <h2 class="text-2xl font-bold text-white">Connect via Telegram</h2>
+                </div>
+                <p class="text-lg text-[var(--text-muted)] mb-8">StockSentry operates <strong>entirely within Telegram</strong>. You don't need a new app or a heavy charting suite. It's conversational, intuitive, and always in your pocket.</p>
+                
+                <div class="bg-dark-800/30 border border-slate-700 rounded-3xl p-8">
+                    <ul class="grid md:grid-cols-3 gap-8 text-sm text-[var(--text-base)]">
+                        <li class="space-y-3">
+                            <div class="w-10 h-10 bg-brand-500/10 rounded-lg flex items-center justify-center text-brand-500">
+                                <i data-lucide="download" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <strong class="text-white block text-base mb-1">Install Telegram</strong>
+                                Available for iOS, Android, or Desktop.
+                            </div>
+                        </li>
+                        <li class="space-y-3">
+                            <div class="w-10 h-10 bg-brand-500/10 rounded-lg flex items-center justify-center text-brand-500">
+                                <i data-lucide="user-plus" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <strong class="text-white block text-base mb-1">Create an Account</strong>
+                                Privacy first: StockSentry <strong>cannot see your phone number</strong>, only your anonymous ID.
+                            </div>
+                        </li>
+                        <li class="space-y-3">
+                            <div class="w-10 h-10 bg-brand-500/10 rounded-lg flex items-center justify-center text-brand-500">
+                                <i data-lucide="play" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <strong class="text-white block text-base mb-1">Start the Bot</strong>
+                                Visit <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="text-brand-500 hover:underline">t.me/StockSentryAYS_bot</a> and tap <strong>START</strong> to begin.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Step 2: Add Tickers -->
+            <section class="reveal-item">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">2</div>
+                            <h2 class="text-2xl font-bold text-white">Add your tickers</h2>
+                        </div>
+                        <p class="text-lg text-[var(--text-muted)] mb-6">Setup takes seconds. Tell the Sentry what you own and what you're watching using simple commands.</p>
+                        <div class="space-y-4 mb-8">
+                            <div class="bg-dark-800 p-4 rounded-xl border border-slate-700">
+                                <code class="text-brand-500 font-mono text-base">/bought AAPL 190.50</code>
+                                <p class="text-xs text-slate-500 mt-2">Log an owned stock to track your specific P&L and risk.</p>
+                            </div>
+                            <div class="bg-dark-800 p-4 rounded-xl border border-slate-700">
+                                <code class="text-brand-500 font-mono text-base">/watch NVDA</code>
+                                <p class="text-xs text-slate-500 mt-2">Add to your watchlist for entry-point monitoring.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Telegram Mockup: Setup -->
+                    <div class="bg-dark-950 rounded-[3rem] p-3 shadow-2xl relative z-10 border-2 border-slate-800/80">
+                        <div class="bg-dark-900 rounded-[2.5rem] overflow-hidden relative flex flex-col h-[400px]">
+                            <div class="p-4 space-y-3 flex-grow overflow-hidden flex flex-col justify-end text-[12px]">
+                                <div class="bg-brand-500 text-white px-3 py-2 rounded-2xl rounded-tr-sm self-end max-w-[85%] relative">
+                                    /bought AAPL 190.50
+                                </div>
+                                <div class="bg-dark-800 text-white px-3 py-2 rounded-2xl rounded-tl-sm self-start border border-slate-700">
+                                    ✅ Logged <strong>AAPL</strong> at <strong>$190.50</strong>. I'll monitor it and alert you when action is needed.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 3: Alerts -->
+            <section class="reveal-item">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                         <!-- Telegram Mockup: Alert -->
+                        <div class="bg-dark-950 rounded-[3rem] p-3 shadow-2xl relative z-10 border-2 border-slate-800/80">
+                            <div class="bg-dark-900 rounded-[2.5rem] overflow-hidden relative flex flex-col h-[400px]">
+                                <div class="p-4 space-y-3 flex-grow overflow-hidden flex flex-col justify-end text-[12px]">
+                                    <div class="bg-dark-800 text-white px-3 py-3 rounded-2xl rounded-tl-sm self-start border border-slate-700 leading-relaxed">
+                                        🚨 [17:40]<br>
+                                        <span class="font-bold text-brand-500">⚠️ SET STOP-LOSS — META</span><br>
+                                        $609.63 | 🔴 -9.6% from entry<br>
+                                        Why: META has dropped below its long-term average. Protecing your capital is the priority...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-brand-500 font-bold shrink-0">3</div>
+                            <h2 class="text-2xl font-bold text-white">Receive "Plain English" verdicts</h2>
+                        </div>
+                        <p class="text-lg text-[var(--text-muted)] mb-6">No charts to interpret. No noise. The Sentry stays silent until a <strong>significant trend shift</strong> is detected.</p>
+                        <p class="text-[var(--text-muted)]">When it pings, you get a clear briefing: <strong>the signal, the reasoning, and the suggested action</strong>. You make the final decision.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- The Side-by-Side Comparison -->
+        <section class="reveal-item py-24 bg-dark-800/30 rounded-[3rem] border border-slate-800 p-8 md:p-16">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white">How we stack up</h2>
+                <p class="text-slate-400 mt-4">We aren't just simpler—we're significantly more affordable.</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse min-w-[800px]">
+                    <thead>
+                        <tr class="text-slate-400 border-b border-slate-700">
+                            <th class="p-6 font-medium">Feature</th>
+                            <th class="p-6 font-bold text-white bg-brand-500/10 rounded-t-2xl">StockSentry</th>
+                            <th class="p-6 font-medium">Stock Alarm</th>
+                            <th class="p-6 font-medium">TrendSpider</th>
+                            <th class="p-6 font-medium">Trade Ideas</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-300 divide-y divide-slate-800">
+                        <tr class="hover:bg-white/5 transition">
+                            <td class="p-6 font-medium text-white">Starting Price</td>
+                            <td class="p-6 font-bold text-brand-500 bg-brand-500/5">$19.99/mo</td>
+                            <td class="p-6">$9.99/mo</td>
+                            <td class="p-6">$82.00/mo</td>
+                            <td class="p-6">$127.00/mo</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition">
+                            <td class="p-6 font-medium text-white">"Standard" AI Alerts</td>
+                            <td class="p-6 font-bold text-brand-500 bg-brand-500/5"><i data-lucide="check-circle-2" class="text-green-500"></i></td>
+                            <td class="p-6">Limited (10)</td>
+                            <td class="p-6"><i data-lucide="check-circle-2" class="text-slate-500"></i></td>
+                            <td class="p-6"><i data-lucide="minus-circle" class="text-slate-600"></i></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition">
+                            <td class="p-6 font-medium text-white">Analysis Type</td>
+                            <td class="p-6 font-bold text-brand-500 bg-brand-500/5">Plain English AI</td>
+                            <td class="p-6">Price Triggers</td>
+                            <td class="p-6">Technical Charts</td>
+                            <td class="p-6">Quantitative</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition">
+                            <td class="p-6 font-medium text-white">AI Intelligence</td>
+                            <td class="p-6 font-bold text-brand-500 bg-brand-500/5"><i data-lucide="check-circle-2" class="text-green-500"></i> (LLM)</td>
+                            <td class="p-6"><i data-lucide="x-circle" class="text-slate-700"></i></td>
+                            <td class="p-6"><i data-lucide="check-circle-2" class="text-slate-500"></i></td>
+                            <td class="p-6"><i data-lucide="check-circle-2" class="text-slate-500"></i></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition">
+                            <td class="p-6 font-medium text-white">Live Performance Audit</td>
+                            <td class="p-6 font-bold text-brand-500 bg-brand-500/5"><i data-lucide="check-circle-2" class="text-green-500"></i></td>
+                            <td class="p-6"><i data-lucide="x-circle" class="text-slate-700"></i></td>
+                            <td class="p-6">Backtesting Only</td>
+                            <td class="p-6">Backtesting Only</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition">
+                            <td class="p-6 font-medium text-white">Free Trial</td>
+                            <td class="p-6 font-bold text-brand-500 bg-brand-500/5">14 Days (Full)</td>
+                            <td class="p-6">Very Limited</td>
+                            <td class="p-6">$19 (Paid)</td>
+                            <td class="p-6">None</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-8 text-xs text-slate-500 text-center">*Competitor pricing based on published standard monthly rates as of May 2026.</p>
+        </section>
+
+        <!-- Final Call to Action -->
+        <section class="reveal-item py-12">
+            <div class="max-w-4xl mx-auto bg-gradient-to-br from-brand-600 to-brand-700 rounded-[2.5rem] p-8 md:p-16 text-center shadow-2xl relative overflow-hidden group">
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none"></div>
+                
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Stop overpaying for data.<br>Start acting on intelligence.</h2>
+                    <p class="text-brand-50 mb-12 text-lg md:text-xl max-w-2xl mx-auto opacity-90">
+                        Try the full Pro experience for <strong>14 days. No credit card required.</strong> No obligation. If you don't love the Sentry, simply walk away.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="w-full sm:w-auto bg-white text-brand-600 px-10 py-5 rounded-2xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-6 h-6"></i>
+                            Start Free Trial
+                        </a>
+                        <a href="/pricing" class="text-white font-medium hover:text-brand-100 transition flex items-center gap-2">
+                            View All Plans <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-3 gap-4 text-brand-50 text-sm">
+                        <div class="flex items-center justify-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4"></i> No Card Needed
+                        </div>
+                        <div class="flex items-center justify-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4"></i> 14-Day Pro Access
+                        </div>
+                        <div class="flex items-center justify-center gap-2 col-span-2 md:col-span-1">
+                            <i data-lucide="check-circle" class="w-4 h-4"></i> No Auto-Subscription
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</MainLayout>
+
+<script>
+    import { 
+        createIcons, 
+        Download, 
+        UserPlus, 
+        Play, 
+        CheckCircle2, 
+        MinusCircle, 
+        XCircle, 
+        Send, 
+        ArrowRight, 
+        CheckCircle,
+        BellRing
+    } from 'lucide';
+    
+    createIcons({
+        icons: { 
+            Download, 
+            UserPlus, 
+            Play, 
+            CheckCircle2, 
+            MinusCircle, 
+            XCircle, 
+            Send, 
+            ArrowRight, 
+            CheckCircle,
+            BellRing
+        }
+    });
+</script>

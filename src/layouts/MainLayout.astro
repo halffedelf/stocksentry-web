@@ -33,5 +33,42 @@ const currentPath = Astro.url.pathname;
 		<slot />
 		<Footer />
 		<Tracker />
+		<style is:global>
+			.reveal {
+				opacity: 0;
+				transform: translateY(20px);
+				transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+			}
+			.reveal.active {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		</style>
+		<script>
+			const observerOptions = {
+				threshold: 0.1
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('active');
+					}
+				});
+			}, observerOptions);
+
+			const setupReveal = () => {
+				document.querySelectorAll('section > div > div:first-child, .reveal-item').forEach(el => {
+					el.classList.add('reveal');
+					observer.observe(el);
+				});
+			};
+
+			// Run on initial load
+			setupReveal();
+
+			// Re-run after Astro page transitions
+			document.addEventListener('astro:after-swap', setupReveal);
+		</script>
 	</body>
 </html>
