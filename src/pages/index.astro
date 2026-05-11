@@ -6,16 +6,16 @@ import MainLayout from '../layouts/MainLayout.astro';
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div class="reveal-direct">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-800 text-sm font-medium mb-6 text-brand-500 border border-slate-700">
                     <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
                     S&P 100 Monitoring Active
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                    Stop watching charts. <br><span class="text-brand-500">Let StockSentry do it.</span>
+                    Own the trend, <br><span class="text-brand-500">not the screen.</span>
                 </h1>
-                <p class="text-lg text-[var(--text-base)] mb-8 max-w-xl">
-                    The AI powered bot that <strong>constantly monitors your positions</strong>. It reads the charts, examines the news, and nudges you in <strong>plain English</strong> only when it's time to act.
+                <p class="text-lg text-[var(--text-base)] mb-8 max-w-xl leading-relaxed">
+                    Delegate your analysis to the Sentry. It <strong>watches the indicators</strong> and <strong>reads the news</strong>, so you only get pinged when it’s time to act.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="https://t.me/StockSentryAYS_bot" target="_blank" class="bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-xl font-bold text-lg text-center transition btn-hover-effect flex items-center justify-center gap-2">
@@ -35,7 +35,7 @@ import MainLayout from '../layouts/MainLayout.astro';
             </div>
             
             <!-- Telegram Mockup (Phone Frame) -->
-            <div class="relative mx-auto w-full max-w-[340px] mt-12 lg:mt-0 animate-float">
+            <div class="relative mx-auto w-full max-w-[340px] mt-12 lg:mt-0 animate-float reveal-direct">
                 <!-- Background glow (Illumination) -->
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-brand-500/20 blur-[100px] rounded-full z-0 pointer-events-none opacity-60"></div>
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-brand-500/30 blur-[60px] rounded-full z-0 pointer-events-none"></div>
@@ -153,7 +153,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-12 items-center reveal-group">
                 <!-- Visual 1: The Verdict -->
                 <div class="reveal-item bg-dark-900 rounded-[2.5rem] p-8 border border-slate-700 shadow-2xl relative group">
                     <div class="absolute -top-4 -right-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">The Verdict</div>
@@ -201,7 +201,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                         </div>
                         <div class="flex items-center gap-4 text-slate-500 text-[10px] uppercase tracking-wider font-bold">
                             <div class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Auto-Tracking</div>
-                            <div class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Instant Alert</div>
+                            <div class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4"></i> Instant Alert</div>
                         </div>
                     </div>
                 </div>
@@ -224,9 +224,9 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-group">
                 <!-- Feature 1: No Charts -->
-                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                <div class="reveal-item bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
                     <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
                         <i data-lucide="eye-off" class="w-7 h-7"></i>
                     </div>
@@ -237,7 +237,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </div>
 
                 <!-- Feature 2: Proactive AI -->
-                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                <div class="reveal-item bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
                     <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
                         <i data-lucide="brain-circuit" class="w-7 h-7"></i>
                     </div>
@@ -248,7 +248,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </div>
 
                 <!-- Feature 3: Conversational UX -->
-                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                <div class="reveal-item bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
                     <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
                         <i data-lucide="message-square-more" class="w-7 h-7"></i>
                     </div>
@@ -259,7 +259,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </div>
 
                 <!-- Feature 4: Discovery -->
-                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                <div class="reveal-item bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
                     <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
                         <i data-lucide="search" class="w-7 h-7"></i>
                     </div>
@@ -270,7 +270,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </div>
 
                 <!-- Feature 5: Privacy First -->
-                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                <div class="reveal-item bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
                     <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
                         <i data-lucide="lock" class="w-7 h-7"></i>
                     </div>
@@ -281,7 +281,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 </div>
 
                 <!-- Feature 6: Proactive Alerts -->
-                <div class="bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
+                <div class="reveal-item bg-dark-800 p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
                     <div class="w-14 h-14 bg-dark-900 rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
                         <i data-lucide="bell-ring" class="w-7 h-7"></i>
                     </div>
@@ -308,13 +308,13 @@ import MainLayout from '../layouts/MainLayout.astro';
             </div>
 
             <!-- Steps -->
-            <div class="relative">
+            <div class="relative reveal-group">
                 <!-- Desktop connecting line -->
                 <div class="hidden md:block absolute top-12 left-[10%] w-[80%] h-[1px] border-t-2 border-dashed border-slate-700 z-0"></div>
 
                 <div class="grid md:grid-cols-4 gap-12 relative z-10">
                     <!-- Step 1 -->
-                    <div class="relative flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="reveal-item relative flex flex-col items-center md:items-start text-center md:text-left">
                         <div class="w-24 h-24 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center mb-6 relative shadow-xl">
                             <i data-lucide="scan" class="w-8 h-8 text-brand-500"></i>
                             <div class="absolute -top-2 -right-2 bg-brand-600 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center border-4 border-dark-900">01</div>
