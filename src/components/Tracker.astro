@@ -28,8 +28,11 @@
     };
 
     const startTracking = () => {
-        // Generate a unique ID for this specific page view
-        currentViewId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        // Generate a valid UUID for the database
+        currentViewId = typeof crypto.randomUUID === 'function' 
+            ? crypto.randomUUID() 
+            : Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        
         secondsSpent = 0;
         
         // Initial page view ping

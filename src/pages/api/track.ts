@@ -45,7 +45,10 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
           last_active_at: new Date().toISOString()
         });
         
-      if (error) throw error;
+      if (error) {
+        console.error('Supabase Insert Error:', error);
+        throw error;
+      }
     } else if (type === 'heartbeat') {
       const { error } = await supabase
         .from('page_views')
@@ -55,7 +58,10 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
         })
         .eq('id', viewId);
 
-      if (error) throw error;
+      if (error) {
+        console.error('Supabase Update Error:', error);
+        throw error;
+      }
     }
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
