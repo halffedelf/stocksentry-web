@@ -112,41 +112,49 @@ const navLinks = [
         const closeIcon = document.getElementById('close-icon');
         const navLinks = menu?.querySelectorAll('a');
 
+        if (!button || !menu || button.hasAttribute('data-nav-initialized')) return;
+
         const toggleMenu = (forceClose = false) => {
-            const isOpening = forceClose ? false : menu?.classList.contains('hidden');
+            const isOpening = forceClose ? false : menu.classList.contains('hidden');
             
             if (isOpening) {
-                menu?.classList.remove('hidden');
+                menu.classList.remove('hidden');
                 overlay?.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
                 
-                // Trigger animation
                 requestAnimationFrame(() => {
-                    menu?.classList.remove('-translate-y-4', 'opacity-0', 'pointer-events-none');
+                    menu.classList.remove('-translate-y-4', 'opacity-0', 'pointer-events-none');
                     overlay?.classList.add('opacity-100');
                     menuIcon?.classList.add('hidden');
                     closeIcon?.classList.remove('hidden');
                 });
             } else {
-                menu?.classList.add('-translate-y-4', 'opacity-0', 'pointer-events-none');
+                menu.classList.add('-translate-y-4', 'opacity-0', 'pointer-events-none');
                 overlay?.classList.remove('opacity-100');
                 menuIcon?.classList.remove('hidden');
                 closeIcon?.classList.add('hidden');
                 document.body.style.overflow = '';
                 
                 setTimeout(() => {
-                    menu?.classList.add('hidden');
+                    menu.classList.add('hidden');
                     overlay?.classList.add('hidden');
                 }, 300);
             }
         };
 
-        button?.addEventListener('click', () => toggleMenu());
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu();
+        });
+
         overlay?.addEventListener('click', () => toggleMenu(true));
 
         navLinks?.forEach(link => {
             link.addEventListener('click', () => toggleMenu(true));
         });
+
+        button.setAttribute('data-nav-initialized', 'true');
     };
 
     // Re-run after Astro page transitions
