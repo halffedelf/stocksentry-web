@@ -57,19 +57,19 @@ const navLinks = [
     </div>
 
     <!-- Mobile Menu: Dim backdrop -->
-    <div 
-        id="mobile-menu-overlay" 
-        class="fixed inset-0 z-[40] hidden md:hidden"
-        style="background: rgba(0,0,0,0); backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); transition: background 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease;"
+    <div
+        id="mobile-menu-overlay"
+        class="fixed inset-0 z-[40] md:hidden pointer-events-none"
+        style="background: rgba(0,0,0,0.6); opacity: 0; transition: opacity 0.3s ease;"
     ></div>
 
     <!-- Mobile Menu: Glass card -->
-    <div 
-        id="mobile-menu" 
-        class="hidden md:hidden fixed top-[4.5rem] inset-x-4 z-[50] pointer-events-none"
+    <div
+        id="mobile-menu"
+        class="md:hidden fixed top-[4.5rem] inset-x-4 z-[50] pointer-events-none"
         style="opacity: 0; transform: translateY(-12px) scale(0.97); transition: opacity 0.3s ease, transform 0.3s ease;"
     >
-        <div style="background: rgba(255,255,255,0.07); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,0.12); border-radius: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.1); overflow: hidden;">
+        <div style="background: rgba(10, 16, 36, 0.97); border: 1px solid rgba(255,255,255,0.12); border-radius: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08); overflow: hidden;">
             <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent); margin: 0 1.5rem;"></div>
             <div class="p-3 space-y-1 pt-4">
                 {navLinks.map(({ href, label }) => (
@@ -137,24 +137,16 @@ const navLinks = [
 
         const openMenu = () => {
             isOpen = true;
-            menu.classList.remove('hidden');
-            overlay?.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
-
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    menu.style.opacity = '1';
-                    menu.style.transform = 'translateY(0) scale(1)';
-                    menu.style.pointerEvents = 'auto';
-                    if (overlay) {
-                        overlay.style.background = 'rgba(0,0,0,0.55)';
-                        overlay.style.backdropFilter = 'blur(4px)';
-                        overlay.style.webkitBackdropFilter = 'blur(4px)';
-                    }
-                    menuIcon?.classList.add('hidden');
-                    closeIcon?.classList.remove('hidden');
-                });
-            });
+            menu.style.opacity = '1';
+            menu.style.transform = 'translateY(0) scale(1)';
+            menu.style.pointerEvents = 'auto';
+            if (overlay) {
+                overlay.style.opacity = '1';
+                overlay.style.pointerEvents = 'auto';
+            }
+            menuIcon?.classList.add('hidden');
+            closeIcon?.classList.remove('hidden');
         };
 
         const closeMenu = () => {
@@ -163,20 +155,12 @@ const navLinks = [
             menu.style.transform = 'translateY(-12px) scale(0.97)';
             menu.style.pointerEvents = 'none';
             if (overlay) {
-                overlay.style.background = 'rgba(0,0,0,0)';
-                overlay.style.backdropFilter = 'blur(0px)';
-                overlay.style.webkitBackdropFilter = 'blur(0px)';
+                overlay.style.opacity = '0';
+                overlay.style.pointerEvents = 'none';
             }
             menuIcon?.classList.remove('hidden');
             closeIcon?.classList.add('hidden');
             document.body.style.overflow = '';
-
-            setTimeout(() => {
-                if (!isOpen) {
-                    menu.classList.add('hidden');
-                    overlay?.classList.add('hidden');
-                }
-            }, 350);
         };
 
         const toggleMenu = () => isOpen ? closeMenu() : openMenu();
