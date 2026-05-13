@@ -23,6 +23,7 @@ const currentPath = Astro.url.pathname;
 		<link rel="icon" type="image/png" href="/logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | StockSentry</title>
+		<script async src="https://tally.so/widgets/embed.js"></script>
 		<ViewTransitions />
 	</head>
 	<body>
@@ -90,7 +91,14 @@ const currentPath = Astro.url.pathname;
 			};
 
 			// Re-run after View Transitions
-			document.addEventListener('astro:page-load', setupReveal);
+			document.addEventListener('astro:page-load', () => {
+				setupReveal();
+				// @ts-ignore
+				if (typeof Tally !== 'undefined') {
+					// @ts-ignore
+					Tally.loadEmbeds();
+				}
+			});
 		</script>
 	</body>
 </html>

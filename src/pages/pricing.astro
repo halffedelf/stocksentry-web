@@ -4,11 +4,11 @@ import PricingCard from '../components/PricingCard.astro';
 
 const tiers = [
   {
-    title: "Free Trial",
-    description: "Test drive the Pro features for two weeks. No credit card required.",
+    title: "Alpha Club Access",
+    description: "Earn your spot in our exclusive monitoring group. No credit card required to apply.",
     price: "$0",
     period: "/14 days",
-    buttonText: "Start Free Trial",
+    buttonText: "Apply for Access",
     features: [
       { label: "<strong class='text-white'>25</strong> Tracked Tickers", active: true },
       { label: "<strong class='text-white'>25</strong> Manual /checks per day", active: true },
@@ -22,7 +22,7 @@ const tiers = [
     description: "For casual investors watching a tight list of specific assets.",
     price: "$19.99",
     period: "/month",
-    buttonText: "Subscribe",
+    buttonText: "",
     features: [
       { label: "<strong class='text-white'>10</strong> Tracked Tickers", active: true },
       { label: "<strong class='text-white'>10</strong> Manual /checks per day", active: true },
@@ -36,7 +36,7 @@ const tiers = [
     description: "For active swing traders managing broader portfolios.",
     price: "$29.99",
     period: "/month",
-    buttonText: "Subscribe",
+    buttonText: "",
     highlight: true,
     features: [
       { label: "<strong class='text-white'>25</strong> Tracked Tickers", active: true },
@@ -51,7 +51,7 @@ const tiers = [
     description: "Unrestricted access and expanded market discovery.",
     price: "$49.99",
     period: "/month",
-    buttonText: "Subscribe",
+    buttonText: "",
     features: [
       { label: "<strong class='text-white'>100</strong> Tracked Tickers", active: true },
       { label: "<strong class='text-white'>100</strong> Manual /checks per day", active: true },
@@ -66,9 +66,9 @@ const tiers = [
 <MainLayout title="Pricing">
     <!-- Header -->
     <header class="pt-32 pb-12 px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Delegate your technical analysis.</h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Join the <span class="text-brand-500">Alpha Group.</span></h1>
         <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
-            Choose the capacity that fits your portfolio. All plans include automated 30-minute monitoring, AI assessments, and plain-English Telegram alerts.
+            To maintain signal quality and institutional-grade monitoring speed, we limit active memberships to a select group of traders. Apply for access below.
         </p>
     </header>
 
@@ -88,8 +88,8 @@ const tiers = [
             
             <div class="space-y-8">
                 <div>
-                    <h3 class="text-lg font-bold text-white mb-2">How does the free trial work?</h3>
-                    <p class="text-slate-400 text-sm">You get 14 days of full access to the Pro tier. We do not require a credit card upfront. When your trial ends, the bot will message you with a link to subscribe via Stripe to keep your watchlist active.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">How does Alpha Club Access work?</h3>
+                    <p class="text-slate-400 text-sm">Once your application is approved, you get 14 days of full access to the Pro tier. We do not require a credit card upfront. When your trial ends, the bot will message you with a link to subscribe via Stripe to keep your watchlist active.</p>
                 </div>
                 <div>
                     <h3 class="text-lg font-bold text-white mb-2">How are payments processed?</h3>

@@ -34,7 +34,21 @@ const { title, description, price, period, features, buttonText, highlight = fal
             </li>
         ))}
     </ul>
-    <a href="https://t.me/StockSentryAYS_bot" target="_blank" class={`block w-full py-3 px-4 text-center rounded-lg font-bold transition ${highlight ? 'bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-500/20' : 'bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white'}`}>
-        {buttonText}
-    </a>
+    {buttonText && (
+        buttonText === "Apply for Access" || buttonText === "Start Free Trial" ? (
+            <button 
+                data-tally-open="KYv4MD" 
+                data-tally-layout="modal" 
+                data-tally-hide-title="1" 
+                data-tally-auto-close="0"
+                class={`block w-full py-3 px-4 text-center rounded-lg font-bold transition bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-500/20`}
+            >
+                {buttonText}
+            </button>
+        ) : (
+            <a href="https://t.me/StockSentryAYS_bot" target="_blank" class={`block w-full py-3 px-4 text-center rounded-lg font-bold transition ${highlight ? 'bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-500/20' : 'bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white'}`}>
+                {buttonText}
+            </a>
+        )
+    )}
 </div>
