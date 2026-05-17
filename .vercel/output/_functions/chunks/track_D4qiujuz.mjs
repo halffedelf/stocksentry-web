@@ -1,6 +1,5 @@
-import { s as supabase } from '../../chunks/supabase_COXij51b.mjs';
+import { s as supabase } from './supabase_lUNhk8-s.mjs';
 import crypto from 'crypto';
-export { renderers } from '../../renderers.mjs';
 
 const prerender = false;
 const POST = async ({ request, clientAddress }) => {
@@ -9,7 +8,7 @@ const POST = async ({ request, clientAddress }) => {
     const { path, referrer, type, viewId } = data;
     const userAgent = request.headers.get("user-agent") || "";
     const ip = clientAddress || request.headers.get("x-forwarded-for")?.split(",")[0] || "0.0.0.0";
-    const salt = (/* @__PURE__ */ new Date()).toISOString().split("T")[0] + (process.env.TRACKER_SECRET || "default_secret");
+    const salt = (/* @__PURE__ */ new Date()).toISOString().split("T")[0] + "a3f9c2d1e8b74f6a9c0d2e4b6f1a8c3e5d7f9b2c4e6a8d0f2b4c6e8a0d2f4b6";
     const dailyHash = crypto.createHash("sha256").update(ip + userAgent + salt).digest("hex");
     if (type === "pageview") {
       let country = "Unknown";

@@ -2,7 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Tracker from '../components/Tracker.astro';
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 
 interface Props {
@@ -24,7 +24,7 @@ const currentPath = Astro.url.pathname;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | StockSentry</title>
 		<script async src="https://tally.so/widgets/embed.js"></script>
-		<ViewTransitions />
+		<ClientRouter />
 	</head>
 	<body>
 		<div class="bg-mesh">
