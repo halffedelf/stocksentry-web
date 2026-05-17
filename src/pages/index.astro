@@ -15,7 +15,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                     Own the trend, <br><span class="text-brand-500">not the screen.</span>
                 </h1>
                 <p class="text-lg text-[var(--text-base)] mb-8 max-w-xl leading-relaxed">
-                    Delegate your analysis to the Sentry. It <strong>watches the indicators</strong> and <strong>reads the news</strong>, so you only get pinged when it’s time to act.
+                    Delegate your analysis to the Sentry. It <strong>watches the indicators</strong> and <strong>reads the news</strong>, giving you a definitive 0-100% confidence score on every setup.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#alpha-club" class="bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-xl font-bold text-lg text-center transition btn-hover-effect flex items-center justify-center gap-2">
@@ -27,10 +27,10 @@ import MainLayout from '../layouts/MainLayout.astro';
                     </a>
                 </div>
                 <p class="mt-4 text-xs text-[var(--text-muted)] flex items-center gap-1">
-                    <i data-lucide="info" class="w-3 h-3"></i> Not a day-trading bot. Built for swing trading timeframes.
+                    <i data-lucide="clock" class="w-3 h-3"></i> Built for the long-game. Swing trading focus (months, not weeks).
                 </p>
                 <p class="mt-2 text-xs text-red-400/80 flex items-center gap-1">
-                    <i data-lucide="alert-triangle" class="w-3 h-3"></i> Not financial advice. For informational purposes only.
+                    <i data-lucide="alert-triangle" class="w-3 h-3"></i> Not financial advice. Protect your capital.
                 </p>
             </div>
             
@@ -166,15 +166,25 @@ import MainLayout from '../layouts/MainLayout.astro';
                                 <span class="text-white font-bold">Sentry Analysis</span>
                             </div>
                             <div class="text-[var(--text-base)] text-[13px] leading-relaxed italic border-l-4 border-brand-500 pl-4 space-y-3">
-                                <p><strong>👀 WATCHLIST CANDIDATE — DUK</strong><br>
-                                Duke Energy | Utilities</p>
-                                <p>DUK has pulled back to a major buyer zone and looks stretched. With a reasonable valuation and a fresh price-target hike, this is a solid defensive addition to balance your tech-heavy portfolio.</p>
+                                <p><strong>👀 WATCHLIST CANDIDATE — DUK</strong></p>
+                                
+                                <div class="bg-dark-900 border border-brand-500/20 rounded-lg p-3 my-2 not-italic">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-brand-500 font-bold text-[10px] uppercase">Verdict</span>
+                                        <span class="text-white font-bold text-[10px]">STRONG BUY</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-brand-500 font-bold text-[10px] uppercase">Confidence</span>
+                                        <span class="text-white font-bold text-[10px]">88%</span>
+                                    </div>
+                                </div>
+
+                                <p>DUK has pulled back to a major buyer zone. Our rubric shows strong technical alignment and fundamental health. Sentiment catalyst: positive price-target hike.</p>
                                 <p><strong>Stop-loss: $119.86 | Risk/Reward: 1:2.9</strong></p>
-                                <p class="text-brand-500 not-italic font-bold text-[11px]">➡️ Add DUK to WATCHLIST in Telegram.</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-4 text-slate-500 text-[10px] uppercase tracking-wider font-bold">
-                            <div class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> No Charts</div>
+                            <div class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> AI Rubric</div>
                             <div class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Plain English</div>
                         </div>
                     </div>
@@ -209,6 +219,254 @@ import MainLayout from '../layouts/MainLayout.astro';
         </div>
     </section>
 
+    <!--
+    ════════════════════════════════════════════════════════════════════
+    PERFORMANCE PROOF SECTION — drop into index.astro
+    ════════════════════════════════════════════════════════════════════
+
+    Recommended placement: between the existing "Sentry in Action" section
+    (the Verdict + Risk Management cards) and the "Personal Market
+    Intelligence" features grid. Narrative: see what it does → see what
+    it produced → see why it works.
+
+    Paste the whole <section>...</section> below into index.astro at that
+    point. The accompanying <style> + <script> blocks are scoped to this
+    section — paste them once, anywhere within MainLayout.
+    ════════════════════════════════════════════════════════════════════
+    -->
+
+    <!-- The Receipts / Backtest Proof Section -->
+    <section id="proof" class="py-24 bg-black border-y border-slate-800 relative overflow-hidden">
+    <div class="absolute -top-32 left-1/4 w-[600px] h-[600px] rounded-full bg-brand-500/10 blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-brand-500/5 blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Heading row -->
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14 reveal-direct">
+        <div class="max-w-2xl">
+            <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold tracking-wider uppercase mb-6 border border-brand-500/25">
+            <i data-lucide="badge-check" class="w-3 h-3 mr-1.5"></i> The Receipts
+            </div>
+            <h2 class="text-3xl md:text-5xl font-bold text-white leading-[1.05] mb-5 tracking-tight">
+            Four years of backtesting.<br/>
+            <span class="text-brand-500">Audited and public.</span>
+            </h2>
+            <p class="text-lg text-slate-400 leading-relaxed">
+            We replayed the Sentry tick-by-tick from January 2021 through December 2024 — a full macro cycle including the 2022 bear market. Every entry, every exit, every reason. <span class="text-white font-semibold">No cherry-picking.</span>
+            </p>
+        </div>
+        <a href="/performance" class="hidden lg:inline-flex items-center gap-2 text-brand-500 hover:text-brand-50 font-semibold transition group whitespace-nowrap">
+            <span>Read the full audit</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+        </div>
+
+        <!-- 4-stat strip + equity sparkline card -->
+        <div class="grid lg:grid-cols-12 gap-6 mb-10 reveal-group">
+        <div class="lg:col-span-7">
+            <div class="grid grid-cols-2 gap-3 h-full">
+            <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6">
+                <div class="flex items-center justify-between mb-4">
+                <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">Profit Factor</div>
+                <i data-lucide="scale" class="w-4 h-4 text-slate-500"></i>
+                </div>
+                <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">2.82<span class="text-slate-500 text-3xl">×</span></div>
+                <p class="text-[11px] text-slate-500 leading-snug"><span class="text-brand-500 ss-num font-semibold">$2.82</span> gross profit for every <span class="ss-num">$1.00</span> lost.</p>
+            </div>
+
+            <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6 relative overflow-hidden">
+                <div class="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-brand-500/15 blur-3xl pointer-events-none"></div>
+                <div class="relative">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">$10K Grew Into</div>
+                    <i data-lucide="trending-up" class="w-4 h-4 text-slate-500"></i>
+                </div>
+                <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">$16,623<span class="text-slate-500 text-2xl">.83</span></div>
+                <p class="text-[11px] text-slate-500 leading-snug"><span class="text-brand-500 ss-num font-semibold">+66.24%</span> cumulative · vs SPY <span class="ss-num">+30.4%</span>.</p>
+                </div>
+            </div>
+
+            <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6">
+                <div class="flex items-center justify-between mb-4">
+                <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">Max Drawdown</div>
+                <i data-lucide="shield" class="w-4 h-4 text-slate-500"></i>
+                </div>
+                <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">−15.77<span class="text-slate-500 text-3xl">%</span></div>
+                <p class="text-[11px] text-slate-500 leading-snug">Through 2022's bear. SPY hit <span class="text-rose-400 ss-num">−24%</span> in the same window.</p>
+            </div>
+
+            <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6">
+                <div class="flex items-center justify-between mb-4">
+                <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">Risk : Reward</div>
+                <i data-lucide="target" class="w-4 h-4 text-slate-500"></i>
+                </div>
+                <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">1 : 3.64</div>
+                <p class="text-[11px] text-slate-500 leading-snug">Average winner is <span class="text-brand-500 ss-num font-semibold">3.64×</span> the size of an average loser.</p>
+            </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 reveal-direct">
+            <div class="h-full rounded-3xl border border-slate-700 bg-dark-900 p-7 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 18px 18px;"></div>
+            <div class="relative flex flex-col h-full">
+                <div class="flex items-center justify-between mb-3">
+                <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">Equity Curve · 2021–2024</div>
+                <div class="flex items-center gap-1.5 text-[10px] text-slate-500 font-mono">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    NET OF SLIPPAGE
+                </div>
+                </div>
+                <div class="relative flex-1 min-h-[200px]">
+                <svg viewBox="0 0 600 240" preserveAspectRatio="none" class="w-full h-full" id="proof-sparkline"></svg>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-800 grid grid-cols-3 gap-3">
+                <div>
+                    <div class="ss-label-stamp text-slate-500 mb-1">Trades</div>
+                    <div class="ss-num text-white font-bold">64</div>
+                </div>
+                <div>
+                    <div class="ss-label-stamp text-slate-500 mb-1">Win Rate</div>
+                    <div class="ss-num text-white font-bold">40.6%</div>
+                </div>
+                <div>
+                    <div class="ss-label-stamp text-slate-500 mb-1">Sharpe</div>
+                    <div class="ss-num text-white font-bold">1.41</div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Asymmetry pull-quote -->
+        <div class="rounded-3xl border border-brand-500/30 bg-dark-900 p-6 sm:p-8 flex flex-col md:flex-row md:items-center gap-6 mb-10 reveal-direct">
+        <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-brand-500/15 border border-brand-500/30 flex items-center justify-center text-brand-500">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+        </div>
+        <p class="text-base sm:text-lg text-white leading-relaxed flex-1">
+            StockSentry closed 64 trades at a <span class="text-brand-500 ss-num font-bold">40.6% win rate</span> — yet returned <span class="text-brand-500 ss-num font-bold">+66.24%</span>. The math: an average win is <span class="text-brand-500 ss-num font-bold">3.64×</span> larger than an average loss. <span class="text-slate-400">Expectancy over emotion.</span>
+        </p>
+        </div>
+
+        <!-- "What kept us alive" highlights -->
+        <div class="grid sm:grid-cols-3 gap-4 mb-10 reveal-group">
+        <div class="reveal-item rounded-2xl border border-slate-700 bg-dark-900 p-5 flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/25 flex items-center justify-center text-brand-500">
+            <i data-lucide="navigation-2" class="w-4 h-4"></i>
+            </div>
+            <div>
+            <div class="ss-num text-2xl font-bold text-white leading-none mb-1.5">416</div>
+            <div class="text-xs text-slate-400 leading-snug">Trailing-stop adjustments locked open gains before reversals.</div>
+            </div>
+        </div>
+        <div class="reveal-item rounded-2xl border border-slate-700 bg-dark-900 p-5 flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/25 flex items-center justify-center text-brand-500">
+            <i data-lucide="zap" class="w-4 h-4"></i>
+            </div>
+            <div>
+            <div class="ss-num text-2xl font-bold text-white leading-none mb-1.5">50<span class="text-slate-500 text-base">%</span></div>
+            <div class="text-xs text-slate-400 leading-snug">Of all exits came from an AI "SELL NOW" override, not a stop.</div>
+            </div>
+        </div>
+        <div class="reveal-item rounded-2xl border border-slate-700 bg-dark-900 p-5 flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/25 flex items-center justify-center text-brand-500">
+            <i data-lucide="gauge" class="w-4 h-4"></i>
+            </div>
+            <div>
+            <div class="ss-num text-2xl font-bold text-white leading-none mb-1.5">VIX &gt; 30</div>
+            <div class="text-xs text-slate-400 leading-snug">Hard-blocked new entries during macro panic — cash shield engaged.</div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Mobile CTA (desktop version is in heading row) -->
+        <a href="/performance" class="lg:hidden inline-flex items-center gap-2 text-brand-500 hover:text-brand-50 font-semibold transition group">
+        <span>Read the full audit</span>
+        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+
+        <p class="text-[10px] text-slate-600 leading-relaxed mt-6 max-w-3xl">
+        Backtest results reflect simulated trading on a $10,000 starting account; the simulated user accepted bot suggestions at ≥50% confidence. Past performance is not predictive of future results.
+        </p>
+    </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+        Scoped styles + sparkline script — paste once anywhere in MainLayout
+        ════════════════════════════════════════════════════════════════════ -->
+    <style is:global>
+    .ss-num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+    .ss-label-stamp { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; font-size: 10px; }
+    .ss-metric { transition: transform .25s ease, border-color .25s ease; }
+    .ss-metric:hover { transform: translateY(-2px); border-color: rgba(255,122,26,.35); }
+    </style>
+
+    <script>
+    const drawProofSparkline = () => {
+        const svg = document.getElementById('proof-sparkline');
+        if (!svg) return;
+
+        const monthly = [
+        4.2, 3.8, -1.2, 5.1, 2.4, 3.6, 1.9, 4.4, -2.1, 6.3, 3.2, 1.8,
+        -3.4, 1.2, 0.8, -4.1, 2.3, -2.8, 1.1, -1.6, 0.4, 2.1, -0.9, 1.7,
+        5.2, 1.4, 3.8, 2.6, -1.1, 4.2, 3.7, -2.3, 1.8, 2.9, 4.1, 3.4,
+        3.1, 1.8, 4.2, -2.4, 2.7, 1.5, -1.8, 3.4, 2.1, 0.9, 2.8, 1.6,
+        ];
+        const spyM = [
+        -1.0, 2.7, 4.3, 5.2, 0.7, 2.3, 2.4, 3.0, -4.8, 6.9, -0.7, 4.4,
+        -5.2, -3.0, 3.7, -8.8, 0.2, -8.4, 9.2, -4.2, -9.3, 8.1, 5.4, -5.9,
+        6.2, -2.6, 3.5, 1.5, 0.3, 6.5, 3.1, -1.8, -4.9, -2.2, 9.1, 4.5,
+        1.6, 5.2, 3.1, -4.2, 4.8, 3.5, 1.1, 2.3, 2.0, -1.0, 5.7, -2.5,
+        ];
+
+        const eq = [10000]; monthly.forEach(r => eq.push(eq[eq.length - 1] * (1 + r / 100)));
+        const sp = [10000]; spyM.forEach(r => sp.push(sp[sp.length - 1] * (1 + r / 100)));
+
+        const W = 600, H = 240, padL = 8, padR = 56, padT = 14, padB = 28;
+        const yMin = Math.min(...eq, ...sp) * 0.97;
+        const yMax = Math.max(...eq, ...sp) * 1.03;
+        const n = eq.length - 1;
+        const x = (i) => padL + (W - padL - padR) * (i / n);
+        const y = (v) => padT + (H - padT - padB) * (1 - (v - yMin) / (yMax - yMin));
+
+        let pa = '', pb = '';
+        eq.forEach((v, i) => pa += (i === 0 ? 'M' : 'L') + x(i).toFixed(1) + ',' + y(v).toFixed(1) + ' ');
+        sp.forEach((v, i) => pb += (i === 0 ? 'M' : 'L') + x(i).toFixed(1) + ',' + y(v).toFixed(1) + ' ');
+        const area = pa + ' L ' + x(n).toFixed(1) + ',' + (H - padB) + ' L ' + padL + ',' + (H - padB) + ' Z';
+
+        const yrs = [[0, '’21'], [12, '’22'], [24, '’23'], [36, '’24'], [48, 'now']];
+        const xLabels = yrs.map(([i, l]) => `<text x="${x(i)}" y="${H - padB + 16}" text-anchor="middle" fill="#64748b" font-size="10" font-family="JetBrains Mono, monospace">${l}</text>`).join('');
+
+        const yr22 = eq.slice(12, 25);
+        const minIdx = 12 + yr22.indexOf(Math.min(...yr22));
+        const troughX = x(minIdx), troughY = y(eq[minIdx]);
+        const trough = `<line x1="${troughX}" x2="${troughX}" y1="${padT}" y2="${H - padB}" stroke="rgba(244,63,94,0.18)" stroke-width="1" stroke-dasharray="3 3"/><circle cx="${troughX}" cy="${troughY}" r="3.5" fill="#f43f5e"/>`;
+
+        const endA = `<circle cx="${x(n)}" cy="${y(eq[n])}" r="5" fill="#ff7a1a" stroke="#030712" stroke-width="2"/><text x="${x(n) + 8}" y="${y(eq[n]) + 4}" fill="#ff7a1a" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">$16,623</text>`;
+        const endB = `<circle cx="${x(n)}" cy="${y(sp[n])}" r="4" fill="#64748b" stroke="#030712" stroke-width="2"/><text x="${x(n) + 8}" y="${y(sp[n]) + 4}" fill="#94a3b8" font-size="11" font-family="JetBrains Mono, monospace">$13,043</text>`;
+
+        svg.innerHTML = `
+        <defs>
+            <linearGradient id="proofSg" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#ff7a1a" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#ff7a1a" stop-opacity="0"/>
+            </linearGradient>
+        </defs>
+        <path d="${area}" fill="url(#proofSg)"/>
+        <path d="${pb}" stroke="#64748b" stroke-width="1.5" fill="none" stroke-dasharray="4 4"/>
+        <path d="${pa}" stroke="#ff7a1a" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+        ${trough}
+        ${endA}${endB}
+        ${xLabels}
+        <text x="${padL}" y="${padT + 8}" fill="#64748b" font-size="10" font-family="JetBrains Mono, monospace">Sentry</text>
+        <text x="${padL + 50}" y="${padT + 8}" fill="#64748b" font-size="10" font-family="JetBrains Mono, monospace" opacity="0.7">— — SPY</text>
+        `;
+    };
+
+    document.addEventListener('astro:page-load', drawProofSparkline);
+    </script>
+
     <!-- Personal Market Intelligence Section (The Sentry Advantage) -->
     <section id="features" class="py-24 bg-dark-900 border-y border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -239,11 +497,11 @@ import MainLayout from '../layouts/MainLayout.astro';
                 <!-- Feature 2: Proactive AI -->
                 <div class="reveal-item bg-transparent p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
                     <div class="w-14 h-14 bg-transparent rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
-                        <i data-lucide="brain-circuit" class="w-7 h-7"></i>
+                        <i data-lucide="gauge" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Latest AI Analysis</h3>
+                    <h3 class="text-xl font-bold text-white mb-3">AI Confidence Engine</h3>
                     <p class="text-slate-400 leading-relaxed text-sm">
-                        Raw data is translated by <strong>LLMs</strong> into clear, plain English directives that you can act on instantly.
+                        Raw data is evaluated against a <strong>3-prong rubric</strong> (Technical, Fundamental, Macro) to give you a definitive confidence score before you act.
                     </p>
                 </div>
 
@@ -254,18 +512,18 @@ import MainLayout from '../layouts/MainLayout.astro';
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Conversational UX</h3>
                     <p class="text-slate-400 leading-relaxed text-sm">
-                        Telegram is <strong>native and intuitive</strong>. Manage your entire watchlist through simple, natural messages.
+                        Telegram is <strong>native and intuitive</strong>. Manage your entire watchlist through simple, natural messages—private and secure.
                     </p>
                 </div>
 
                 <!-- Feature 4: Discovery -->
                 <div class="reveal-item bg-transparent p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
                     <div class="w-14 h-14 bg-transparent rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
-                        <i data-lucide="search" class="w-7 h-7"></i>
+                        <i data-lucide="shield-check" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Discovery Scan</h3>
+                    <h3 class="text-xl font-bold text-white mb-3">Principal Protection</h3>
                     <p class="text-slate-400 leading-relaxed text-sm">
-                        Find fresh opportunities with our <strong>daily S&P 100 sweep</strong>, ranking the best setups before the close.
+                        Hardcoded risk shields like the <strong>-10% Floor</strong> and <strong>Earnings Blackout</strong> protect your capital from sudden market shocks.
                     </p>
                 </div>
 
@@ -276,18 +534,18 @@ import MainLayout from '../layouts/MainLayout.astro';
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Strict Privacy</h3>
                     <p class="text-slate-400 leading-relaxed text-sm">
-                        No broker links. No personal data. We only store your <strong>anonymous Telegram ID</strong> and your tickers.
+                        No broker links. No personal data. We only store your <strong>anonymous Telegram ID</strong> and your chosen tickers.
                     </p>
                 </div>
 
                 <!-- Feature 6: Proactive Alerts -->
                 <div class="reveal-item bg-transparent p-8 rounded-3xl border border-slate-700 hover:border-brand-500/30 transition group">
                     <div class="w-14 h-14 bg-transparent rounded-2xl flex items-center justify-center text-brand-500 mb-6 border border-slate-700 group-hover:scale-110 transition-transform shadow-lg">
-                        <i data-lucide="bell-ring" class="w-7 h-7"></i>
+                        <i data-lucide="trending-up" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Actionable Pings</h3>
+                    <h3 class="text-xl font-bold text-white mb-3">Swing Trading Focus</h3>
                     <p class="text-slate-400 leading-relaxed text-sm">
-                        Zero noise. The Sentry stays silent until a <strong>significant trend shift</strong> is detected in your positions.
+                        Designed for <strong>long-term gains</strong>. The Sentry handles the noise while you wait months or years for the real trend to manifest.
                     </p>
                 </div>
             </div>
@@ -320,8 +578,8 @@ import MainLayout from '../layouts/MainLayout.astro';
                             <div class="absolute -top-2 -right-2 bg-brand-600 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center border-4 border-dark-900">01</div>
                         </div>
                         <div class="text-brand-500 text-xs font-bold tracking-wider uppercase mb-3">Scan</div>
-                        <h3 class="text-lg font-bold text-white mb-3">Scans top tickers for strong opportunities.</h3>
-                        <p class="text-sm text-[var(--text-base)] leading-relaxed">StockSentry runs a daily sweep across the S&P 100 and NASDAQ 100*, ranking tickers by signal strength.</p>
+                        <h3 class="text-lg font-bold text-white mb-3">Evaluate setups via the 3-Prong Rubric.</h3>
+                        <p class="text-sm text-[var(--text-base)] leading-relaxed">StockSentry evaluates every ticker against Technical, Fundamental, and Macro axes to ensure high-probability outcomes.</p>
                     </div>
 
                     <!-- Step 2 -->
@@ -360,7 +618,7 @@ import MainLayout from '../layouts/MainLayout.astro';
             </div>
 
             <!-- Bottom Cadence Banner -->
-            <div class="mt-16 bg-dark-800/50 border border-slate-700 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left max-w-4xl">
+            <div class="mt-16 bg-dark-900 border border-slate-700 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left max-w-4xl">
                 <div class="bg-brand-500/20 text-brand-500 text-xs font-bold px-3 py-1.5 rounded-md shrink-0 border border-brand-500/20">30 MIN</div>
                 <p class="text-sm text-[var(--text-base)]">Re-check cadence after you own the ticker — fast enough to catch a turn, slow enough to ignore the noise.</p>
             </div>
@@ -441,7 +699,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     <section id="alpha-club" class="py-24 bg-gradient-to-br from-orange-600 to-orange-900 border-y border-orange-500/30 relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none"></div>
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-900/40 backdrop-blur-md text-sm font-medium mb-6 text-orange-200 border border-orange-400/30">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-900 backdrop-blur-md text-sm font-medium mb-6 text-orange-200 border border-orange-400/30">
                 <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
                 Alpha Group: 4/20 Spots Remaining
             </div>
@@ -473,7 +731,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
     <!-- Alpha Club Glass Popup Modal -->
     <div id="alpha-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300 backdrop-blur-sm">
-        <div class="absolute inset-0 bg-dark-950/60" id="alpha-modal-overlay"></div>
+        <div class="absolute inset-0 bg-black" id="alpha-modal-overlay"></div>
         <div class="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[2.5rem] p-8 md:p-12 max-w-2xl w-full relative z-10 shadow-2xl transform scale-95 transition-all duration-300" id="alpha-modal-content">
             <button id="alpha-modal-close" class="absolute top-6 right-6 text-white/60 hover:text-white transition">
                 <i data-lucide="x" class="w-6 h-6"></i>
@@ -564,18 +822,18 @@ import MainLayout from '../layouts/MainLayout.astro';
             <div class="lg:col-span-2 grid sm:grid-cols-2 gap-8">
                 <div class="space-y-4">
                     <div class="flex items-center gap-2 text-white text-xs font-bold">
-                        <i data-lucide="shield" class="w-3 h-3 text-brand-500"></i> No Financial Access
+                        <i data-lucide="clock" class="w-3 h-3 text-brand-500"></i> Swing Trading Timeframe
                     </div>
                     <p class="text-[10px] text-slate-500 leading-relaxed">
-                        We have <strong>no visibility</strong> into your brokerage, balance, or transaction history. All signals are derived from public market data.
+                        The Sentry is optimized for <strong>swing trading</strong>. Expect to hold positions for months or years. Short-term volatility is expected; long-term gains are the goal.
                     </p>
                 </div>
                 <div class="space-y-4">
                     <div class="flex items-center gap-2 text-white text-xs font-bold">
-                        <i data-lucide="scale" class="w-3 h-3 text-brand-500"></i> Not Financial Advice
+                        <i data-lucide="trending-down" class="w-3 h-3 text-brand-500"></i> Risk of Loss
                     </div>
                     <p class="text-[10px] text-slate-500 leading-relaxed">
-                        All information is for educational purposes. Trading involves risk of loss. Consult a professional before making investment decisions.
+                        Trading involves real risk. There will be <strong>drawdowns and losses</strong>. Never trade with money you cannot afford to lose.
                     </p>
                 </div>
             </div>

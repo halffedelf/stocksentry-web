@@ -4,6 +4,7 @@ const { currentPath } = Astro.props;
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/experience", label: "Experience" },
+  { href: "/performance", label: "Performance" },
   { href: "/pricing", label: "Pricing" },
   { href: "/faq", label: "FAQ" },
 ];
@@ -88,6 +89,7 @@ const navLinks = [
                             <i data-lucide={
                                 label === "Home" ? "home" : 
                                 label === "Experience" ? "compass" : 
+                                label === "Performance" ? "line-chart" : 
                                 label === "Pricing" ? "credit-card" : "help-circle"
                             } class="w-4 h-4 text-brand-500"></i>
                         </div>
@@ -198,6 +200,8 @@ const navLinks = [
 
     // Re-run after Astro page transitions
     document.addEventListener('astro:page-load', () => {
+        // @ts-ignore
+        if (window.lucide) window.lucide.createIcons();
         setupNav();
         setupMobileMenu();
     });

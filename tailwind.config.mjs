@@ -5,9 +5,11 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: 'var(--brand-50)',
+          50:  'var(--brand-50)',
+          400: '#ff9447',  // light hover
           500: 'var(--brand-500)',
           600: 'var(--brand-600)',
+          700: '#b34e08',  // dark text on light bg
           900: 'var(--brand-900)',
           950: 'var(--brand-950)',
         },

@@ -79,15 +79,57 @@
         Lock,
         CheckCircle2,
         MinusCircle,
-        XCircle
+        XCircle,
+        Building2,
+        CreditCard,
+        Component,
+        Cpu,
+        Navigation2,
+        Zap,
+        Gauge,
+        Sparkles,
+        CalendarOff,
+        Compass,
+        Home,
+        HelpCircle,
+        ShieldCheck,
+        Briefcase,
+        ArrowRight,
+        CheckCircle,
+        Copy,
+        Database,
+        Receipt,
+        GitBranch,
+        GitFork,
+        ChevronDown,
+        Bell,
+        Layers,
+        BookOpen,
+        ArrowUpRight,
+        Pill,
+        Hammer,
+        Shuffle
     } from 'lucide';
+
+    const icons = {
+        Send, Mail, Scan, Binoculars, MessageCircle, Activity, Shield, EyeOff, MessageSquare, Sunrise, Radar, Brain, Info, AlertTriangle, Paperclip, Mic, Scale, TrendingDown, TrendingUp, UserCheck, Loader2, Check, Minus, Download, UserPlus, Play, ArrowLeft, MoreVertical, Menu, Smile, DollarSign, Target, LineChart, PieChart, ShieldAlert, CheckCheck, Eye, Users, Clock, FileText, Share2, Globe, BellRing, BrainCircuit, MessageSquareMore, Search, Lock, CheckCircle2, MinusCircle, XCircle, Building2, CreditCard, Component, Cpu, Navigation2, Zap, Gauge, Sparkles, CalendarOff, Compass, Home, HelpCircle, ShieldCheck, Briefcase, ArrowRight, CheckCircle, Copy, Database, Receipt, GitBranch, GitFork, ChevronDown, Bell, Layers, BookOpen, ArrowUpRight, Pill, Hammer, Shuffle
+    };
 
     const renderIcons = () => {
         createIcons({
-            icons: {
-                Send, Mail, Scan, Binoculars, MessageCircle, Activity, Shield, EyeOff, MessageSquare, Sunrise, Radar, Brain, Info, AlertTriangle, Paperclip, Mic, Scale, TrendingDown, TrendingUp, UserCheck, Loader2, Check, Minus, Download, UserPlus, Play, ArrowLeft, MoreVertical, Menu, Smile, DollarSign, Target, LineChart, PieChart, ShieldAlert, CheckCheck, Eye, Users, Clock, FileText, Share2, Globe, BellRing, BrainCircuit, MessageSquareMore, Search, Lock, CheckCircle2, MinusCircle, XCircle
-            }
+            icons
         });
+    };
+
+    // Export to window for other scripts to use
+    // @ts-ignore
+    window.lucide = {
+        createIcons: (options = {}) => {
+            createIcons({
+                icons,
+                ...options
+            });
+        }
     };
 
     // Initial render logic for Astro View Transitions
