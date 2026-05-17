@@ -139,9 +139,9 @@ import MainLayout from '../layouts/MainLayout.astro';
     </section>
 
     <!-- The Sentry in Action (Visual Proof) -->
-    <section class="py-24 bg-dark-800 border-y border-slate-800 relative overflow-hidden">
+    <section class="py-16 bg-dark-800 border-y border-slate-800 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold tracking-wider uppercase mb-6 border border-brand-500/20">
                     Real-time Performance
                 </div>
@@ -236,13 +236,14 @@ import MainLayout from '../layouts/MainLayout.astro';
     -->
 
     <!-- The Receipts / Backtest Proof Section -->
-    <section id="proof" class="py-24 bg-black border-y border-slate-800 relative overflow-hidden">
-    <div class="absolute -top-32 left-1/4 w-[600px] h-[600px] rounded-full bg-brand-500/10 blur-[120px] pointer-events-none"></div>
+    <section id="proof" class="py-20 bg-black border-y border-slate-800 relative overflow-hidden">
+    <!-- Background glow -->
+    <div class="absolute -top-32 left-1/4 w-[600px] h-[600px] rounded-full bg-brand-500/8 blur-[120px] pointer-events-none"></div>
     <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-brand-500/5 blur-[100px] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <!-- Heading row -->
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14 reveal-direct">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10 reveal-direct">
         <div class="max-w-2xl">
             <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold tracking-wider uppercase mb-6 border border-brand-500/25">
             <i data-lucide="badge-check" class="w-3 h-3 mr-1.5"></i> The Receipts
@@ -261,51 +262,65 @@ import MainLayout from '../layouts/MainLayout.astro';
         </a>
         </div>
 
-        <!-- 4-stat strip + equity sparkline card -->
+        <!-- Main proof block: 4-stat metric strip + receipts card -->
         <div class="grid lg:grid-cols-12 gap-6 mb-10 reveal-group">
+        <!-- LEFT: 4-up stat grid -->
         <div class="lg:col-span-7">
             <div class="grid grid-cols-2 gap-3 h-full">
-            <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6">
+            <!-- Stat 1: Profit factor -->
+            <div class="metric-card rounded-3xl border border-slate-700 bg-dark-900 p-6 reveal-item">
                 <div class="flex items-center justify-between mb-4">
                 <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">Profit Factor</div>
                 <i data-lucide="scale" class="w-4 h-4 text-slate-500"></i>
                 </div>
-                <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">2.82<span class="text-slate-500 text-3xl">×</span></div>
-                <p class="text-[11px] text-slate-500 leading-snug"><span class="text-brand-500 ss-num font-semibold">$2.82</span> gross profit for every <span class="ss-num">$1.00</span> lost.</p>
+                <div class="num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">2.82<span class="text-slate-500 text-3xl">×</span></div>
+                <p class="text-[11px] text-slate-500 leading-snug">
+                <span class="text-brand-500 num font-semibold">$2.82</span> gross profit for every <span class="num">$1.00</span> lost.
+                </p>
             </div>
 
-            <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6 relative overflow-hidden">
+            <!-- Stat 2: $10k → $16.6k -->
+            <div class="metric-card rounded-3xl border border-slate-700 bg-dark-900 p-6 relative overflow-hidden reveal-item">
                 <div class="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-brand-500/15 blur-3xl pointer-events-none"></div>
                 <div class="relative">
                 <div class="flex items-center justify-between mb-4">
                     <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">$10K Grew Into</div>
                     <i data-lucide="trending-up" class="w-4 h-4 text-slate-500"></i>
                 </div>
-                <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">$16,623<span class="text-slate-500 text-2xl">.83</span></div>
-                <p class="text-[11px] text-slate-500 leading-snug"><span class="text-brand-500 ss-num font-semibold">+66.24%</span> cumulative · vs SPY <span class="ss-num">+30.4%</span>.</p>
+                <div class="num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">
+                    $16,623<span class="text-slate-500 text-2xl">.83</span>
+                </div>
+                <p class="text-[11px] text-slate-500 leading-snug">+66.24% cumulative growth · Net of slippage</p>
                 </div>
             </div>
 
-            <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6">
+            <!-- Stat 3: Max drawdown -->
+            <div class="metric-card rounded-3xl border border-slate-700 bg-dark-900 p-6 reveal-item">
                 <div class="flex items-center justify-between mb-4">
                 <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">Max Drawdown</div>
                 <i data-lucide="shield" class="w-4 h-4 text-slate-500"></i>
                 </div>
-                <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">−15.77<span class="text-slate-500 text-3xl">%</span></div>
-                <p class="text-[11px] text-slate-500 leading-snug">Through 2022's bear. SPY hit <span class="text-rose-400 ss-num">−24%</span> in the same window.</p>
+                <div class="num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">−15.77<span class="text-slate-500 text-3xl">%</span></div>
+                <p class="text-[11px] text-slate-500 leading-snug">
+                Simulated worst-case decline. Algorithmic cash-shields prevented catastrophic account wreckage.
+                </p>
             </div>
 
-            <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6">
+            <!-- Stat 4: Risk:Reward -->
+            <div class="metric-card rounded-3xl border border-slate-700 bg-dark-900 p-6 reveal-item">
                 <div class="flex items-center justify-between mb-4">
                 <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">Risk : Reward</div>
                 <i data-lucide="target" class="w-4 h-4 text-slate-500"></i>
                 </div>
-                <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">1 : 3.64</div>
-                <p class="text-[11px] text-slate-500 leading-snug">Average winner is <span class="text-brand-500 ss-num font-semibold">3.64×</span> the size of an average loser.</p>
+                <div class="num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">1 : 3.64</div>
+                <p class="text-[11px] text-slate-500 leading-snug">
+                Average winner is <span class="text-brand-500 num font-semibold">3.64×</span> the size of an average loser.
+                </p>
             </div>
             </div>
         </div>
 
+        <!-- RIGHT: Equity sparkline card -->
         <div class="lg:col-span-5 reveal-direct">
             <div class="h-full rounded-3xl border border-slate-700 bg-dark-900 p-7 relative overflow-hidden">
             <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 18px 18px;"></div>
@@ -317,21 +332,25 @@ import MainLayout from '../layouts/MainLayout.astro';
                     NET OF SLIPPAGE
                 </div>
                 </div>
-                <div class="relative flex-1 min-h-[200px]">
-                <svg viewBox="0 0 600 240" preserveAspectRatio="none" class="w-full h-full" id="proof-sparkline"></svg>
+
+                <!-- Inline equity sparkline -->
+                <div class="relative flex-1 min-h-[240px]">
+                <svg viewBox="0 0 700 340" preserveAspectRatio="xMidYMid meet" class="w-full h-full" id="proof-sparkline"></svg>
                 </div>
+
+                <!-- Legend + breakdown -->
                 <div class="mt-4 pt-4 border-t border-slate-800 grid grid-cols-3 gap-3">
                 <div>
-                    <div class="ss-label-stamp text-slate-500 mb-1">Trades</div>
-                    <div class="ss-num text-white font-bold">64</div>
+                    <div class="label-stamp text-slate-500 mb-1">Trades</div>
+                    <div class="num text-white font-bold">64</div>
                 </div>
                 <div>
-                    <div class="ss-label-stamp text-slate-500 mb-1">Win Rate</div>
-                    <div class="ss-num text-white font-bold">40.6%</div>
+                    <div class="label-stamp text-slate-500 mb-1">Win Rate</div>
+                    <div class="num text-white font-bold">40.6%</div>
                 </div>
                 <div>
-                    <div class="ss-label-stamp text-slate-500 mb-1">Sharpe</div>
-                    <div class="ss-num text-white font-bold">1.41</div>
+                    <div class="label-stamp text-slate-500 mb-1">Sharpe</div>
+                    <div class="num text-white font-bold">1.15</div>
                 </div>
                 </div>
             </div>
@@ -339,53 +358,44 @@ import MainLayout from '../layouts/MainLayout.astro';
         </div>
         </div>
 
-        <!-- Asymmetry pull-quote -->
+        <!-- Pull-quote callout: the asymmetry insight -->
         <div class="rounded-3xl border border-brand-500/30 bg-dark-900 p-6 sm:p-8 flex flex-col md:flex-row md:items-center gap-6 mb-10 reveal-direct">
         <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-brand-500/15 border border-brand-500/30 flex items-center justify-center text-brand-500">
             <i data-lucide="zap" class="w-6 h-6"></i>
         </div>
         <p class="text-base sm:text-lg text-white leading-relaxed flex-1">
-            StockSentry closed 64 trades at a <span class="text-brand-500 ss-num font-bold">40.6% win rate</span> — yet returned <span class="text-brand-500 ss-num font-bold">+66.24%</span>. The math: an average win is <span class="text-brand-500 ss-num font-bold">3.64×</span> larger than an average loss. <span class="text-slate-400">Expectancy over emotion.</span>
+            StockSentry closed 64 trades at a <span class="text-brand-500 num font-bold">40.6% win rate</span>, with the average winner running <span class="text-brand-500 num font-bold">+15%</span> against an average loser of just <span class="text-brand-500 num font-bold">−4.1%</span>. <span class="text-slate-400">Cut losses fast, let winners run.</span>
         </p>
         </div>
 
-        <!-- "What kept us alive" highlights -->
-        <div class="grid sm:grid-cols-3 gap-4 mb-10 reveal-group">
-        <div class="reveal-item rounded-2xl border border-slate-700 bg-dark-900 p-5 flex items-start gap-4">
-            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/25 flex items-center justify-center text-brand-500">
-            <i data-lucide="navigation-2" class="w-4 h-4"></i>
-            </div>
-            <div>
-            <div class="ss-num text-2xl font-bold text-white leading-none mb-1.5">416</div>
-            <div class="text-xs text-slate-400 leading-snug">Trailing-stop adjustments locked open gains before reversals.</div>
-            </div>
-        </div>
-        <div class="reveal-item rounded-2xl border border-slate-700 bg-dark-900 p-5 flex items-start gap-4">
-            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/25 flex items-center justify-center text-brand-500">
-            <i data-lucide="zap" class="w-4 h-4"></i>
-            </div>
-            <div>
-            <div class="ss-num text-2xl font-bold text-white leading-none mb-1.5">50<span class="text-slate-500 text-base">%</span></div>
-            <div class="text-xs text-slate-400 leading-snug">Of all exits came from an AI "SELL NOW" override, not a stop.</div>
-            </div>
-        </div>
-        <div class="reveal-item rounded-2xl border border-slate-700 bg-dark-900 p-5 flex items-start gap-4">
+        <div class="grid sm:grid-cols-2 gap-4 mb-10 reveal-group">
+        <div class="rounded-2xl border border-slate-700 bg-dark-900 p-5 flex items-start gap-4 reveal-item">
             <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/25 flex items-center justify-center text-brand-500">
             <i data-lucide="gauge" class="w-4 h-4"></i>
             </div>
             <div>
-            <div class="ss-num text-2xl font-bold text-white leading-none mb-1.5">VIX &gt; 30</div>
-            <div class="text-xs text-slate-400 leading-snug">Hard-blocked new entries during macro panic — cash shield engaged.</div>
+            <div class="num text-2xl font-bold text-white leading-none mb-1.5">88<span class="text-slate-500 text-base">%</span></div>
+            <div class="text-xs text-slate-400 leading-snug">Avg cash held through 2022. VIX-gate parked capital out of harm's way for 177 of 251 trading days.</div>
+            </div>
+        </div>
+        <div class="rounded-2xl border border-slate-700 bg-dark-900 p-5 flex items-start gap-4 reveal-item">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/25 flex items-center justify-center text-brand-500">
+            <i data-lucide="shield" class="w-4 h-4"></i>
+            </div>
+            <div>
+            <div class="num text-2xl font-bold text-white leading-none mb-1.5">$31</div>
+            <div class="text-xs text-slate-400 leading-snug">Avg loss size across 23 losers. Trailing stops fired fast — 23× smaller than the average <span class="num text-white">$711</span> winner.</div>
             </div>
         </div>
         </div>
 
-        <!-- Mobile CTA (desktop version is in heading row) -->
+        <!-- Mobile CTA -->
         <a href="/performance" class="lg:hidden inline-flex items-center gap-2 text-brand-500 hover:text-brand-50 font-semibold transition group">
         <span>Read the full audit</span>
         <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
         </a>
 
+        <!-- Footnote -->
         <p class="text-[10px] text-slate-600 leading-relaxed mt-6 max-w-3xl">
         Backtest results reflect simulated trading on a $10,000 starting account; the simulated user accepted bot suggestions at ≥50% confidence. Past performance is not predictive of future results.
         </p>
@@ -393,13 +403,13 @@ import MainLayout from '../layouts/MainLayout.astro';
     </section>
 
     <!-- ════════════════════════════════════════════════════════════════════
-        Scoped styles + sparkline script — paste once anywhere in MainLayout
+        Scoped styles + sparkline script
         ════════════════════════════════════════════════════════════════════ -->
     <style is:global>
-    .ss-num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
-    .ss-label-stamp { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; font-size: 10px; }
-    .ss-metric { transition: transform .25s ease, border-color .25s ease; }
-    .ss-metric:hover { transform: translateY(-2px); border-color: rgba(255,122,26,.35); }
+    .num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+    .label-stamp { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; font-size: 10px; }
+    .metric-card { transition: transform .25s ease, border-color .25s ease; }
+    .metric-card:hover { transform: translateY(-2px); border-color: rgba(255,122,26,.35); }
     </style>
 
     <script>
@@ -407,70 +417,130 @@ import MainLayout from '../layouts/MainLayout.astro';
         const svg = document.getElementById('proof-sparkline');
         if (!svg) return;
 
+        // Data from the simulation
         const monthly = [
-        4.2, 3.8, -1.2, 5.1, 2.4, 3.6, 1.9, 4.4, -2.1, 6.3, 3.2, 1.8,
-        -3.4, 1.2, 0.8, -4.1, 2.3, -2.8, 1.1, -1.6, 0.4, 2.1, -0.9, 1.7,
-        5.2, 1.4, 3.8, 2.6, -1.1, 4.2, 3.7, -2.3, 1.8, 2.9, 4.1, 3.4,
-        3.1, 1.8, 4.2, -2.4, 2.7, 1.5, -1.8, 3.4, 2.1, 0.9, 2.8, 1.6,
+        5.12, 4.74, 1.95, 2.92, 6.08, 5.4, -0.18, 4.41, -3.39, 8.31, -1.12, 0.11, 
+        -9.53, -0.16, 1.68, 0.54, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 
+        -0.11, -0.39, 0.52, 1.33, -2.52, 4.01, 1.86, -0.01, -4.62, -2.25, 5.48, 4.23, 
+        6.37, 5.24, 3.0, -4.04, -2.15, 0.64, 3.85, -2.56, -0.68, 1.72, 10.96, -2.62
         ];
+        
+        const eq = [10000]; 
+        monthly.forEach(r => eq.push(eq[eq.length - 1] * (1 + r / 100)));
+
         const spyM = [
-        -1.0, 2.7, 4.3, 5.2, 0.7, 2.3, 2.4, 3.0, -4.8, 6.9, -0.7, 4.4,
-        -5.2, -3.0, 3.7, -8.8, 0.2, -8.4, 9.2, -4.2, -9.3, 8.1, 5.4, -5.9,
-        6.2, -2.6, 3.5, 1.5, 0.3, 6.5, 3.1, -1.8, -4.9, -2.2, 9.1, 4.5,
-        1.6, 5.2, 3.1, -4.2, 4.8, 3.5, 1.1, 2.3, 2.0, -1.0, 5.7, -2.5,
+        0.35, 2.78, 4.54, 5.29, 0.66, 2.24, 2.44, 2.98, -4.66, 7.02, -0.8, 4.62, 
+        -5.27, -2.95, 3.76, -8.78, 0.23, -8.25, 9.21, -4.08, -9.24, 8.13, 5.56, -5.76, 
+        6.29, -2.51, 3.71, 1.6, 0.46, 6.48, 3.27, -1.63, -4.74, -2.17, 9.13, 4.57, 
+        1.59, 5.22, 3.27, -4.03, 5.06, 3.53, 1.21, 2.34, 2.1, -0.89, 5.96, -2.05
         ];
 
-        const eq = [10000]; monthly.forEach(r => eq.push(eq[eq.length - 1] * (1 + r / 100)));
-        const sp = [10000]; spyM.forEach(r => sp.push(sp[sp.length - 1] * (1 + r / 100)));
+        const W = 700, H = 340;
+        const padL = 52, padR = 88, padT = 60, padB = 36;
+        const monoFont = 'JetBrains Mono, monospace';
 
-        const W = 600, H = 240, padL = 8, padR = 56, padT = 14, padB = 28;
-        const yMin = Math.min(...eq, ...sp) * 0.97;
-        const yMax = Math.max(...eq, ...sp) * 1.03;
+        const yMin = Math.min(...eq) * 0.94;
+        const yMax = Math.max(...eq) * 1.08;
         const n = eq.length - 1;
         const x = (i) => padL + (W - padL - padR) * (i / n);
         const y = (v) => padT + (H - padT - padB) * (1 - (v - yMin) / (yMax - yMin));
 
-        let pa = '', pb = '';
-        eq.forEach((v, i) => pa += (i === 0 ? 'M' : 'L') + x(i).toFixed(1) + ',' + y(v).toFixed(1) + ' ');
+        // ===== Regime bands + labels =====
+        const yrIdx = [0, 12, 24, 36, 48];
+        const bandConf = [
+        { from: yrIdx[0], to: yrIdx[1], fill: 'rgba(16,185,129,.14)',  stroke: 'rgba(16,185,129,.45)',  label: "'21 BULL",   sub: '+39.4%', color: '#34d399' },
+        { from: yrIdx[1], to: yrIdx[2], fill: 'rgba(244,63,94,.20)',   stroke: 'rgba(244,63,94,.60)',   label: "'22 BEAR",   sub: '−7.7%',  color: '#fb7185' },
+        { from: yrIdx[2], to: yrIdx[4], fill: 'rgba(255,122,26,.13)',  stroke: 'rgba(255,122,26,.45)',  label: "'23–'24",   sub: '+29.1%', color: '#ffb37a' },
+        ];
+        
+        let bands = '', bandLabels = '';
+        bandConf.forEach(b => {
+        const xa = x(b.from), xb = x(b.to), wd = xb - xa;
+        bands += `<rect x="${xa}" y="${padT}" width="${wd}" height="${H - padT - padB}" fill="${b.fill}"/>`;
+        bands += `<line x1="${xa}" x2="${xa}" y1="${padT}" y2="${H - padB}" stroke="${b.stroke}" stroke-width="1" stroke-dasharray="3 4"/>`;
+        bandLabels += `<text x="${xa + wd/2}" y="${padT - 32}" text-anchor="middle" fill="${b.color}" font-size="10" font-weight="700" font-family="${monoFont}" letter-spacing="1.5">${b.label}</text>`;
+        bandLabels += `<text x="${xa + wd/2}" y="${padT - 12}" text-anchor="middle" fill="${b.color}" font-size="17" font-weight="800" font-family="${monoFont}">${b.sub}</text>`;
+        });
+        const xRight = x(yrIdx[4]);
+        bands += `<line x1="${xRight}" x2="${xRight}" y1="${padT}" y2="${H - padB}" stroke="rgba(255,122,26,.45)" stroke-width="1" stroke-dasharray="3 4"/>`;
+
+        // ===== SPY path =====
+        const sp = [10000]; 
+        spyM.forEach(r => sp.push(sp[sp.length - 1] * (1 + r / 100)));
+        let pb = '';
         sp.forEach((v, i) => pb += (i === 0 ? 'M' : 'L') + x(i).toFixed(1) + ',' + y(v).toFixed(1) + ' ');
+
+        // ===== Sentry path =====
+        let pa = '';
+        eq.forEach((v,i) => pa += (i===0?'M':'L') + x(i).toFixed(1) + ',' + y(v).toFixed(1) + ' ');
         const area = pa + ' L ' + x(n).toFixed(1) + ',' + (H - padB) + ' L ' + padL + ',' + (H - padB) + ' Z';
 
-        const yrs = [[0, '’21'], [12, '’22'], [24, '’23'], [36, '’24'], [48, 'now']];
-        const xLabels = yrs.map(([i, l]) => `<text x="${x(i)}" y="${H - padB + 16}" text-anchor="middle" fill="#64748b" font-size="10" font-family="JetBrains Mono, monospace">${l}</text>`).join('');
+        // ===== Y-axis (3 ticks) =====
+        let yLabels = '';
+        for (let i = 0; i <= 3; i++) {
+        const v = yMin + (yMax - yMin) * (i / 3);
+        const yy = y(v);
+        yLabels += `<line x1="${padL}" x2="${W - padR}" y1="${yy}" y2="${yy}" stroke="rgba(148,163,184,.08)" stroke-width="1"/>`;
+        yLabels += `<text x="${padL - 10}" y="${yy + 4}" text-anchor="end" fill="#94a3b8" font-size="11" font-family="${monoFont}">$${(Math.round(v/500)*500/1000).toFixed(1)}k</text>`;
+        }
 
-        const yr22 = eq.slice(12, 25);
-        const minIdx = 12 + yr22.indexOf(Math.min(...yr22));
-        const troughX = x(minIdx), troughY = y(eq[minIdx]);
-        const trough = `<line x1="${troughX}" x2="${troughX}" y1="${padT}" y2="${H - padB}" stroke="rgba(244,63,94,0.18)" stroke-width="1" stroke-dasharray="3 3"/><circle cx="${troughX}" cy="${troughY}" r="3.5" fill="#f43f5e"/>`;
+        // ===== X-axis year labels =====
+        let xLabels = '';
+        const yrLab = [["'21", yrIdx[0]], ["'22", yrIdx[1]], ["'23", yrIdx[2]], ["'24", yrIdx[3]]];
+        yrLab.forEach(([l, idx]) => {
+        xLabels += `<text x="${x(idx)}" y="${H - padB + 20}" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="500" font-family="${monoFont}">${l}</text>`;
+        });
 
-        const endA = `<circle cx="${x(n)}" cy="${y(eq[n])}" r="5" fill="#ff7a1a" stroke="#030712" stroke-width="2"/><text x="${x(n) + 8}" y="${y(eq[n]) + 4}" fill="#ff7a1a" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">$16,623</text>`;
-        const endB = `<circle cx="${x(n)}" cy="${y(sp[n])}" r="4" fill="#64748b" stroke="#030712" stroke-width="2"/><text x="${x(n) + 8}" y="${y(sp[n]) + 4}" fill="#94a3b8" font-size="11" font-family="JetBrains Mono, monospace">$13,043</text>`;
+        // ===== Max DD marker =====
+        const tIdx = 13; // Feb 2022 was the local trough in monthly data
+        const tx = x(tIdx), ty = y(eq[tIdx]);
+        const troughMark = `
+        <line x1="${tx}" x2="${tx}" y1="${ty - 32}" y2="${ty - 6}" stroke="#f43f5e" stroke-width="1" stroke-dasharray="2 2"/>
+        <rect x="${tx - 50}" y="${ty - 50}" width="100" height="22" rx="5" fill="rgba(244,63,94,0.18)" stroke="rgba(244,63,94,0.55)" stroke-width="1"/>
+        <text x="${tx}" y="${ty - 35}" text-anchor="middle" fill="#fb7185" font-size="12" font-weight="700" font-family="${monoFont}">−15.77%</text>
+        <circle cx="${tx}" cy="${ty}" r="5" fill="#f43f5e" stroke="#030712" stroke-width="2"/>
+        `;
+
+        // ===== End-value callout =====
+        const lx = x(n), ly = y(eq[n]);
+        const endStr = '$' + Math.round(eq[n]).toLocaleString();
+        const totalPct = ((eq[n] - 10000) / 10000) * 100;
+
+        const endCallout = `
+        <line x1="${lx}" x2="${W - padR + 10}" y1="${ly}" y2="${ly}" stroke="rgba(255,122,26,.5)" stroke-width="1" stroke-dasharray="2 3"/>
+        <circle cx="${lx}" cy="${ly}" r="6" fill="#ff7a1a" stroke="#030712" stroke-width="2.5"/>
+        <text x="${W - padR + 14}" y="${ly - 2}" fill="#ff7a1a" font-size="18" font-weight="800" font-family="${monoFont}">${endStr}</text>
+        <text x="${W - padR + 14}" y="${ly + 18}" fill="#34d399" font-size="12" font-weight="700" font-family="${monoFont}">+${totalPct.toFixed(2)}%</text>
+        `;
 
         svg.innerHTML = `
         <defs>
-            <linearGradient id="proofSg" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="#ff7a1a" stop-opacity="0.4"/>
+            <linearGradient id="sg" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#ff7a1a" stop-opacity="0.42"/>
             <stop offset="100%" stop-color="#ff7a1a" stop-opacity="0"/>
             </linearGradient>
         </defs>
-        <path d="${area}" fill="url(#proofSg)"/>
-        <path d="${pb}" stroke="#64748b" stroke-width="1.5" fill="none" stroke-dasharray="4 4"/>
+        ${bands}
+        ${bandLabels}
+        ${yLabels}
+        <path d="${area}" fill="url(#sg)"/>
         <path d="${pa}" stroke="#ff7a1a" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-        ${trough}
-        ${endA}${endB}
+        ${troughMark}
+        ${endCallout}
         ${xLabels}
-        <text x="${padL}" y="${padT + 8}" fill="#64748b" font-size="10" font-family="JetBrains Mono, monospace">Sentry</text>
-        <text x="${padL + 50}" y="${padT + 8}" fill="#64748b" font-size="10" font-family="JetBrains Mono, monospace" opacity="0.7">— — SPY</text>
         `;
     };
 
-    document.addEventListener('astro:page-load', drawProofSparkline);
+    document.addEventListener('astro:page-load', () => {
+        drawProofSparkline();
+        if (window.lucide) window.lucide.createIcons();
+    });
     </script>
 
     <!-- Personal Market Intelligence Section (The Sentry Advantage) -->
-    <section id="features" class="py-24 bg-dark-900 border-y border-slate-800">
+    <section id="features" class="py-16 bg-dark-900 border-y border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold tracking-wider uppercase mb-6 border border-brand-500/20">
                     The Sentry Advantage
                 </div>
@@ -553,10 +623,10 @@ import MainLayout from '../layouts/MainLayout.astro';
     </section>
 
     <!-- How it Works Process Section -->
-    <section id="how-it-works" class="py-24 bg-dark-900 border-t border-slate-800 overflow-hidden">
+    <section id="how-it-works" class="py-16 bg-dark-900 border-t border-slate-800 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header -->
-            <div class="mb-20 max-w-3xl">
+            <div class="mb-12 max-w-3xl">
                 <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold tracking-wider uppercase mb-6 border border-brand-500/20">
                     How it works
                 </div>
@@ -626,12 +696,12 @@ import MainLayout from '../layouts/MainLayout.astro';
     </section>
 
     <!-- A Day in the Life Timeline -->
-    <section class="py-24 bg-transparent border-y border-slate-800 relative overflow-hidden">
+    <section class="py-16 bg-transparent border-y border-slate-800 relative overflow-hidden">
         <!-- Abstract Background Glow -->
         <div class="absolute top-1/4 right-0 w-1/2 h-1/2 bg-brand-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold tracking-wider uppercase mb-6 border border-brand-500/20">
                     Always On
                 </div>
@@ -696,7 +766,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     </section>
 
     <!-- Alpha Club Waitlist Section -->
-    <section id="alpha-club" class="py-24 bg-gradient-to-br from-orange-600 to-orange-900 border-y border-orange-500/30 relative overflow-hidden">
+    <section id="alpha-club" class="py-16 bg-gradient-to-br from-orange-600 to-orange-900 border-y border-orange-500/30 relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none"></div>
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-900 backdrop-blur-md text-sm font-medium mb-6 text-orange-200 border border-orange-400/30">
