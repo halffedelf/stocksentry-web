@@ -3,10 +3,8 @@ const { currentPath } = Astro.props;
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/experience", label: "Experience" },
   { href: "/performance", label: "Performance" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/faq", label: "FAQ" },
 ];
 ---
 
@@ -14,11 +12,7 @@ const navLinks = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
             <a href="/" class="flex items-center gap-2">
-                <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="var(--brand-500)" stroke-width="6" stroke-linejoin="round"/>
-                    <path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="70" cy="30" r="4" fill="var(--brand-500)"/>
-                </svg>
+                <img src="/favicon/logo.png" alt="StockSentry Logo" class="w-8 h-8 object-contain" />
                 <span class="text-xl font-bold text-white tracking-tight">StockSentry<span class="text-brand-500">.bot</span></span>
             </a>
             
@@ -88,9 +82,7 @@ const navLinks = [
                         <div style="width:2.25rem; height:2.25rem; border-radius:0.65rem; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
                             <i data-lucide={
                                 label === "Home" ? "home" : 
-                                label === "Experience" ? "compass" : 
-                                label === "Performance" ? "line-chart" : 
-                                label === "Pricing" ? "credit-card" : "help-circle"
+                                label === "Performance" ? "line-chart" : "credit-card"
                             } class="w-4 h-4 text-brand-500"></i>
                         </div>
                         <span class="text-[15px] font-medium">{label}</span>

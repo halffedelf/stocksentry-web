@@ -1,0 +1,266 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout 
+    title="The 2022 Survival Guide | AI Stock App Insights"
+    description="Learn how algorithmic risk shields and VIX-regime filters prevented account wreckage during the 2022 bear market. A technical post-mortem by StockSentry."
+    ogImage="/charts/chart_2022_bear.png"
+>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The 2022 Survival Guide: How Algorithmic Risk Shields Prevent Account Wreckage",
+        "image": "https://stocksentry.bot/charts/chart_2022_bear.png",
+        "author": {
+          "@type": "Organization",
+          "name": "StockSentry Research"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "StockSentry",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://stocksentry.bot/favicon/logo.png"
+          }
+        },
+        "datePublished": "2026-05-20",
+        "description": "Learn how algorithmic risk shields and VIX-regime filters prevented account wreckage during the 2022 bear market.",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://stocksentry.bot/insights/bear-market-survival"
+        }
+      }
+    </script>
+
+    <!-- Article Header -->
+    <header class="pt-32 pb-16 px-4 border-b border-slate-800 bg-dark-900 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-brand-500/5 blur-[120px] pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto relative z-10 text-center">
+            <div class="flex items-center justify-center gap-4 mb-8">
+                <a href="/insights" class="text-brand-500 text-xs font-bold uppercase tracking-widest flex items-center gap-1.5 hover:gap-2 transition-all">
+                    <i data-lucide="arrow-left" class="w-3 h-3"></i> Back to Insights
+                </a>
+                <span class="text-slate-600">/</span>
+                <span class="text-slate-500 text-xs font-mono uppercase tracking-widest">Risk Management</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight leading-[1.1]">
+                The 2022 Survival Guide:<br/>
+                <span class="text-brand-500">How Algorithmic Shields Prevent Wreckage</span>
+            </h1>
+            <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-500">
+                        <i data-lucide="user" class="w-4 h-4"></i>
+                    </div>
+                    <span>StockSentry Research Desk</span>
+                </div>
+                <div class="w-1 h-1 rounded-full bg-slate-700"></div>
+                <div class="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-slate-500">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                    May 20, 2026
+                </div>
+                <div class="w-1 h-1 rounded-full bg-slate-700"></div>
+                <div class="flex items-center gap-2 text-brand-500 font-bold font-mono text-xs uppercase tracking-wider">
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+                    12 min read
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="space-y-10 text-slate-300 text-lg leading-relaxed">
+            
+            <p class="text-xl text-white font-medium leading-relaxed">
+                2022 was a bloodbath. The S&P 500 fell −18.2%. The NASDAQ 100 — the benchmark for every growth investor who rode the 2020–2021 euphoria — cratered <strong class="text-rose-400 font-black ss-num">−32.6%</strong>. 
+            </p>
+
+            <p>
+                At its worst, a $10,000 portfolio tracking QQQ had shrunk to roughly $6,740. For millions of retail investors holding tech-heavy portfolios, the year didn't just feel bad — it mathematically <em class="italic text-white">set them back years</em>.
+            </p>
+
+            <!-- Key Insight Box -->
+            <div class="bg-dark-800 border border-brand-500/30 rounded-3xl p-8 my-12 shadow-2xl relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <i data-lucide="shield-check" class="w-24 h-24 text-brand-500"></i>
+                </div>
+                <p class="relative z-10 text-white leading-relaxed text-xl">
+                    Disciplined algorithmic systems posted just <strong class="text-brand-500 ss-num">−13.7% in 2022</strong> — less than half the destruction QQQ inflicted on passive holders. 
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-700/50 relative z-10">
+                    <p class="text-sm text-slate-400 uppercase tracking-widest font-black">The Compounding Gap</p>
+                    <p class="text-sm text-slate-500 mt-1">This preservation of capital determines whether you're making new highs in 2023 or still clawing back to breakeven.</p>
+                </div>
+            </div>
+
+            <p>This article is a technical post-mortem of what actually works during a bear market, what fails even in well-designed systems, and what every serious trader should build into their risk framework before the next one arrives.</p>
+
+            <h2 class="text-3xl font-bold text-white mt-24 mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-brand-500 text-sm font-mono">01</span>
+                Why 2022 Was a Different Kind of Bear
+            </h2>
+
+            <p>Before dissecting the mechanics, it's important to understand <em class="text-white">why</em> 2022 was so punishing — and why it caught so many systematic strategies off-guard. The 2022 bear market was <strong>macro-driven and persistent</strong>, not a short-term shock correction like March 2020.</p>
+
+            <div class="grid sm:grid-cols-2 gap-4 my-10">
+                <div class="bg-dark-900 border border-slate-800 p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="trending-down" class="w-5 h-5 text-rose-500"></i>
+                        <span class="text-white font-bold">Fastest Fed Hiking Cycle</span>
+                    </div>
+                    <p class="text-sm text-slate-400">The most aggressive rate hikes since the 1980s compressed growth stock multiples at record speed.</p>
+                </div>
+                <div class="bg-dark-900 border border-slate-800 p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="activity" class="w-5 h-5 text-brand-500"></i>
+                        <span class="text-white font-bold">Elevated VIX Regime</span>
+                    </div>
+                    <p class="text-sm text-slate-400">The VIX averaged well above 25 for the full year—a regime of sustained fear, not a spike event.</p>
+                </div>
+                <div class="bg-dark-900 border border-slate-800 p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="repeat" class="w-5 h-5 text-blue-500"></i>
+                        <span class="text-white font-bold">Frequent "Bear Rallies"</span>
+                    </div>
+                    <p class="text-sm text-slate-400">S&P 500 staged four significant rallies of 8–17%, trapping dip-buyers repeatedly before new lows.</p>
+                </div>
+                <div class="bg-dark-900 border border-slate-800 p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="shuffle" class="w-5 h-5 text-violet-500"></i>
+                        <span class="text-white font-bold">Extreme Sector Rotation</span>
+                    </div>
+                    <p class="text-sm text-slate-400">Energy names (XOM, CVX) surged while Tech cratered, punishing strategies that lacked sector awareness.</p>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-white mt-24 mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-brand-500 text-sm font-mono">02</span>
+                The Anatomy of Bear Market Account Wreckage
+            </h2>
+            <p>Account destruction rarely happens in a day. It is a four-stage path fueled by hope and conditioning:</p>
+
+            <div class="space-y-4">
+                {[
+                    { s: 1, t: "Denial Entries", d: "Buying the 10% dip because it 'worked since 2009'." },
+                    { s: 2, t: "First Flush", d: "The 20% decline where stops are either too wide or vanish entirely." },
+                    { s: 3, t: "The Churn Trap", d: "A sequence of 5–10% losses on false bounces with no winners." },
+                    { s: 4, t: "The Recovery Problem", d: "The math of loss asymmetry: a 30% drop requires +43% just to break even." }
+                ].map(step => (
+                    <div class="flex items-center gap-6 p-6 bg-dark-900 border border-slate-800 rounded-2xl group hover:border-brand-500/30 transition-all">
+                        <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-500 font-mono text-sm group-hover:bg-brand-500 group-hover:text-dark-900 transition-colors">{step.s}</div>
+                        <div>
+                            <h4 class="text-white font-bold">{step.t}</h4>
+                            <p class="text-xs text-slate-500 uppercase tracking-widest mt-0.5">{step.d}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <h2 class="text-3xl font-bold text-white mt-24 mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-brand-500 text-sm font-mono">03</span>
+                What Works: The Five Risk Shields
+            </h2>
+
+            <h3 class="text-2xl font-bold text-brand-500 mt-12 mb-6">1. The VIX Regime Gate — The Master Circuit Breaker</h3>
+            <p>The VIX is not just a fear gauge — it is a <strong>signal of the probability that any given breakout will succeed or fail</strong>. In a low-VIX environment (sub-20), momentum breakouts have high follow-through. In a high-VIX environment (above 25–30), the market is in a regime of noise, not signal.</p>
+            <div class="bg-dark-950 border border-slate-800 rounded-2xl p-6 my-6 italic text-sm">
+                "The smart move is to simply not play when the game is rigged against you."
+            </div>
+
+            <h3 class="text-2xl font-bold text-brand-500 mt-12 mb-6">2. The SPY 200-Day SMA Filter — The Macro Compass</h3>
+            <p>The market above its 200-day SMA is in a fundamentally different regime than a market below it. When SPY crossed below its 200-day SMA in early 2022, StockSentry shifted from offense to defense, reducing position count and tightening exit parameters for 232 consecutive trading days.</p>
+
+            <h3 class="text-2xl font-bold text-brand-500 mt-12 mb-6">3. The ATR-Based Trailing Stop — The Asymmetry Engine</h3>
+            <p>Implementation matters. Our stop "ratchets up" as a position gains, creating a mathematical lock on profits. In 2022, the average loss on bear-regime trades was contained to approximately <strong class="text-white ss-num">−3.7% per trade</strong>. Compare this to the 30–50% losses experienced by retail holders averaging down into Tech.</p>
+
+            <h3 class="text-2xl font-bold text-brand-500 mt-12 mb-6">4. Quality Universe Filtering — No Defense with Trash</h3>
+            <p>Speculative names collapse 50–80% when liquidity vanishes. By restricting our universe to large-cap, institutionally-owned businesses from the S&P 100 and NASDAQ 100, we ensure that even stop-outs stay in the 2–7% range. Quality is a form of <strong>passive risk management</strong>.</p>
+
+            <h3 class="text-2xl font-bold text-brand-500 mt-12 mb-6">5. The Rotation Delta Rule — Preventing "Churn"</h3>
+            <p>In a bear market, systems tend to rotate too fast, hitting stops repeatedly. Our Delta Rule requires that any replacement position must show <strong>meaningfully higher conviction</strong> than the one it replaces. This mechanically slows turnover and preserves capital during signal droughts.</p>
+
+            <h2 class="text-3xl font-bold text-white mt-24 mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-brand-500 text-sm font-mono">04</span>
+                What Failed: The Honest Post-Mortem
+            </h2>
+            <div class="grid gap-6">
+                <div class="bg-dark-900 border-l-4 border-l-rose-500 p-8 rounded-r-3xl">
+                    <h4 class="text-white font-bold text-xl mb-4">The Full-Exposure Problem</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Even with shields, holding 10 positions simultaneously in a broad bear market means absorbing 10 small losses. The next evolution is a <strong>position count cap</strong> (e.g. max 5) tied directly to the macro regime.</p>
+                </div>
+                <div class="bg-dark-900 border-l-4 border-l-rose-500 p-8 rounded-r-3xl">
+                    <h4 class="text-white font-bold text-xl mb-4">The False Breakout Trap</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Many stocks crossed above their 200-SMA during bounces, triggering signals that failed when the Broad Market resumed its fall. Fix: Require <strong>Relative Strength confirmation</strong> against SPY for all bear-regime entries.</p>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-white mt-24 mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-brand-500 text-sm font-mono">05</span>
+                The Compounding Math of Defense
+            </h2>
+            
+            <div class="bg-dark-900 border border-slate-800 rounded-[2rem] overflow-hidden my-12 shadow-2xl">
+                <div class="p-6 bg-slate-800/30 border-b border-slate-800">
+                    <h4 class="text-white font-bold uppercase tracking-widest text-[10px]">Returns Trajectory ($10k Start)</h4>
+                </div>
+                <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-800">
+                    <div class="p-8">
+                        <p class="text-slate-500 font-bold uppercase text-[10px] mb-4">Passive QQQ (No Shields)</p>
+                        <div class="space-y-4 font-mono text-sm">
+                            <div class="flex justify-between"><span>End '21</span><span class="text-emerald-400">$12,920</span></div>
+                            <div class="flex justify-between"><span>End '22</span><span class="text-rose-400">$8,706</span></div>
+                            <div class="flex justify-between"><span>End '24</span><span class="text-white font-bold">$16,557</span></div>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-brand-500/5">
+                        <p class="text-brand-500 font-bold uppercase text-[10px] mb-4">StockSentry (Algorithmic)</p>
+                        <div class="space-y-4 font-mono text-sm">
+                            <div class="flex justify-between"><span>End '21</span><span class="text-emerald-400">$14,293</span></div>
+                            <div class="flex justify-between"><span>End '22</span><span class="text-white">$12,333</span></div>
+                            <div class="flex justify-between"><span>End '24</span><span class="text-brand-500 font-bold text-lg">$22,883</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 bg-brand-500 text-white font-black text-center text-xs uppercase tracking-widest">
+                    StockSentry ended 2024 with $6,326 more (38% Alpha)
+                </div>
+            </div>
+
+            <div class="mt-20 pt-16 border-t border-slate-800">
+                <div class="bg-brand-600 rounded-[2.5rem] p-12 text-center relative overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                    <h3 class="text-3xl font-black text-white mb-4 relative z-10">Stop reacting. Start automating.</h3>
+                    <p class="text-orange-50 mb-8 relative z-10 max-w-lg mx-auto">Join the Alpha Group and get real-time alerts backed by these identical risk shields.</p>
+                    <button data-tally-open="KYv4MD" data-tally-layout="modal" data-tally-hide-title="1" data-tally-auto-close="0" class="bg-white text-brand-600 px-10 py-4 rounded-2xl font-bold text-xl hover:bg-brand-50 transition shadow-2xl relative z-10">
+                        Start Your Free Trial
+                    </button>
+                </div>
+
+                <!-- Related Articles Footer -->
+                <div class="grid sm:grid-cols-3 gap-4 text-left mt-16">
+                    <a href="/insights/llm-stock-prediction" class="group bg-dark-800/50 p-5 rounded-2xl border border-slate-800 hover:border-brand-500/30 transition-all">
+                        <p class="text-[10px] text-slate-500 uppercase font-bold mb-2">AI Insights</p>
+                        <h4 class="text-white font-bold text-sm group-hover:text-brand-500 transition-colors leading-tight">Can LLMs Predict Stocks?</h4>
+                    </a>
+                    <a href="/insights/swing-vs-day-trading" class="group bg-dark-800/50 p-5 rounded-2xl border border-slate-800 hover:border-brand-500/30 transition-all">
+                        <p class="text-[10px] text-slate-500 uppercase font-bold mb-2">Strategy</p>
+                        <h4 class="text-white font-bold text-sm group-hover:text-brand-500 transition-colors leading-tight">Why 'Slow' Trading Wins</h4>
+                    </a>
+                    <a href="/insights/three-prong-rubric" class="group bg-dark-800/50 p-5 rounded-2xl border border-slate-800 hover:border-brand-500/30 transition-all">
+                        <p class="text-[10px] text-slate-500 uppercase font-bold mb-2">How it Works</p>
+                        <h4 class="text-white font-bold text-sm group-hover:text-brand-500 transition-colors leading-tight">Understanding the Rubric</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <style is:global>
+        .ss-num { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+        .ss-stamp { font-family: 'JetBrains Mono', monospace; letter-spacing: .12em; text-transform: uppercase; font-size: 10px; }
+    </style>
+</MainLayout>

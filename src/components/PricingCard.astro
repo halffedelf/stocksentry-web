@@ -28,27 +28,21 @@ const { title, description, price, period, features, buttonText, highlight = fal
     </div>
     <ul class="space-y-4 mb-8 flex-grow">
         {features.map((feature) => (
-            <li class={`flex items-start gap-3 ${!feature.active ? 'opacity-40' : ''}`}>
-                <i data-lucide={feature.active ? "check" : "minus"} class={`w-5 h-5 shrink-0 ${feature.active ? 'text-brand-500' : 'text-slate-500'}`}></i>
-                <span class={`text-sm ${feature.active ? 'text-slate-300' : 'text-slate-500'}`} set:html={feature.label}></span>
+            <li class={`flex items-start gap-3 ${!feature.active ? 'opacity-60' : ''}`}>
+                <i data-lucide={feature.active ? "check" : "minus"} class={`w-5 h-5 shrink-0 ${feature.active ? 'text-brand-500' : 'text-slate-600'}`}></i>
+                <span class={`text-sm ${feature.active ? 'text-slate-300' : 'text-slate-400'}`} set:html={feature.label}></span>
             </li>
         ))}
     </ul>
     {buttonText && (
-        buttonText === "Apply for Access" || buttonText === "Start Free Trial" ? (
-            <button 
-                data-tally-open="KYv4MD" 
-                data-tally-layout="modal" 
-                data-tally-hide-title="1" 
-                data-tally-auto-close="0"
-                class={`block w-full py-3 px-4 text-center rounded-lg font-bold transition bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-500/20`}
-            >
-                {buttonText}
-            </button>
-        ) : (
-            <a href="https://t.me/StockSentryAYS_bot" target="_blank" class={`block w-full py-3 px-4 text-center rounded-lg font-bold transition ${highlight ? 'bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-500/20' : 'bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white'}`}>
-                {buttonText}
-            </a>
-        )
+        <button 
+            data-tally-open="KYv4MD" 
+            data-tally-layout="modal" 
+            data-tally-hide-title="1" 
+            data-tally-auto-close="0"
+            class={`block w-full py-3 px-4 text-center rounded-lg font-bold transition ${highlight ? 'bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-500/20' : 'bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white'}`}
+        >
+            {buttonText}
+        </button>
     )}
 </div>

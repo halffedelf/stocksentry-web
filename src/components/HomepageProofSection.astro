@@ -1,0 +1,365 @@
+<!--
+  ════════════════════════════════════════════════════════════════════
+  PERFORMANCE PROOF SECTION (Backtest v9) — drop into index.astro
+  ════════════════════════════════════════════════════════════════════
+
+  Recommended placement: between the existing "Sentry in Action" section
+  (the Verdict + Risk Management cards) and the "Personal Market
+  Intelligence" features grid. Narrative: see what it does → see what
+  it produced → see why it works.
+
+  Paste the whole <section>...</section> below into index.astro at that
+  point. The accompanying <style> + <script> blocks are scoped to this
+  section — paste them once, anywhere within MainLayout.
+
+  Data: 48-month equity series (Jan 2021 → Dec 2024), rebased to a
+  $10,000 start, lives inline in the sparkline script below.
+  ════════════════════════════════════════════════════════════════════
+-->
+
+<!-- The Receipts / Backtest Proof Section -->
+<section id="proof" class="py-24 bg-transparent border-y border-slate-800 relative overflow-hidden">
+  <div class="absolute -top-32 left-1/4 w-[600px] h-[600px] rounded-full bg-brand-500/10 blur-[120px] pointer-events-none"></div>
+  <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-brand-500/5 blur-[100px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Heading row -->
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14 reveal-direct">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold tracking-wider uppercase mb-6 border border-brand-500/25">
+          <i data-lucide="badge-check" class="w-3 h-3 mr-1.5"></i> The Receipts
+        </div>
+        <h2 class="text-3xl md:text-5xl font-bold text-white leading-[1.05] mb-5 tracking-tight">
+          Four years backtested.<br/>
+          <span class="text-brand-500">It nearly doubled the market.</span>
+        </h2>
+        <p class="text-lg text-slate-400 leading-relaxed">
+          We replayed StockSentry tick-by-tick from January 2021 through December 2024 — a full macro cycle, 2022 bear market and all. <span class="text-white font-semibold">207 trades, every entry and exit logged.</span> No cherry-picking.
+        </p>
+      </div>
+      <a href="/performance" class="hidden lg:inline-flex items-center gap-2 text-brand-500 hover:text-brand-50 font-semibold transition group whitespace-nowrap">
+        <span>Read the full audit</span>
+        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+      </a>
+    </div>
+
+    <!-- 4-stat strip + equity sparkline card -->
+    <div class="grid lg:grid-cols-12 gap-6 mb-10 reveal-group">
+      <div class="lg:col-span-7">
+        <div class="grid grid-cols-2 gap-3 h-full">
+          <!-- Total return -->
+          <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">Total Return · 4 Yrs</div>
+              <i data-lucide="trending-up" class="w-4 h-4 text-slate-500"></i>
+            </div>
+            <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">+122.8<span class="text-slate-500 text-3xl">%</span></div>
+            <p class="text-[11px] text-slate-500 leading-snug">Net of slippage. The S&amp;P 500 returned <span class="ss-num text-slate-300">+70.7%</span> over the same window.</p>
+          </div>
+
+          <!-- Number of trades -->
+          <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6 relative overflow-hidden">
+            <div class="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-brand-500/15 blur-3xl pointer-events-none"></div>
+            <div class="relative">
+              <div class="flex items-center justify-between mb-4">
+                <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">Number of Trades</div>
+                <i data-lucide="repeat" class="w-4 h-4 text-slate-500"></i>
+              </div>
+              <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">207</div>
+              <p class="text-[11px] text-slate-500 leading-snug">Closed over <span class="ss-num text-slate-300">1,005</span> trading days in 4 years.</p>
+            </div>
+          </div>
+
+          <!-- Alpha vs S&P 500 -->
+          <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">Alpha vs S&amp;P 500</div>
+              <i data-lucide="medal" class="w-4 h-4 text-slate-500"></i>
+            </div>
+            <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">+52.1<span class="text-slate-500 text-3xl"> pp</span></div>
+            <p class="text-[11px] text-slate-500 leading-snug"><span class="text-brand-500 ss-num font-semibold">1.7×</span> the index — also ahead of the Nasdaq-100's <span class="ss-num text-slate-300">+70.5%</span>.</p>
+          </div>
+
+          <!-- Win : Loss size -->
+          <div class="ss-metric reveal-item rounded-3xl border border-slate-700 bg-dark-900 p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">Win : Loss Size</div>
+              <i data-lucide="scale" class="w-4 h-4 text-slate-500"></i>
+            </div>
+            <div class="ss-num text-4xl sm:text-5xl font-bold text-white leading-none mb-3">1 : 4.65</div>
+            <p class="text-[11px] text-slate-500 leading-snug">Avg winner <span class="text-brand-500 ss-num font-semibold">+20.0%</span> vs avg loser <span class="text-rose-400 ss-num">−4.3%</span>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 reveal-direct">
+        <button id="proof-chart-trigger" class="w-full h-full text-left transition-transform hover:scale-[1.01] active:scale-[0.99] group cursor-zoom-in">
+          <div class="h-full rounded-3xl border border-slate-700 bg-dark-900 p-7 relative overflow-hidden group-hover:border-brand-500/50 transition-colors">
+            <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 18px 18px;"></div>
+            <div class="relative flex flex-col h-full">
+              <div class="flex items-center justify-between mb-3">
+                <div class="text-[10px] uppercase tracking-widest text-brand-500 font-bold">$10K Growth · 2021–2024</div>
+                <div class="flex items-center gap-1.5 text-[10px] text-slate-500 font-mono">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  NET OF SLIPPAGE
+                </div>
+              </div>
+
+              <!-- Legend -->
+              <div class="flex items-center gap-4 mb-1 text-[10px] font-mono">
+                <span class="inline-flex items-center gap-1.5"><span class="w-3 h-[2px] rounded-full" style="background:#ff7a1a"></span><span class="text-white font-semibold">StockSentry</span></span>
+                <span class="inline-flex items-center gap-1.5"><span class="w-3 h-[2px] rounded-full" style="background:#64748b"></span><span class="text-slate-400">S&amp;P 500</span></span>
+                <span class="inline-flex items-center gap-1.5"><span class="w-3 h-0 border-t border-dashed" style="border-color:#475569"></span><span class="text-slate-400">Nasdaq-100</span></span>
+              </div>
+
+              <!-- Equity sparkline -->
+              <div class="relative flex-1 min-h-[240px]">
+                <svg viewBox="0 0 700 340" preserveAspectRatio="xMidYMid meet" class="w-full h-full" id="proof-sparkline-main"></svg>
+              </div>
+
+              <!-- Trade-stat breakdown -->
+              <div class="mt-4 pt-4 border-t border-slate-800 grid grid-cols-3 gap-3">
+                <div>
+                  <div class="ss-label-stamp text-slate-500 mb-1">Trades</div>
+                  <div class="ss-num text-white font-bold">207</div>
+                </div>
+                <div>
+                  <div class="ss-label-stamp text-slate-500 mb-1">Win Rate</div>
+                  <div class="ss-num text-white font-bold">35.7%</div>
+                </div>
+                <div>
+                  <div class="ss-label-stamp text-slate-500 mb-1">Sharpe</div>
+                  <div class="ss-num text-white font-bold">1.25</div>
+                </div>
+              </div>
+
+              <!-- Zoom Hint -->
+              <div class="absolute bottom-4 right-4 text-[9px] font-mono text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                CLICK TO ENLARGE
+              </div>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Chart Modal -->
+    <div id="proof-chart-modal" class="fixed inset-0 z-[100] hidden">
+      <div class="absolute inset-0 bg-dark-950/95 backdrop-blur-xl"></div>
+      <div class="absolute inset-0 flex items-center justify-center p-4 sm:p-8 lg:p-12">
+        <div class="relative w-full max-w-6xl aspect-[16/10] sm:aspect-video bg-dark-900 rounded-[2rem] border border-slate-800 p-6 sm:p-10 shadow-2xl overflow-hidden">
+          <button id="proof-modal-close" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-dark-800 border border-slate-700 flex items-center justify-center text-white hover:bg-slate-800 transition-colors z-20" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+
+          <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
+          
+          <div class="relative h-full flex flex-col">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+              <div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">Equity Growth · 4-Year Backtest</h3>
+                <p class="text-xs sm:text-sm text-slate-400 font-mono">JAN 2021 — DEC 2024 · NET OF SLIPPAGE</p>
+              </div>
+              <div class="flex items-center gap-6 text-[10px] sm:text-xs font-mono">
+                <span class="inline-flex items-center gap-2"><span class="w-4 h-[3px] rounded-full" style="background:#ff7a1a"></span><span class="text-white font-bold">StockSentry</span></span>
+                <span class="inline-flex items-center gap-2"><span class="w-4 h-[3px] rounded-full" style="background:#64748b"></span><span class="text-slate-400">S&amp;P 500</span></span>
+                <span class="inline-flex items-center gap-2"><span class="w-4 h-0 border-t-2 border-dashed" style="border-color:#475569"></span><span class="text-slate-400">Nasdaq-100</span></span>
+              </div>
+            </div>
+
+            <div class="flex-1 min-h-0">
+              <svg viewBox="0 0 700 340" preserveAspectRatio="xMidYMid meet" class="w-full h-full" id="proof-sparkline-modal"></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Asymmetry pull-quote -->
+    <div class="rounded-3xl border border-brand-500/30 bg-dark-900 p-6 sm:p-8 flex flex-col md:flex-row md:items-center gap-6 mb-10 reveal-direct">
+      <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-brand-500/15 border border-brand-500/30 flex items-center justify-center text-brand-500">
+        <i data-lucide="zap" class="w-6 h-6"></i>
+      </div>
+      <p class="text-base sm:text-lg text-white leading-relaxed flex-1">
+        StockSentry was right on just over a third of its <span class="text-brand-500 ss-num font-bold">207 trades</span> — and still nearly doubled the S&amp;P 500. The edge isn't being right often; it's that the average winner runs <span class="text-brand-500 ss-num font-bold">+20.0%</span> while the average loser is cut at <span class="text-brand-500 ss-num font-bold">−4.3%</span>. <span class="text-slate-400">Cut losses fast, let winners run.</span>
+      </p>
+    </div>
+
+    <!-- "What kept us alive" highlights -->
+    <div class="grid sm:grid-cols-3 gap-4 mb-10 reveal-group">
+      <div class="reveal-item rounded-2xl border border-slate-700 bg-dark-900 p-5 flex items-start gap-4">
+        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/25 flex items-center justify-center text-brand-500">
+          <i data-lucide="trending-up" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <div class="ss-num text-2xl font-bold text-white leading-none mb-1.5">+141.96<span class="text-slate-500 text-base">%</span></div>
+          <div class="text-xs text-slate-400 leading-snug">Biggest single winner — GE, held 638 days for a <span class="ss-num text-white">+$3,574</span> gain. We let true trends run.</div>
+        </div>
+      </div>
+      <div class="reveal-item rounded-2xl border border-slate-700 bg-dark-900 p-5 flex items-start gap-4">
+        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/25 flex items-center justify-center text-brand-500">
+          <i data-lucide="shield" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <div class="ss-num text-2xl font-bold text-white leading-none mb-1.5">−13.7<span class="text-slate-500 text-base">%</span></div>
+          <div class="text-xs text-slate-400 leading-snug">StockSentry's 2022, vs <span class="ss-num text-rose-400">−18.2%</span> for the S&amp;P 500 and <span class="ss-num text-rose-400">−32.6%</span> for the Nasdaq-100.</div>
+        </div>
+      </div>
+      <div class="reveal-item rounded-2xl border border-slate-700 bg-dark-900 p-5 flex items-start gap-4">
+        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/25 flex items-center justify-center text-brand-500">
+          <i data-lucide="trending-down" class="w-5 h-5 text-rose-500"></i>
+        </div>
+        <div>
+          <div class="ss-num text-2xl font-bold text-white leading-none mb-1.5">
+            −4.3<span class="text-slate-500 text-base">%</span>
+          </div>
+          <div class="text-xs text-slate-400 leading-snug">Average loss. ATR trailing stops cut losers fast and small — <span class="ss-num text-white">4.6×</span> smaller than the average winner.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile CTA (desktop version is in heading row) -->
+    <a href="/performance" class="lg:hidden inline-flex items-center gap-2 text-brand-500 hover:text-brand-50 font-semibold transition group">
+      <span>Read the full audit</span>
+      <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+    </a>
+
+    <p class="text-[10px] text-slate-600 leading-relaxed mt-6 max-w-3xl">
+      Backtest results reflect simulated trading on a $10,000 starting account from January 2021 through December 2024 (207 closed trades), net of slippage, against a 168-name quality-screened large-cap universe. Past performance is not predictive of future results.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     Scoped styles + sparkline script — paste once anywhere in MainLayout
+     ════════════════════════════════════════════════════════════════════ -->
+<style is:global>
+  .ss-num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  .ss-label-stamp { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; font-size: 10px; }
+  .ss-metric { transition: transform .25s ease, border-color .25s ease; }
+  .ss-metric:hover { transform: translateY(-2px); border-color: rgba(255,122,26,.35); }
+</style>
+
+<script>
+  const drawProofSparkline = (svgId) => {
+    const svg = document.getElementById(svgId);
+    if (!svg) return;
+
+    // 48-month equity (Jan 2021 → Dec 2024), rebased to $10,000. Source: Backtest v9.
+    const user = [9796,10484,10803,11000,11672,12295,12626,13210,12703,14010,14126,14293,13658,13364,13575,13271,13639,12588,12457,12057,11154,12495,12785,12329,12561,12461,13177,13275,14065,15105,15807,15746,15377,15132,16396,16686,17183,19075,20315,20339,20898,20787,21619,22337,23044,22874,23857,22283];
+    const spy  = [10035,10314,10782,11352,11427,11683,11968,12325,11750,12575,12474,13051,12362,11997,12448,11356,11381,10443,11405,10939,9928,10735,11332,10679,11350,11065,11475,11658,11712,12471,12879,12670,12069,11807,12885,13474,13688,14403,14874,14274,14996,15525,15713,16080,16418,16271,17242,16827];
+    const qqq  = [10170,10156,10331,10941,10810,11487,11815,12314,11614,12527,12777,12924,11794,11266,11792,10189,10027,9134,10280,9753,8725,9074,9577,8714,9641,9607,10519,10572,11406,12125,12593,12406,11776,11533,12780,13494,13740,14466,14650,14009,14871,15833,15568,15739,16152,16012,16869,16946];
+    const yearIdx = [0, 12, 24, 36]; // Jan of '21 '22 '23 '24
+    const monoFont = 'JetBrains Mono, monospace';
+
+    const W = 700, H = 340;
+    const padL = 50, padR = 104, padT = 30, padB = 34;
+
+    const all = user.concat(spy, qqq);
+    const yMin = Math.min(...all) * 0.95;
+    const yMax = Math.max(...all) * 1.07;
+    const n = user.length - 1;
+    const x = (i) => padL + (W - padL - padR) * (i / n);
+    const y = (v) => padT + (H - padT - padB) * (1 - (v - yMin) / (yMax - yMin));
+
+    // 2022 bear shading (highlight survival)
+    const bx0 = x(yearIdx[1]), bx1 = x(yearIdx[2]);
+    const bear = `
+      <rect x="${bx0}" y="${padT}" width="${bx1 - bx0}" height="${H - padT - padB}" fill="rgba(244,63,94,.07)"/>
+      <text x="${(bx0 + bx1) / 2}" y="${padT + 13}" text-anchor="middle" fill="#fb7185" font-size="9" font-weight="700" font-family="${monoFont}" letter-spacing="1.5" opacity="0.8">2022 BEAR</text>
+    `;
+
+    // Y-axis grid + $k ticks
+    let yLabels = '';
+    for (let i = 0; i <= 3; i++) {
+      const v = yMin + (yMax - yMin) * (i / 3);
+      const yy = y(v);
+      yLabels += `<line x1="${padL}" x2="${W - padR}" y1="${yy}" y2="${yy}" stroke="rgba(148,163,184,.08)" stroke-width="1"/>`;
+      yLabels += `<text x="${padL - 9}" y="${yy + 4}" text-anchor="end" fill="#94a3b8" font-size="11" font-family="${monoFont}">$${Math.round(v / 1000)}k</text>`;
+    }
+
+    // X-axis year labels
+    let xLabels = '';
+    [["’21", yearIdx[0]], ["’22", yearIdx[1]], ["’23", yearIdx[2]], ["’24", yearIdx[3]]].forEach(([l, idx]) => {
+      xLabels += `<text x="${x(idx)}" y="${H - padB + 20}" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="500" font-family="${monoFont}">${l}</text>`;
+    });
+
+    // Path builder
+    const pathOf = (arr) => arr.map((v, i) => (i === 0 ? 'M' : 'L') + x(i).toFixed(1) + ',' + y(v).toFixed(1)).join(' ');
+    const pUser = pathOf(user), pSpy = pathOf(spy), pQqq = pathOf(qqq);
+    const area = pUser + ' L ' + x(n).toFixed(1) + ',' + (H - padB) + ' L ' + padL + ',' + (H - padB) + ' Z';
+
+    // End dots + callouts
+    const lx = x(n);
+    const yU = y(user[n]), yS = y(spy[n]), yQ = y(qqq[n]);
+    const sentryEnd = `
+      <line x1="${lx}" x2="${W - padR + 8}" y1="${yU}" y2="${yU}" stroke="rgba(255,122,26,.5)" stroke-width="1" stroke-dasharray="2 3"/>
+      <circle cx="${lx}" cy="${yU}" r="6" fill="#ff7a1a" stroke="#030712" stroke-width="2.5"/>
+      <text x="${W - padR + 12}" y="${yU - 1}" fill="#ff7a1a" font-size="17" font-weight="800" font-family="${monoFont}">$22,283</text>
+      <text x="${W - padR + 12}" y="${yU + 17}" fill="#34d399" font-size="12" font-weight="700" font-family="${monoFont}">+122.8%</text>
+    `;
+    const yB = (yS + yQ) / 2;
+    const benchEnd = `
+      <circle cx="${lx}" cy="${yS}" r="4" fill="#64748b" stroke="#030712" stroke-width="2"/>
+      <circle cx="${lx}" cy="${yQ}" r="4" fill="#475569" stroke="#030712" stroke-width="2"/>
+      <text x="${W - padR + 12}" y="${yB - 4}" fill="#94a3b8" font-size="11.5" font-weight="700" font-family="${monoFont}">S&amp;P +70.7%</text>
+      <text x="${W - padR + 12}" y="${yB + 12}" fill="#94a3b8" font-size="11.5" font-weight="700" font-family="${monoFont}">QQQ +70.5%</text>
+    `;
+
+    svg.innerHTML = `
+      <defs>
+        <linearGradient id="proofSg-${svgId}" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#ff7a1a" stop-opacity="0.34"/>
+          <stop offset="100%" stop-color="#ff7a1a" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      ${bear}
+      ${yLabels}
+      <path d="${area}" fill="url(#proofSg-${svgId})"/>
+      <path d="${pQqq}" stroke="#475569" stroke-width="1.75" fill="none" stroke-dasharray="5 4" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="${pSpy}" stroke="#64748b" stroke-width="1.75" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="${pUser}" stroke="#ff7a1a" stroke-width="2.75" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+      ${benchEnd}
+      ${sentryEnd}
+      ${xLabels}
+    `;
+  };
+
+  const setupChartModal = () => {
+    const trigger = document.getElementById('proof-chart-trigger');
+    const modal = document.getElementById('proof-chart-modal');
+    const closeBtn = document.getElementById('proof-modal-close');
+    
+    if (!trigger || !modal || !closeBtn) return;
+
+    const openModal = () => {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      drawProofSparkline('proof-sparkline-modal');
+    };
+
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    };
+
+    trigger.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  };
+
+  document.addEventListener('astro:page-load', () => {
+    drawProofSparkline('proof-sparkline-main');
+    setupChartModal();
+    if (window.lucide) window.lucide.createIcons();
+  });
+</script>

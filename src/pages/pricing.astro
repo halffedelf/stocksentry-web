@@ -4,76 +4,90 @@ import PricingCard from '../components/PricingCard.astro';
 
 const tiers = [
   {
-    title: "Alpha Club Access",
-    description: "Earn your spot in our exclusive monitoring group. No credit card required to apply.",
+    title: "Free",
+    description: "Get a taste of the app with global performance insights.",
     price: "$0",
-    period: "/14 days",
-    buttonText: "Apply for Access",
+    period: "/mo",
+    buttonText: "Join Free",
     features: [
-      { label: "<strong class='text-white'>25</strong> Tracked Tickers", active: true },
-      { label: "<strong class='text-white'>25</strong> Manual /checks per day", active: true },
-      { label: "<strong class='text-white'>Daily</strong> S&P 100 Discovery Scan", active: true },
-      { label: "Daily Morning Briefing", active: true },
-      { label: "NASDAQ 100 Scans", active: false },
+      { label: "Global Performance Teasers", active: true },
+      { label: "Aggregate Market Insights", active: true },
+      { label: "No Actionable Signal Data", active: true },
+      { label: "Signal Engine Access", active: false },
     ]
   },
   {
     title: "Basic",
-    description: "For casual investors watching a tight list of specific assets.",
-    price: "$19.99",
-    period: "/month",
-    buttonText: "",
+    description: "Tireless screener for hands-on investors who trust their own judgment.",
+    price: "$9.99",
+    period: "/mo",
+    buttonText: "Start Basic",
     features: [
-      { label: "<strong class='text-white'>10</strong> Tracked Tickers", active: true },
-      { label: "<strong class='text-white'>10</strong> Manual /checks per day", active: true },
-      { label: "<strong class='text-white'>Weekly</strong> S&P 100 Discovery Scan", active: true },
+      { label: "Raw Technical Analysis Signals", active: true },
       { label: "Daily Morning Briefing", active: true },
-      { label: "NASDAQ 100 Scans", active: false },
+      { label: "Stop-loss + ATR Ratchet", active: true },
+      { label: "Distress Circuit-breaker", active: true },
+      { label: "10 AI-powered stock analyses /mo", active: true },
+      { label: "Portfolio health AI - only at setup", active: true },
+      { label: "Personalized suggestions", active: false },
+      { label: "Detailed reasoning", active: false },
+      { label: "AI-powered macro overlay", active: false },
     ]
   },
   {
     title: "Pro",
-    description: "For active swing traders managing broader portfolios.",
-    price: "$29.99",
-    period: "/month",
-    buttonText: "",
+    description: "Personalized analysis co-pilot layering macro context on every setup.",
+    price: "$19.99",
+    period: "/mo",
+    buttonText: "Start Pro Trial",
     highlight: true,
     features: [
-      { label: "<strong class='text-white'>25</strong> Tracked Tickers", active: true },
-      { label: "<strong class='text-white'>25</strong> Manual /checks per day", active: true },
-      { label: "<strong class='text-white'>Daily</strong> S&P 100 Discovery Scan", active: true },
-      { label: "Daily Morning Briefing", active: true },
-      { label: "NASDAQ 100 Scans", active: false },
+      { label: "Everything in Basic", active: true },
+      { label: "AI-powered macro overlay", active: true },
+      { label: "Personalized Verdict + Why", active: true },
+      { label: "Portfolio Health AI - every week", active: true },
+      { label: "20 AI-powered stock analyses /mo", active: true },
+      { label: "Full Performance Attribution", active: true },
+      { label: "Agent Behavior Controls", active: false },
+      { label: "Conversational Agent Chat", active: false },
     ]
   },
   {
-    title: "Premium",
-    description: "Unrestricted access and expanded market discovery.",
-    price: "$49.99",
-    period: "/month",
-    buttonText: "",
+    title: "Advanced",
+    description: "Full configurable co-pilot with interrogation and behavior control.",
+    price: "$39.99",
+    period: "/mo",
+    buttonText: "Start Advanced",
     features: [
-      { label: "<strong class='text-white'>100</strong> Tracked Tickers", active: true },
-      { label: "<strong class='text-white'>100</strong> Manual /checks per day", active: true },
-      { label: "<strong class='text-white'>Daily</strong> S&P 100 Scan", active: true },
-      { label: "<strong class='text-white'>Daily</strong> NASDAQ 100 Scan", active: true },
-      { label: "Daily Morning Briefing", active: true },
+      { label: "Everything in Pro", active: true },
+      { label: "Full Parameter Breakdown", active: true },
+      { label: "Conversational Agent Chat", active: true },
+      { label: "Agent Behavior Controls", active: true },
+      { label: "50 AI-powered stock analyses /mo", active: true },
     ]
   }
 ];
 ---
 
-<MainLayout title="Pricing">
+<style is:global>
+    .ss-stamp { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; font-size: 10px; }
+    .ss-num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+</style>
+
+<MainLayout 
+    title="AI Stock Market App Pricing | Choose Your Intelligence Tier"
+    description="Find the perfect plan for your trading style. Our AI Stock Market App offers tiers from raw technical signals to a full conversational market co-pilot."
+>
     <!-- Header -->
-    <header class="pt-32 pb-12 px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Join the <span class="text-brand-500">Alpha Group.</span></h1>
+    <header class="pt-24 pb-8 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Stop watching charts, <span class="text-brand-500">start catching trends.</span></h1>
         <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
-            To maintain signal quality and institutional-grade monitoring speed, we limit active memberships to a select group of traders. Apply for access below.
+            Choose the level of intelligence that fits your portfolio. From raw signals to a fully conversational market co-pilot.
         </p>
     </header>
 
     <!-- Pricing Cards -->
-    <section class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <section class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start mt-8">
             {tiers.map(tier => (
                 <PricingCard {...tier} />
@@ -81,27 +95,241 @@ const tiers = [
         </div>
     </section>
 
+    <!-- Detailed Comparison Table -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-white mb-4">Compare <span class="text-brand-500">Tier Features</span></h2>
+            <p class="text-slate-400">Everything you need to know about how the agent thinks for you.</p>
+        </div>
+
+        <div class="overflow-x-auto bg-dark-900 rounded-[2rem] border border-slate-800 p-2 sm:p-8 shadow-2xl">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="border-b border-slate-800">
+                        <th class="py-6 px-4 text-slate-500 ss-stamp font-bold">Feature</th>
+                        <th class="py-6 px-4 text-white font-bold">Free</th>
+                        <th class="py-6 px-4 text-white font-bold">Basic</th>
+                        <th class="py-6 px-4 text-white font-bold">Pro</th>
+                        <th class="py-6 px-4 text-brand-500 font-bold">Advanced</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm">
+                    <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                        <td class="py-5 px-4 text-slate-300 font-medium">Monthly Price</td>
+                        <td class="py-5 px-4 text-slate-400">$0</td>
+                        <td class="py-5 px-4 text-slate-400">$9.99</td>
+                        <td class="py-5 px-4 text-slate-400">$19.99</td>
+                        <td class="py-5 px-4 text-white font-bold">$39.99</td>
+                    </tr>
+                    <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                        <td class="py-5 px-4 text-slate-300 font-medium">Signal Engine</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs">Teasers only</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs">Raw Technical Analysis</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs">Technical + AI Macro</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs">Technical + AI Macro</td>
+                    </tr>
+                    <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                        <td class="py-5 px-4 text-slate-300 font-medium">Personalized Messaging</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs text-brand-500">Verdict + Conf + Why</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs text-brand-500">Full Parameter Breakdown</td>
+                    </tr>
+                    <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                        <td class="py-5 px-4 text-slate-300 font-medium">Morning Briefing</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-emerald-500"><i data-lucide="check" class="w-4 h-4"></i></td>
+                        <td class="py-5 px-4 text-emerald-500"><i data-lucide="check" class="w-4 h-4"></i></td>
+                        <td class="py-5 px-4 text-emerald-500"><i data-lucide="check" class="w-4 h-4"></i></td>
+                    </tr>
+                    <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                        <td class="py-5 px-4 text-slate-300 font-medium">Safety Features</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-emerald-500"><i data-lucide="check" class="w-4 h-4"></i></td>
+                        <td class="py-5 px-4 text-emerald-500"><i data-lucide="check" class="w-4 h-4"></i></td>
+                        <td class="py-5 px-4 text-emerald-500"><i data-lucide="check" class="w-4 h-4"></i></td>
+                    </tr>
+                    <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                        <td class="py-5 px-4 text-slate-300 font-medium">Portfolio Health AI</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs">On-demand</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs font-bold text-white">Richer, detailed output</td>
+                    </tr>
+                    <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                        <td class="py-5 px-4 text-slate-300 font-medium">AI-powered stock analyses</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-slate-400">10 / mo</td>
+                        <td class="py-5 px-4 text-slate-400">20 / mo</td>
+                        <td class="py-5 px-4 text-white font-bold">50 / mo</td>
+                    </tr>
+                    <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                        <td class="py-5 px-4 text-slate-300 font-medium">Performance Analytics</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs">Global teasers only</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs">Win rate + avoided losses</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs">Full attribution + weekly digest</td>
+                        <td class="py-5 px-4 text-slate-400 text-xs">Full attribution + chat</td>
+                    </tr>
+                    <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                        <td class="py-5 px-4 text-slate-300 font-medium">Agent Chat</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-emerald-500 font-bold text-white">Portfolio-grounded</td>
+                    </tr>
+                    <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                        <td class="py-5 px-4 text-slate-300 font-medium">Behavior Controls</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-slate-400">—</td>
+                        <td class="py-5 px-4 text-emerald-500 font-bold text-white">Risk presets</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
-    <section class="border-t border-slate-800 bg-dark-800/50 py-24">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+    <section class="border-t border-slate-800 bg-dark-950 py-20">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Radical <span class="text-brand-500">Transparency.</span></h2>
+                <p class="text-slate-400">The skeptic's guide to StockSentry pricing.</p>
+            </div>
             
-            <div class="space-y-8">
+            <div class="grid md:grid-cols-2 gap-12">
                 <div>
-                    <h3 class="text-lg font-bold text-white mb-2">How does Alpha Club Access work?</h3>
-                    <p class="text-slate-400 text-sm">Once your application is approved, you get 14 days of full access to the Pro tier. We do not require a credit card upfront. When your trial ends, the bot will message you with a link to subscribe via Stripe to keep your watchlist active.</p>
+                    <h3 class="text-lg font-bold text-white mb-3">Is the Free tier actually useful?</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">The Free tier is designed to show you what you're missing. You'll see aggregate data—like how many conviction setups the agent found today—but no ticker names or entry levels. It's the best way to check out the app.</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold text-white mb-2">How are payments processed?</h3>
-                    <p class="text-slate-400 text-sm">All payments are securely handled by Stripe. StockSentry never sees or stores your payment information. You will receive a unique checkout link directly inside your Telegram chat.</p>
+                    <h3 class="text-lg font-bold text-white mb-3">Why are safety features unconditional?</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Stop-loss alerts, ATR trailing-stops, and distress circuit-breakers are capital-protection features, not product differentiators. We believe every paying subscriber deserves institutional-grade risk management regardless of their tier.</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold text-white mb-2">How do I cancel?</h3>
-                    <p class="text-slate-400 text-sm">You can cancel anytime by typing <code>/account</code> in the bot. It will provide a link to your Stripe customer portal where you can cancel your subscription with one click. Your access will continue until the end of your billing cycle.</p>
+                    <h3 class="text-lg font-bold text-white mb-3">Does it make sense to have it for a small portfolio size?</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">The value of a StockSentry Pro subscription ($19.99/month, or roughly $240/year) depends heavily on your starting capital.
+<br/><br/>
+<b>The Breakeven Math:</b> Your portfolio needs to generate at least $240 in annual profit just to cover the cost of the software.
+<br/><br/>
+<b>Historical Context:</b> Between 2021 and 2024, our backtested model turned $10,000 into $22,282 (a +122.8% gain over 4 years).
+<br/><br/>
+<b>Capital Requirements:</b> If your portfolio is $5,000 or $10,000, historical data suggests the subscription cost is easily absorbed by potential gains. However, if your starting portfolio is under $1,000, the subscription fee will eat up a significant portion of your profits.
+<br/><br/>
+<i>Review our full <a href="/performance" class="text-brand-500 hover:underline">Performance</a> audit to run the numbers against your own account size. <a href="/insights/swing-vs-day-trading" class="text-brand-500 hover:underline">Read why the slow game wins →</a></i></p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold text-white mb-2">Can I upgrade or downgrade later?</h3>
-                    <p class="text-slate-400 text-sm">Yes. You can manage your tier from your Stripe portal at any time. Pricing adjustments are prorated automatically.</p>
+                    <h3 class="text-lg font-bold text-white mb-3">How does Personalization work?</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Personalization is the biggest jump between Basic and Pro. In Pro, the agent layers on macro context and reasons about <b>your</b> specific situation. It doesn't just fire a signal; it tells you <b>why</b> it reached that conclusion based on current market regimes. <a href="/insights/three-prong-rubric" class="text-brand-500 hover:underline">Learn more about the rubric →</a>
+                    <br/><br/>
+                    <a href="/insights/llm-stock-prediction" class="text-slate-500 text-xs hover:text-brand-500 transition-colors">Read our research on LLMs and stock prediction →</a></p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-3">Can I interrogate the Advanced agent?</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Yes. Advanced users can ask the agent direct questions about its reasoning: "Why did you call that sell last week?" or "Which of my positions is most at risk?". The agent has access to its own call log and reasoning history to give you grounded answers.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-3">How are deep-dives powered?</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Deep-dives use our most advanced reasoning models (Claude Sonnet) to perform a point-in-time analysis of any ticker. Higher tiers include larger monthly quotas to accommodate active power users who want deep oversight on every position.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- HOW WE STACK UP -->
+    <section class="px-4 sm:px-6 lg:px-8 py-24 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12 reveal-direct">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold tracking-wider uppercase mb-5 border border-brand-500/25">
+                    <i data-lucide="git-compare" class="w-3 h-3"></i> Comparison
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">How we stack up.</h2>
+            </div>
+
+            <div class="rounded-3xl border border-slate-700 bg-dark-800 overflow-hidden reveal-direct">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left min-w-[800px]">
+                        <thead>
+                            <tr class="border-b border-slate-700">
+                                <th class="p-5 text-slate-400 font-medium text-sm">Feature</th>
+                                <th class="p-5 font-bold text-white bg-brand-500/10 text-sm">StockSentry</th>
+                                <th class="p-5 text-slate-400 font-medium text-sm">Stock Alarm</th>
+                                <th class="p-5 text-slate-400 font-medium text-sm">TrendSpider</th>
+                                <th class="p-5 text-slate-400 font-medium text-sm">Trade Ideas</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-300 text-sm divide-y divide-slate-800">
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-5 font-medium text-white">Starting price</td>
+                                <td class="p-5 font-bold text-brand-500 bg-brand-500/5 font-mono">$9.99/mo</td>
+                                <td class="p-5 font-mono">$9.99/mo</td>
+                                <td class="p-5 font-mono">$82.00/mo</td>
+                                <td class="p-5 font-mono">$127.00/mo</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-5 font-medium text-white">Delivery channel</td>
+                                <td class="p-5 bg-brand-500/5 text-white font-semibold">Native mobile app</td>
+                                <td class="p-5">Mobile app</td>
+                                <td class="p-5">Web dashboard</td>
+                                <td class="p-5">Desktop platform</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-5 font-medium text-white">Setup time</td>
+                                <td class="p-5 bg-brand-500/5 text-brand-500 font-bold font-mono">&lt; 1 minute</td>
+                                <td class="p-5 font-mono">~ 2 minutes</td>
+                                <td class="p-5 font-mono">~ 15 minutes</td>
+                                <td class="p-5 font-mono">~ 30 minutes</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-5 font-medium text-white">AI alerts (standard)</td>
+                                <td class="p-5 bg-brand-500/5"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i></td>
+                                <td class="p-5">Limited (10)</td>
+                                <td class="p-5"><i data-lucide="check-circle-2" class="w-5 h-5 text-slate-500"></i></td>
+                                <td class="p-5"><i data-lucide="minus-circle" class="w-5 h-5 text-slate-600"></i></td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-5 font-medium text-white">Analysis type</td>
+                                <td class="p-5 bg-brand-500/5 text-white font-semibold">Plain English AI</td>
+                                <td class="p-5">Price triggers</td>
+                                <td class="p-5">Technical charts</td>
+                                <td class="p-5">Quantitative</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-5 font-medium text-white">LLM intelligence</td>
+                                <td class="p-5 bg-brand-500/5"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i></td>
+                                <td class="p-5"><i data-lucide="x-circle" class="w-5 h-5 text-slate-700"></i></td>
+                                <td class="p-5"><i data-lucide="check-circle-2" class="w-5 h-5 text-slate-500"></i></td>
+                                <td class="p-5"><i data-lucide="check-circle-2" class="w-5 h-5 text-slate-500"></i></td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-5 font-medium text-white">News sentiment in alerts</td>
+                                <td class="p-5 bg-brand-500/5"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i></td>
+                                <td class="p-5"><i data-lucide="x-circle" class="w-5 h-5 text-slate-700"></i></td>
+                                <td class="p-5 text-slate-400">Add-on</td>
+                                <td class="p-5 text-slate-400">Limited</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-5 font-medium text-white">Risk shields built-in</td>
+                                <td class="p-5 bg-brand-500/5 text-white font-semibold">Trailing + −10% floor</td>
+                                <td class="p-5"><i data-lucide="x-circle" class="w-5 h-5 text-slate-700"></i></td>
+                                <td class="p-5 text-slate-400">Manual setup</td>
+                                <td class="p-5 text-slate-400">Configurable</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-5 font-medium text-white">Live performance audit</td>
+                                <td class="p-5 bg-brand-500/5"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i></td>
+                                <td class="p-5"><i data-lucide="x-circle" class="w-5 h-5 text-slate-700"></i></td>
+                                <td class="p-5 text-slate-400">Backtesting only</td>
+                                <td class="p-5 text-slate-400">Backtesting only</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-5 font-medium text-white">Free trial</td>
+                                <td class="p-5 bg-brand-500/5 text-brand-500 font-bold">14 days (full)</td>
+                                <td class="p-5 text-slate-400">Very limited</td>
+                                <td class="p-5 text-slate-400">$19 (paid)</td>
+                                <td class="p-5 text-slate-400">None</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

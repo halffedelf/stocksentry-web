@@ -2,7 +2,10 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="FAQ">
+<MainLayout 
+    title="StockSentry FAQ | Common Questions About Our AI Stock App"
+    description="Have questions about StockSentry? Learn how our AI Stock Market App works, its coverage of US equities, and how it protects your capital with automated risk shields."
+>
     <!-- Page Header -->
     <header class="pt-32 pb-12 px-4 border-b border-slate-800 bg-dark-900">
         <div class="max-w-3xl mx-auto text-center">
@@ -24,7 +27,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                     <h3 class="text-white font-bold mb-2">Does StockSentry execute trades for me?</h3>
                     <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                         <li><strong>No.</strong> StockSentry is an intelligence and alerting tool only.</li>
-                        <li>We identify setups and send Telegram notifications.</li>
+                        <li>We identify setups and send native app notifications.</li>
                         <li>You are responsible for executing trades manually in your own brokerage account.</li>
                     </ul>
                 </div>
@@ -34,25 +37,25 @@ import MainLayout from '../layouts/MainLayout.astro';
                     <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                         <li><strong>No.</strong> We operate with zero financial visibility.</li>
                         <li>We do not ask for API keys, login credentials, or account balances.</li>
-                        <li>We only store your Telegram ID and the specific ticker symbols you ask the bot to watch.</li>
+                        <li>We only store your anonymous account ID and the specific ticker symbols you ask the app to watch.</li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="text-white font-bold mb-2">Why Telegram instead of a standalone app?</h3>
+                    <h3 class="text-white font-bold mb-2">Which platforms are supported?</h3>
                     <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
-                        <li><strong>Speed:</strong> Telegram's API allows for near-instant push notification delivery.</li>
-                        <li><strong>Efficiency:</strong> No heavy charting app running in your background draining battery.</li>
-                        <li><strong>Frictionless:</strong> You likely already have the app open; no context switching required to get an alert.</li>
+                        <li><strong>Android:</strong> Available now on the Google Play Store.</li>
+                        <li><strong>iOS:</strong> Native app coming soon to the Apple App Store.</li>
+                        <li><strong>Web:</strong> Subscription and account management available via our secure portal.</li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="text-white font-bold mb-2">What markets do you cover?</h3>
                     <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
-                        <li>Currently limited to US Equities.</li>
-                        <li>Discovery scans are restricted to the highly liquid S&P 100 and NASDAQ 100 components.</li>
-                        <li>OTC, crypto, and forex are not supported.</li>
+                        <li><strong>Currently US Equities Only.</strong> The agent is optimized for the depth and liquidity of the US stock market.</li>
+                        <li>Discovery scans are restricted to a curated universe of highly liquid US Large-Cap components.</li>
+                        <li>OTC, crypto, and forex are not currently supported.</li>
                     </ul>
                 </div>
             </div>
@@ -66,15 +69,15 @@ import MainLayout from '../layouts/MainLayout.astro';
                     <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                         <li>Apply via our waitlist form. Once approved, you receive 14 days of unrestricted access to the Pro tier features.</li>
                         <li>No credit card is required to join the waitlist or initiate the trial.</li>
-                        <li>After 14 days, the bot will cease monitoring unless you initiate a paid subscription via Stripe.</li>
+                        <li>After 14 days, the app will cease monitoring unless you initiate a paid subscription via Stripe.</li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="text-white font-bold mb-2">How do I cancel my subscription?</h3>
                     <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
-                        <li>Send the command <code>/account</code> to the bot in Telegram.</li>
-                        <li>The bot will return a secure, temporary link to your Stripe Customer Portal.</li>
+                        <li>Access your account settings directly within the app.</li>
+                        <li>The app will provide a secure, temporary link to your Stripe Customer Portal.</li>
                         <li>Click "Cancel Plan". Service remains active until the end of your billing cycle.</li>
                     </ul>
                 </div>
@@ -104,7 +107,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="space-y-8">
                         <div>
-                            <h3 class="text-white font-bold mb-2">I don't have any stock yet but I want to start. Is this bot useful for me?</h3>
+                            <h3 class="text-white font-bold mb-2">I don't have any stock yet but I want to start. Is this app useful for me?</h3>
                             <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                                 <li><strong>Yes, absolutely!</strong> The daily discovery scan is a great way to find potential investment ideas to research.</li>
                                 <li>Just keep in mind that StockSentry is an analysis tool, not a broker or a financial advisor.</li>
@@ -134,7 +137,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                             <ul class="list-disc pl-5 space-y-1 text-sm text-[var(--text-muted)] marker:text-brand-500">
                                 <li><strong>Yes</strong>, having a dedicated assistant watching your portfolio helps you spot trend changes early so you can manage your risk.</li>
                                 <li>The agent sends you a daily P&L report, so you can easily see if it's adding value.</li>
-                                <li><strong>The Catch:</strong> The math only works if you tell the bot the truth. You must log your actual, exact entry prices (using <code>/bought</code>) so the agent knows exactly where your break-even points are to calculate accurate alert levels.</li>
+                                <li><strong>The Catch:</strong> The math only works if you tell the app the truth. You must log your actual, exact entry prices (using <code>/bought</code>) so the agent knows exactly where your break-even points are to calculate accurate alert levels.</li>
                             </ul>
                         </div>
                     </div>
@@ -177,8 +180,8 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div class="mt-16 bg-dark-900 border border-slate-700 rounded-lg p-6 text-center">
             <h3 class="text-white font-bold mb-2">Still have questions?</h3>
             <p class="text-sm text-[var(--text-muted)] mb-4">Reach out to our technical support desk.</p>
-            <a href="mailto:support@stocksentry.bot" class="inline-flex items-center gap-2 text-brand-500 hover:text-brand-400 font-medium transition">
-                <i data-lucide="mail" class="w-4 h-4"></i> support@stocksentry.bot
+            <a href="mailto:support@stocksentry.app" class="inline-flex items-center gap-2 text-brand-500 hover:text-brand-400 font-medium transition">
+                <i data-lucide="mail" class="w-4 h-4"></i> support@stocksentry.app
             </a>
         </div>
 

@@ -1,28 +1,49 @@
 ---
 ---
-<footer class="border-t border-slate-800 bg-dark-900 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-        <div class="flex flex-col gap-1 text-[var(--text-muted)]">
+<footer class="border-t border-slate-800 bg-dark-900 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-12 items-start text-center md:text-left">
+        <!-- Brand -->
+        <div class="flex flex-col gap-4 text-[var(--text-muted)]">
             <div class="flex items-center justify-center md:justify-start gap-2">
-                <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 5L15 20V45C15 70 30 90 50 95C70 90 85 70 85 45V20L50 5Z" stroke="var(--brand-500)" stroke-width="6" stroke-linejoin="round"/>
-                    <path d="M30 65L45 45L55 55L70 30" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="70" cy="30" r="4" fill="var(--brand-500)"/>
-                </svg>
+                <img src="/favicon/logo.png" alt="StockSentry Logo" class="w-6 h-6 object-contain" />
                 <span class="font-bold text-white">StockSentry.bot</span>
-                <span class="text-sm">© 2026</span>
             </div>
-            <span class="text-xs text-[var(--text-muted)] opacity-80">A product of Seer Labs Inc., registered in Ontario.</span>
+            <p class="text-xs leading-relaxed max-w-xs mx-auto md:mx-0">
+                Institutional-grade algorithmic oversight for retail investors. Stop watching charts, start catching trends.
+            </p>
+            <span class="text-[10px] text-slate-600 uppercase tracking-widest font-bold">© 2026 Seer Labs Inc.</span>
         </div>
-        <div class="flex flex-col items-center md:items-end gap-3">
-            <div class="flex gap-6 text-sm text-[var(--text-muted)]">
+
+        <!-- Resources -->
+        <div class="flex flex-col gap-4">
+            <h4 class="text-white font-bold text-sm uppercase tracking-widest">Resources</h4>
+            <div class="flex flex-col gap-2.5 text-sm text-[var(--text-muted)]">
+                <a href="/insights" class="hover:text-white transition flex items-center justify-center md:justify-start gap-2 group">
+                    <i data-lucide="book-open" class="w-3.5 h-3.5 text-brand-500"></i>
+                    <span>Insights & Strategy</span>
+                </a>
+                <a href="/performance" class="hover:text-white transition flex items-center justify-center md:justify-start gap-2 group">
+                    <i data-lucide="line-chart" class="w-3.5 h-3.5 text-brand-500"></i>
+                    <span>Performance Audit</span>
+                </a>
+                <a href="/faq" class="hover:text-white transition flex items-center justify-center md:justify-start gap-2 group">
+                    <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-500"></i>
+                    <span>Frequently Asked Questions</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Legal & Contact -->
+        <div class="flex flex-col gap-4 md:items-end">
+            <h4 class="text-white font-bold text-sm uppercase tracking-widest">Legal</h4>
+            <div class="flex flex-col gap-2.5 text-sm text-[var(--text-muted)] md:items-end">
                 <a href="/tos" class="hover:text-white transition">Terms of Service</a>
                 <a href="/privacy" class="hover:text-white transition">Privacy Policy</a>
                 <a href="/refund" class="hover:text-white transition">Refund Policy</a>
+                <a href="mailto:admin@stocksentry.bot" class="text-xs text-brand-500 hover:text-white transition flex items-center gap-1.5 mt-2">
+                    <i data-lucide="mail" class="w-3 h-3"></i> admin@stocksentry.bot
+                </a>
             </div>
-            <a href="mailto:support@stocksentry.bot" class="text-xs text-[var(--text-muted)] hover:text-white transition flex items-center gap-1">
-                <i data-lucide="mail" class="w-3 h-3"></i> support@stocksentry.bot
-            </a>
         </div>
     </div>
 </footer>
@@ -106,13 +127,20 @@
         Layers,
         BookOpen,
         ArrowUpRight,
+        ArrowUp,
         Pill,
         Hammer,
-        Shuffle
+        Shuffle,
+        Smartphone,
+        Phone,
+        Apple,
+        BadgeCheck,
+        Repeat,
+        Medal
     } from 'lucide';
 
     const icons = {
-        Send, Mail, Scan, Binoculars, MessageCircle, Activity, Shield, EyeOff, MessageSquare, Sunrise, Radar, Brain, Info, AlertTriangle, Paperclip, Mic, Scale, TrendingDown, TrendingUp, UserCheck, Loader2, Check, Minus, Download, UserPlus, Play, ArrowLeft, MoreVertical, Menu, Smile, DollarSign, Target, LineChart, PieChart, ShieldAlert, CheckCheck, Eye, Users, Clock, FileText, Share2, Globe, BellRing, BrainCircuit, MessageSquareMore, Search, Lock, CheckCircle2, MinusCircle, XCircle, Building2, CreditCard, Component, Cpu, Navigation2, Zap, Gauge, Sparkles, CalendarOff, Compass, Home, HelpCircle, ShieldCheck, Briefcase, ArrowRight, CheckCircle, Copy, Database, Receipt, GitBranch, GitFork, ChevronDown, Bell, Layers, BookOpen, ArrowUpRight, Pill, Hammer, Shuffle
+        Send, Mail, Scan, Binoculars, MessageCircle, Activity, Shield, EyeOff, MessageSquare, Sunrise, Radar, Brain, Info, AlertTriangle, Paperclip, Mic, Scale, TrendingDown, TrendingUp, UserCheck, Loader2, Check, Minus, Download, UserPlus, Play, ArrowLeft, MoreVertical, Menu, Smile, DollarSign, Target, LineChart, PieChart, ShieldAlert, CheckCheck, Eye, Users, Clock, FileText, Share2, Globe, BellRing, BrainCircuit, MessageSquareMore, Search, Lock, CheckCircle2, MinusCircle, XCircle, Building2, CreditCard, Component, Cpu, Navigation2, Zap, Gauge, Sparkles, CalendarOff, Compass, Home, HelpCircle, ShieldCheck, Briefcase, ArrowRight, CheckCircle, Copy, Database, Receipt, GitBranch, GitFork, ChevronDown, Bell, Layers, BookOpen, ArrowUpRight, Pill, Hammer, Shuffle, ArrowUp, Smartphone, Phone, Apple, BadgeCheck, Repeat, Medal
     };
 
     const renderIcons = () => {

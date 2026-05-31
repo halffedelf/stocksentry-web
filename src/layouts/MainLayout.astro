@@ -8,21 +8,50 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
+	ogImage?: string;
 }
 
-const { title, description = "The AI powered bot that constantly monitors your positions. It reads the charts, examines the news, and nudges you in plain English only when it's time to act." } = Astro.props;
+const { 
+	title, 
+	description = "The AI powered app that constantly monitors your positions. It reads the charts, examines the news, and nudges you in plain English only when it's time to act.",
+	ogImage = "/favicon/logo.png"
+} = Astro.props;
+
 const currentPath = Astro.url.pathname;
+const siteUrl = "https://stocksentry.bot";
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/png" href="/logo.png" />
-		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
 		<title>{title} | StockSentry</title>
+		<meta name="title" content={`${title} | StockSentry`} />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={`${title} | StockSentry`} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(ogImage, siteUrl)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={`${title} | StockSentry`} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(ogImage, siteUrl)} />
+
+		<link rel="icon" type="image/png" href="/favicon/favicon.png" />
+		<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+		<link rel="manifest" href="/favicon/site.webmanifest" />
+		<meta name="generator" content={Astro.generator} />
 		<script async src="https://tally.so/widgets/embed.js"></script>
 		<ClientRouter />
 	</head>
