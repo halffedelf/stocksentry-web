@@ -3,17 +3,71 @@ import MainLayout from '../layouts/MainLayout.astro';
 import HomepageProofSection from '../components/HomepageProofSection.astro';
 ---
 
-<MainLayout 
-    title="AI Stock Market App | Automated Trading Monitoring & Alerts"
-    description="StockSentry is the leading AI Stock Market App for automated monitoring. Get real-time technical analysis, plain-English verdicts, and proactive trading alerts directly on your phone."
+<MainLayout
+    title="AI Stock Alert App for Swing Traders"
+    description="StockSentry monitors 14 indicators and reads the news 24/7, sending plain-English alerts only when it's time to act. No broker connection. Free 14-day trial."
 >
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "StockSentry",
+      "operatingSystem": "Android",
+      "applicationCategory": "dataAnalysis",
+      "description": "StockSentry is an AI-powered stock data analysis and alert app for swing traders. It watches technical indicators and reads news sentiment to deliver plain-English personalized alerts only when it is time to act.",
+      "url": "https://stocksentry.bot",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Basic",
+          "price": "9.99",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "19.99",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Advanced",
+          "price": "39.99",
+          "priceCurrency": "USD"
+        }
+      ],
+      "featureList": [
+        "Real-time AI stock alerts",
+        "Confidence score 0–100%",
+        "Daily morning briefing at 08:30 AM",
+        "Stop-loss and ATR trailing ratchet alerts",
+        "Earnings blackout circuit breaker",
+        "No broker connection required",
+        "Plain-English AI verdicts",
+        "Swing trading focus"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "StockSentry",
+        "url": "https://stocksentry.bot"
+      },
+      "screenshot": "https://stocksentry.bot/favicon/logo.png"
+    }
+    </script>
+
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div class="reveal-direct">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                    Stop watching charts, <br><span class="text-brand-500">start catching trends.</span>
-                    <span class="sr-only">Personalized AI Stock Monitoring & Alerting App for US Markets</span>
+                    The AI Stock Alert App — <br><span class="text-brand-500">stop watching charts, start catching trends.</span>
                 </h1>
                 <p class="text-lg text-[var(--text-base)] mb-8 max-w-xl leading-relaxed">
                     Delegate your analysis to the Sentry. It <strong>watches the indicators</strong> and <strong>reads the news</strong>, giving you a definitive 0-100% confidence score on every setup.
@@ -25,7 +79,11 @@ import HomepageProofSection from '../components/HomepageProofSection.astro';
                     </a>
                     <div class="flex gap-3">
                         <!-- Google Play -->
-                        <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-dark-800 border border-slate-700 shadow-xl group hover:border-brand-500/50 transition-all cursor-pointer active:scale-[0.98]">
+                        <a href="https://play.google.com/store/apps/details?id=com.stocksentry.app"
+                           aria-label="Download StockSentry on Google Play"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-dark-800 border border-slate-700 shadow-xl group hover:border-brand-500/50 transition-all active:scale-[0.98]">
                             <div class="w-6 h-6 flex items-center justify-center">
                                 <svg viewBox="0 0 512 512" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M32.5 7.3c-1.6 1.3-2.5 3.3-2.5 5.8v485.7c0 2.5.9 4.5 2.5 5.8l1.4 1.4L282 257.1v-2.2L33.9 5.9l-1.4 1.4z" fill="#2196F3"/>
@@ -38,9 +96,11 @@ import HomepageProofSection from '../components/HomepageProofSection.astro';
                                 <div class="text-[8px] text-slate-500 uppercase font-black tracking-tighter leading-none mb-1">Get it on</div>
                                 <div class="text-[13px] text-white font-black leading-none whitespace-nowrap">Google Play</div>
                             </div>
-                        </div>
+                        </a>
                         <!-- App Store -->
-                        <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-dark-800/40 border border-slate-800 opacity-50 relative overflow-hidden group">
+                        <div class="flex items-center gap-3 px-5 py-3 rounded-2xl bg-dark-800/40 border border-slate-800 opacity-50 relative overflow-hidden group"
+                             aria-label="App Store — Coming Soon"
+                             role="img">
                             <div class="w-6 h-6 flex items-center justify-center">
                                 <svg viewBox="0 0 384 512" class="w-full h-full fill-white" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-31.4-73.1-109.8-1.7-142zM263 118.9c25.5-30.2 40.5-62.1 36-93.5-26.8 1.4-56.1 16.4-75.1 41.6-17.2 22.5-30.8 55.4-26.4 84.8 29.8 2.2 53.4-14.7 65.5-32.9z"/>

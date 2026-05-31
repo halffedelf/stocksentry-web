@@ -74,13 +74,71 @@ const tiers = [
     .ss-num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
 </style>
 
-<MainLayout 
-    title="AI Stock Market App Pricing | Choose Your Intelligence Tier"
+<MainLayout
+    title="AI Stock Alert App Pricing & Plans"
     description="Find the perfect plan for your trading style. Our AI Stock Market App offers tiers from raw technical signals to a full conversational market co-pilot."
 >
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the Free tier actually useful?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Free tier is designed to show you what you're missing. You'll see aggregate data—like how many conviction setups the agent found today—but no ticker names or entry levels. It's the best way to check out the app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are safety features unconditional?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stop-loss alerts, ATR trailing-stops, and distress circuit-breakers are capital-protection features, not product differentiators. We believe every paying subscriber deserves institutional-grade risk management regardless of their tier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it make sense to have StockSentry for a small portfolio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The value of a StockSentry Pro subscription ($19.99/month, or roughly $240/year) depends heavily on your starting capital. Your portfolio needs to generate at least $240 in annual profit to cover the cost. Between 2021 and 2024, our backtested model turned $10,000 into $22,282 (a +122.8% gain over 4 years). If your portfolio is $5,000 or more, historical data suggests the subscription cost is easily absorbed by potential gains. However, if your starting portfolio is under $1,000, the subscription fee will eat up a significant portion of your profits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Personalization work in StockSentry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Personalization is the biggest jump between Basic and Pro. In Pro, the agent layers on macro context and reasons about your specific situation. It doesn't just fire a signal; it tells you why it reached that conclusion based on current market regimes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I interrogate the Advanced agent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Advanced users can ask the agent direct questions about its reasoning: 'Why did you call that sell last week?' or 'Which of my positions is most at risk?'. The agent has access to its own call log and reasoning history to give you grounded answers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are deep-dives powered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deep-dives use our most advanced reasoning models (Claude Sonnet) to perform a point-in-time analysis of any ticker. Higher tiers include larger monthly quotas to accommodate active power users who want deep oversight on every position."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Header -->
     <header class="pt-24 pb-8 px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Stop watching charts, <span class="text-brand-500">start catching trends.</span></h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">StockSentry Pricing — <span class="text-brand-500">Choose Your AI Stock Alert Plan</span></h1>
         <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
             Choose the level of intelligence that fits your portfolio. From raw signals to a fully conversational market co-pilot.
         </p>

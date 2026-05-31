@@ -36,22 +36,38 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content={Astro.url} />
+		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={`${title} | StockSentry`} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={new URL(ogImage, siteUrl)} />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:url" content={canonicalURL} />
 		<meta property="twitter:title" content={`${title} | StockSentry`} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={new URL(ogImage, siteUrl)} />
 
+		<!-- Structured Data: Organization -->
+		<script type="application/ld+json" is:inline>
+		{
+		  "@context": "https://schema.org",
+		  "@type": "Organization",
+		  "name": "StockSentry",
+		  "url": "https://stocksentry.bot",
+		  "logo": "https://stocksentry.bot/favicon/logo.png",
+		  "description": "AI-powered stock data analysis and alerting app for swing traders.",
+		  "contactPoint": {
+		    "@type": "ContactPoint",
+		    "email": "support@stocksentry.app",
+		    "contactType": "customer support"
+		  }
+		}
+		</script>
+
 		<link rel="icon" type="image/png" href="/favicon/favicon.png" />
 		<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
 		<link rel="manifest" href="/favicon/site.webmanifest" />
-		<meta name="generator" content={Astro.generator} />
 		<script async src="https://tally.so/widgets/embed.js"></script>
 		<ClientRouter />
 	</head>

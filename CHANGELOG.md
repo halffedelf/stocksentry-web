@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-05-31
+
+### Added
+- **Structured Data (JSON-LD):** Added four schema blocks for rich SERP results:
+    - `SoftwareApplication` schema on the homepage (pricing tiers, feature list, OS).
+    - `Organization` schema in the global layout (brand entity, logo, support contact).
+    - `FAQPage` schema on `/faq` (9 Q&A pairs for FAQ accordion in search results).
+    - `FAQPage` schema on `/pricing` (6 Q&A pairs from the Radical Transparency section).
+- **Auto-generated Sitemap:** Installed `@astrojs/sitemap` integration. The sitemap is now generated automatically at build time at `/sitemap-index.xml`, eliminating the need to manually update `public/sitemap.xml` when new pages are added. Admin and API routes are excluded via filter.
+- **SEO Planning Docs:** Added `SEO_IMPLEMENTATION_PLAN.md` and `SEO_CONTENT_CALENDAR.md` to the repo for reference.
+
+### Changed
+- **On-page SEO — Title Tags:** Rewrote title tags on homepage, `/pricing`, and `/faq` to target primary keywords within the 60-character SERP limit.
+    - Homepage: `"AI Stock Alert App for Swing Traders"` (renders as 51 chars)
+    - Pricing: `"AI Stock Alert App Pricing & Plans"` (renders as 49 chars)
+    - FAQ: `"StockSentry FAQ — How Our AI Stock Alert App Works"`
+- **On-page SEO — H1s:** Replaced generic or duplicate H1s with keyword-bearing, page-unique headings across homepage, `/pricing`, and `/faq`.
+- **Open Graph URLs:** Fixed `og:url` and `twitter:url` in `MainLayout.astro` to always resolve to the canonical production URL (`https://stocksentry.bot/...`) instead of the request URL (which resolved to `localhost` in dev).
+- **Google Play Button:** Converted the Google Play `<div>` to a proper `<a>` tag linking to `https://play.google.com/store/apps/details?id=com.stocksentry.app`. Added `aria-label`, `target="_blank"`, and `rel="noopener noreferrer"`.
+- **App Store Button:** Added `role="img"` and `aria-label="App Store — Coming Soon"` to the inert App Store placeholder.
+
+### Removed
+- **Generator Meta Tag:** Removed `<meta name="generator">` from `MainLayout.astro` to avoid exposing the tech stack version.
+- **Hand-coded `public/sitemap.xml`:** Deleted in favour of the auto-generated sitemap from `@astrojs/sitemap`.
+
 ## [1.0.0] - 2026-05-24
 
 ### Added
