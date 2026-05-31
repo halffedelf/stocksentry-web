@@ -5,6 +5,7 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://stocksentry.bot',
+  output: 'server',
   adapter: vercel({
     webAnalytics: {
       enabled: true,
